@@ -7,7 +7,8 @@ body {
     color: #333;
 }
 
-header {
+/* Header */
+.header {
     background-color: #007BFF;
     color: white;
     padding: 15px;
@@ -85,25 +86,3 @@ main {
     border-radius: 5px;
 }
 
-/* Footer */
-footer {
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .widgets {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .widget {
-        max-width: 100%;
-    }
-}

@@ -1,15 +1,20 @@
+<?php
+
+require "includes/header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - SwiftConnect</title>
+    <link href="<?php echo APPURL;?>/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo APPURL;?>/assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://localhost/SwiftConnect/index.css">
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <h1>SwiftConnect Dashboard</h1>
         <nav>
             <ul>
@@ -48,6 +53,10 @@
     <footer>
         <p>&copy; 2024 SwiftConnect. All rights reserved.</p>
     </footer>
+
+
+
+
 </body>
 
 </html>
