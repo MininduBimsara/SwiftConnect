@@ -15,9 +15,6 @@
 
 <body>
 
-    <div class="classss" style="height: 1000px;"></div>
-
-
 
     <div class="footer_container">
         <div class="footer_links">

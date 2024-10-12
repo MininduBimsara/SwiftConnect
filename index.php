@@ -11,6 +11,7 @@ require "includes/header.php";
     <link href="<?php echo APPURL;?>/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="<?php echo APPURL;?>/assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://localhost/SwiftConnect/index.css">
+    <link rel="stylesheet" href="includes/footer.css">
 </head>
 
 <body>
@@ -50,13 +51,4 @@ require "includes/header.php";
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 SwiftConnect. All rights reserved.</p>
-    </footer>
-
-
-
-
-</body>
-
-</html>
+    <?php include 'includes/footer.php'; ?>
