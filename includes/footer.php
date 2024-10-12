@@ -59,9 +59,9 @@
             <div class="social_media-wrap">
                 <div class="footer_logo">
                     <a href="/" id="footer_logo">
-                        <i class="fas fa-gem"></i>SwiftConnect</a>
+                        <i class="fa-brands fa-nfc-symbol"></i></i>SwiftConnect</a>
                 </div>
-                <p class="website_rights">©️NEXT 2020. All Rights Reserved</p>
+                <p class="website_rights">©️SwiftConnnect 2024. All Rights Reserved</p>
                 <div class="social_icons">
                     <a href="/" class="social_icon-link" target="_blank">
                         <i class="fab fa-facebook"></i>
