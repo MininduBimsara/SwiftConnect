@@ -59,7 +59,7 @@
             <div class="social_media-wrap">
                 <div class="footer_logo">
                     <a href="/" id="footer_logo">
-                        <i class="fas fa-gem"></i>NEXT</a>
+                        <i class="fas fa-gem"></i>SwiftConnect</a>
                 </div>
                 <p class="website_rights">©️NEXT 2020. All Rights Reserved</p>
                 <div class="social_icons">
