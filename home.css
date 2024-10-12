@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(images/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg) ; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+     
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav h1 {
+    color: #FF8000;
+    font-size: 24px;
+    margin-left: 80px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #f0a500;
+}
+
+.hamburger{
+    font-size: 30px;
+    
+    display: none;
+}
+
+.wrapper{
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 100%;
+    width: inherit;
+   
+
+}
+.header-content {
+    
+    margin-top: 200px;
+    color: black;
+    font-size: 25px;
+}
+span{
+    color: #FF8000;
+}
+
+ 
+ 
+.body-content_paragraph{
+    font-size: 20px;
+}
+
+ 
+
+ 
+.status{
+    display: flex;
+    margin-top: 15px;
+    
+    
+}
+input,button{
+    padding: 10px;
+}
+input{
+  
+    border: 1px solid #FF8000;
+}
+button{
+    background-color: #FF8000;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 0 5px 5x 0;
+    padding: 0 40px;
+}
+.btn{
+    padding: 10px 20px;
+    background-color: #FF8000;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .header-content h2 {
+        font-size: 36px;
+    }
+
+    .header-content p {
+        font-size: 16px;
+    }
+    ul{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+        height: 100%;
+        width: inherit;
+        font-size: 15px;
+        
+    }
+    nav{
+        
+    }
+
+}
