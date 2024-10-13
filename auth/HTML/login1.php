@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php //include "..\includes\header.php";
 
 
@@ -7,7 +8,48 @@
 
 
 ?>
+=======
+<?php
+require "../../includes/header.php"; 
+require "../../config/config.php";  
+>>>>>>> b2efc5f7283a52b04cc601af2e98e3ff2f4bbdf2
 
+if (isset($_SESSION['username'])) {
+    echo "<script> window.location.href ='" . APPURL . "'; </script>";
+}
+
+if (isset($_POST['submit'])) {
+    if (empty($_POST['email']) || empty($_POST['password'])) {
+        echo "<script>alert('One or more inputs are empty');</script>";
+    } else {
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = $_POST['password'];
+
+        $login = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $login->bind_param("s", $email);
+        $login->execute();
+        $result = $login->get_result();
+
+        if ($result->num_rows > 0) {
+            $fetch = $result->fetch_assoc();
+
+            if (password_verify($password, $fetch['mypassword'])) {
+                $_SESSION['username'] = $fetch['username'];
+                $_SESSION['email'] = $fetch['email'];
+                $_SESSION['user_id'] = $fetch['id'];
+                $_SESSION['image'] = $fetch['image'];
+                echo "<script> window.location.href ='" . APPURL . "'; </script>";
+            } else {
+                echo "<script>alert('Email or password is wrong');</script>";
+            }
+        } else {
+            echo "<script>alert('Email or password is incorrect');</script>";
+        }
+
+        $login->close();
+    }
+}
+?>
 
 
 <!DOCTYPE html>
@@ -74,5 +116,5 @@
 
 </html>
 
-<?php //include "..\includes\f1.php";
+<?php include "../../includes/f1.php";
 ?>
