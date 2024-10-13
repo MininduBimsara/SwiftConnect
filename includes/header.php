@@ -18,41 +18,39 @@
       <link href="<?php echo APPURL;?>/assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
       <link href="<?php echo APPURL;?>/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="includes/footer.css">
+      <link rel="stylesheet" href="header.css">
   </head>
 
   <body>
       <div class="page-header">
           <!--=============== Navbar ===============-->
-          <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
+          <nav class="navbar" id="page-navigation">
               <div class="container">
                   <!-- Navbar Brand -->
                   <a href="<?php echo APPURL;?>/" class="navbar-brand">
-                      <img src="<?php echo APPURL;?>/assets/img/logo/logo-1.png" alt="">
+                      <img src="<?php echo APPURL;?>/assets/logos/SwiftConnect.svg" alt="">
                   </a>
 
                   <!-- Toggle Button -->
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
-                      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" id="toggle-button">
                       <span class="navbar-toggler-icon"></span>
                   </button>
 
-                  <div class="collapse navbar-collapse" id="navbarcollapse">
+                  <div class="navbar-collapse" id="navbarcollapse">
                       <!-- Navbar Menu -->
-                      <ul class="navbar-nav ml-auto">
+                      <ul class="navbar-nav">
 
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/shop.php" class="nav-link">Shop</a>
-
+                              <a href="" class="nav-link">Shop</a>
                           </li>
 
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/faq.php" class="nav-link">FAQ</a>
+                              <a href="" class="nav-link">FAQ</a>
                           </li>
 
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/contact.php" class="nav-link">Contact</a>
+                              <a href="" class="nav-link">Contact</a>
                           </li>
-
 
                           <?php if(!isset($_SESSION['username'])) : ?>
 
@@ -66,11 +64,11 @@
                           <?php else: ?>
 
                           <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
-                                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <div class="avatar-header"><img
-                                          src="<?php echo APPURL;?>/assets/img/<?php echo $_SESSION['image']; ?>">
-                                  </div><?php echo $_SESSION['username']; ?>
+                              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown">
+                                  <div class="avatar-header">
+                                      <img src="<?php echo APPURL;?>/assets/img/<?php echo $_SESSION['image']; ?>">
+                                  </div>
+                                  <?php echo $_SESSION['username']; ?>
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item"
@@ -78,14 +76,14 @@
                                       History</a>
                                   <a class="dropdown-item"
                                       href="<?php echo APPURL;?>/users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
-                                  <a class=" dropdown-item" href="<?php echo APPURL;?>/auth/logout.php">Log Out</a>
+                                  <a class="dropdown-item" href="<?php echo APPURL;?>/auth/logout.php">Log Out</a>
                               </div>
                           </li>
                           <li class="nav-item">
-                              <a href="" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fa fa-shopping-basket"></i><span class="badge badge-primary"></span>
+                              <a href="" class="nav-link">
+                                  <i class="fa fa-shopping-basket"></i>
+                                  <span class="badge badge-primary">1</span>
                               </a>
-
                           </li>
 
                           <?php endif ; ?>
@@ -96,3 +94,16 @@
               </div>
           </nav>
       </div>
+      <script>
+      window.addEventListener('scroll', function() {
+          var navbar = document.querySelector('.navbar');
+          if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+          } else {
+              navbar.classList.remove('scrolled');
+          }
+      });
+      </script>
+  </body>
+
+  </html>
