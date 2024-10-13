@@ -9,7 +9,7 @@
   <html>
 
   <head>
-      <title>SwiftConnect | Groceries Organic Store</title>
+      <title>SwiftConnect – Your Gateway to Seamless Shipping.</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -17,21 +17,7 @@
           type="text/css">
       <link href="<?php echo APPURL;?>/assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
       <link href="<?php echo APPURL;?>/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
-
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/bootstrap/bootstrap.css">
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/o2system-ui/o2system-ui.css">
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/owl-carousel/owl-carousel.css">
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/cloudzoom/cloudzoom.css">
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/thumbelina/thumbelina.css">
-      <link rel="stylesheet" type="text/css" media="all"
-          href="<?php echo APPURL;?>/assets/packages/bootstrap-touchspin/bootstrap-touchspin.css">
-      <link rel="stylesheet" type="text/css" media="all" href="<?php echo APPURL;?>/assets/css/theme.css">
-
+      <link rel="stylesheet" href="includes/footer.css">
   </head>
 
   <body>
@@ -71,10 +57,10 @@
                           <?php if(!isset($_SESSION['username'])) : ?>
 
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/auth/register.php" class="nav-link">Register</a>
+                              <a href="<?php echo APPURL;?>/auth/HTML/register.php" class="nav-link">Register</a>
                           </li>
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/auth/login.php" class="nav-link">Login</a>
+                              <a href="<?php echo APPURL;?>/auth/HTML/login.php" class="nav-link">Login</a>
                           </li>
 
                           <?php else: ?>
@@ -96,10 +82,8 @@
                               </div>
                           </li>
                           <li class="nav-item">
-                              <a href="<?php echo APPURL;?>/products/cart.php" class="nav-link" data-toggle=""
-                                  aria-haspopup="true" aria-expanded="false">
-                                  <i class="fa fa-shopping-basket"></i><span
-                                      class="badge badge-primary"><?php echo $num->num_products; ?></span>
+                              <a href="" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fa fa-shopping-basket"></i><span class="badge badge-primary"></span>
                               </a>
 
                           </li>

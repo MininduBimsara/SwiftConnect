@@ -1,4 +1,11 @@
 <?php //include "..\includes\header.php";
+
+
+
+
+
+
+
 ?>
 
 
@@ -22,7 +29,7 @@
                         Login Page
                     </h1>
                     <p class="lead">
-                        Save time and leave the groceries to us!
+                        Connecting the World, One Swift Delivery at a Time.
                     </p>
 
                     <div class="card card-login mb-5">
