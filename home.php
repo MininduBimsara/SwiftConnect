@@ -1,3 +1,7 @@
+<?php
+
+define("APPURL" , "http://localhost/SwiftConnect");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +12,8 @@
     <link rel="stylesheet" href="home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="<?php echo APPURL;?>/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="includes/footer.css">
+
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 <?php
 
-require "includes/header.php";
+define("APPURL" , "http://localhost/SwiftConnect");
 ?>
 <!DOCTYPE html>
 <html lang="en">
