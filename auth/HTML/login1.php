@@ -1,3 +1,44 @@
+<?php
+require "../../includes/header.php"; 
+require "../../config/config.php";  
+
+
+if (isset($_SESSION['username'])) {
+    echo "<script> window.location.href ='" . APPURL . "'; </script>";
+}
+
+if (isset($_POST['submit'])) {
+    if (empty($_POST['email']) || empty($_POST['password'])) {
+        echo "<script>alert('One or more inputs are empty');</script>";
+    } else {
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = $_POST['password'];
+
+        $login = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $login->bind_param("s", $email);
+        $login->execute();
+        $result = $login->get_result();
+
+        if ($result->num_rows > 0) {
+            $fetch = $result->fetch_assoc();
+
+            if (password_verify($password, $fetch['mypassword'])) {
+                $_SESSION['username'] = $fetch['username'];
+                $_SESSION['email'] = $fetch['email'];
+                $_SESSION['user_id'] = $fetch['id'];
+                $_SESSION['image'] = $fetch['image'];
+                echo "<script> window.location.href ='" . APPURL . "'; </script>";
+            } else {
+                echo "<script>alert('Email or password is wrong');</script>";
+            }
+        } else {
+            echo "<script>alert('Email or password is incorrect');</script>";
+        }
+
+        $login->close();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +58,7 @@
                         Login Page
                     </h1>
                     <p class="lead">
-                        Save time and leave the groceries to us!
+                        Connecting the World, One Swift Delivery at a Time.
                     </p>
 
                     <div class="card card-login mb-5">
@@ -61,3 +102,6 @@
 </body>
 
 </html>
+
+<?php include "../../includes/f1.php";
+?>
