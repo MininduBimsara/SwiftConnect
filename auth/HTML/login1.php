@@ -1,5 +1,6 @@
 <?php
-require "../../includes/header.php"; 
+    define("APPURL" , "http://localhost/SwiftConnect");
+
 require "../../config/config.php";  
 
 
@@ -47,6 +48,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../../includes/footer.css">
 </head>
 
 <body>
@@ -103,5 +105,5 @@ if (isset($_POST['submit'])) {
 
 </html>
 
-<?php include "../../includes/f1.php";
+<?php include "../../includes/footer.php";
 ?>
