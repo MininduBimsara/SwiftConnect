@@ -1,3 +1,8 @@
+<?php //include "..\includes\header.php";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,3 +66,6 @@
 </body>
 
 </html>
+
+<?php //include "..\includes\f1.php";
+?>
