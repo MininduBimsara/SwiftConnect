@@ -1,0 +1,131 @@
+body {
+    background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
+    background-size: cover;
+  background-position: center;
+    margin: 10;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Light background color */
+  }
+  
+  .page-content {
+    min-height: 100vh;/* Full height for the page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner {
+      display: flex;
+      justify-content: center; 
+      width: 100%;
+  }
+  
+  .jumbotron {
+    padding: 50px 20px; /* Padding around the jumbotron */
+    background-color: #b2f4f8ba; /* Gray background for the jumbotron */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 100%;
+      max-width: 600px; 
+    position: relative;
+  }
+  
+  .jumbotron-bg {
+    background-image: url("assets/img/bg-header.jpg"); /* Path to your background image */
+    background-size: cover; /* Cover the entire jumbotron */
+    background-position: center; /* Center the background image */
+  }
+  
+  .card-login {
+    width: 70%;
+    max-width: 500px;
+    background-color: rgb(
+      253,
+      140,
+      109
+    ); /* Slightly transparent white for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px auto; /* Margin above the card */
+    margin-left: 100px;
+  }
+  
+  .card-body {
+    padding: 20px; /* Padding inside the card */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Space between form groups */
+  }
+  
+  .form-control {
+    width: 80%; /* Full width for input fields*/
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .btn {
+    width: 170px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  
+  .lead {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(16, 16, 110);
+  }
+  
+  #checkbox0 {
+    transform: scale(1.5);
+  }
+  
+  .text-light {
+    font-size: 15px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Tablet and mobile styles */
+    .jumbotron {
+      padding: 30px 10px;
+    }
+  
+    .card-login {
+      width: 90%; /* Reduce width for smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .form-control {
+      width: 100%; /* Ensure inputs take full width */
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Mobile specific styles */
+    .lead {
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    .btn {
+      font-size: 16px;
+    }
+  
+    .form-control {
+      font-size: 14px;
+      height: 35px;
+    }
+  }
+  
