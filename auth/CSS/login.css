@@ -2,10 +2,10 @@ body {
   background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
   background-size: cover;
   background-position: center;
-  margin: 10px; /* Added px */
+  margin: 10px;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: white; /* Optional */
+  background-color: white; 
 }
 
 .page-content {
@@ -23,7 +23,7 @@ body {
 
 .jumbotron {
   padding: 50px 20px;
-  background-color: #b2f4f8ba;
+  background-color: #fbbc79ca;
   color: rgb(0, 0, 0);
   text-align: center;
   width: 100%;
@@ -35,17 +35,17 @@ body {
   background-image: url("assets/img/bg-header.jpg");
   background-size: cover;
   background-position: center;
-} /* Added missing closing brace */
+} 
 
 .card-login {
   width: 70%;
   max-width: 500px;
-  background-color: rgb(253, 140, 109);
+  background-color: #FF8000;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   margin-right: auto; 
-  margin-left: auto; /* Corrected shorthand */
+  margin-left: auto; 
 }
 
 .card-body {
