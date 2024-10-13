@@ -1,3 +1,4 @@
+/* General Styling */
 body {
   background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
   background-size: cover;
@@ -8,6 +9,7 @@ body {
   background-color: white; 
 }
 
+/* Page Content */
 .page-content {
   min-height: 100vh; /* Full height for the page */
   display: flex;
@@ -21,6 +23,7 @@ body {
   width: 100%;
 }
 
+/* Jumbotron Styling */
 .jumbotron {
   padding: 50px 20px;
   background-color: #FF8000;
@@ -35,8 +38,9 @@ body {
   background-image: url("assets/img/bg-header.jpg");
   background-size: cover;
   background-position: center;
-} 
+}
 
+/* Card Styling */
 .card-login {
   width: 70%;
   max-width: 500px;
@@ -52,18 +56,33 @@ body {
   padding: 20px;
 }
 
+/* Form Group Styling */
 .form-group {
   margin-bottom: 15px; /* Space between form groups */
 }
 
+/* Form Control Styling (Email and Password Inputs) */
 .form-control {
-  width: 80%; /* Full width for input fields */
+  width: 100%; /* Full width for input fields */
   height: 40px;
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
+  margin: 0 auto; /* Center align */
 }
 
+/* Button Styling */
+.btn {
+  width: 100%; /* Set the same width as input fields */
+  height: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto; /* Center align */
+}
+
+/* Remember Me and Forgot Password */
 .remember-forgot .col-md-12 {
   display: flex;
   justify-content: space-between;
@@ -87,14 +106,6 @@ body {
   color: #f0f0f0; 
 }
 
-.btn {
-  width: 170px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
 #checkbox0 {
   transform: scale(1.5);
 }
@@ -103,6 +114,7 @@ body {
   font-size: 15px;
 }
 
+/* Responsive Styling for Tablets and Mobiles */
 @media screen and (max-width: 768px) {
   /* Tablet and mobile styles */
   .jumbotron {
@@ -115,8 +127,9 @@ body {
     margin-right: auto;
   }
 
-  .form-control {
-    width: 100%;
+  .form-control,
+  .btn {
+    width: 100%; /* Full width for input fields and button */
   }
 
   .btn {
@@ -126,8 +139,6 @@ body {
 
 @media screen and (max-width: 480px) {
   /* Mobile specific styles */
- 
-
   h1 {
     font-size: 24px;
   }
