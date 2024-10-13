@@ -5,7 +5,7 @@ background-position: center;
   margin: 10;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: white; /* Light background color */
+  background-color: white; 
 }
 
 .page-content {
@@ -22,8 +22,8 @@ background-position: center;
 }
 
 .jumbotron {
-  padding: 50px 20px; /* Padding around the jumbotron */
-  background-color: #b2f4f8ba; /* Gray background for the jumbotron */
+  padding: 50px 20px; 
+  background-color: #b2f4f8ba;
   color: rgb(0, 0, 0);
   text-align: center;
   width: 100%;
@@ -32,27 +32,22 @@ background-position: center;
 }
 
 .jumbotron-bg {
-  background-image: url("assets/img/bg-header.jpg"); /* Path to your background image */
-  background-size: cover; /* Cover the entire jumbotron */
-  background-position: center; /* Center the background image */
-}
+  background-image: url("assets/img/bg-header.jpg"); 
+  background-size: cover; 
+  background-position: center; 
 
 .card-login {
   width: 70%;
   max-width: 500px;
-  background-color: rgb(
-    253,
-    140,
-    109
-  ); /* Slightly transparent white for the card */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-top: 20px auto; /* Margin above the card */
+  background-color: rgb( 253, 140, 109); 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px auto; 
   margin-left: 100px;
 }
 
 .card-body {
-  padding: 20px; /* Padding inside the card */
+  padding: 20px;
 }
 
 .form-group {
@@ -101,7 +96,7 @@ background-position: center;
   }
 
   .form-control {
-    width: 100%; /* Ensure inputs take full width */
+    width: 100%; 
   }
 
   .btn {
