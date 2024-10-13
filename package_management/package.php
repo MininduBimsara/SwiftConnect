@@ -35,51 +35,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Package Management</title>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
 
-    .container {
-        width: 50%;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    select {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-    button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-
-    table {
-        width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
-    }
-
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
-
-    th,
-    td {
-        padding: 10px;
-        text-align: left;
-    }
-    </style>
 </head>
 
 <body>
