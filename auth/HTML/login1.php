@@ -1,18 +1,7 @@
-<<<<<<< HEAD
-<?php //include "..\includes\header.php";
-
-
-
-
-
-
-
-?>
-=======
 <?php
 require "../../includes/header.php"; 
 require "../../config/config.php";  
->>>>>>> b2efc5f7283a52b04cc601af2e98e3ff2f4bbdf2
+
 
 if (isset($_SESSION['username'])) {
     echo "<script> window.location.href ='" . APPURL . "'; </script>";
@@ -50,8 +39,6 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
