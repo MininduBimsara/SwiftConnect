@@ -42,12 +42,15 @@ nav {
 }
 
 nav h1 {
-    color: #FF8000;
+    color: #22313f;
     font-size: 24px;
     margin-left: 80px;
 }
 nav h1 span{
-    color: #7fa99b;
+    color: #ff0000;
+}
+nav h1 i{
+    color:black;
 }
 
 nav ul {
@@ -155,10 +158,17 @@ button{
 }
 .wrapper .naming{
     width: 30%;
+    color: #22313f;
     
 }
+.naming h1{
+    font-size: 40px;
+}
+.naming h1 i{
+    color: black;
+}
 .naming span{
-    color: #01352c;
+    color:#ff0000 ;
 }
 .wrapper .naming-desc{
     width: 70%;
@@ -195,7 +205,7 @@ button{
 
  
 .gallery h1{
-    color: black;
+    color:#ff0000;
     text-align: center;
 }
 .gallery .wrapper{
@@ -233,7 +243,12 @@ button{
 .description p{
     text-align: justify;
 }
+.description h4{
+    color: #22313f;
+    margin-bottom: 10px;
+}
 .description button{
+    background-color:#FF8000;
     padding: 10px 20px;
     border-radius: 3px;
     font-weight: 400;
