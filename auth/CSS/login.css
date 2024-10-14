@@ -7,13 +7,15 @@
 
 
 body {
-  background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
-  background-size: cover;
+  background-image: url("../../assets/images/login (1).jpg");
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  background-position: ;
   margin: 0%;
   padding: 0%;
   font-family: Arial, sans-serif;
-  background-color: white; 
+  /* background-color: white;  */
 }
 
 /* Page Content */
@@ -33,8 +35,8 @@ body {
 /* Jumbotron Styling */
 .jumbotron {
   padding: 50px 20px;
-  background-color: #FF8000;
-  color: white;
+  background-color: ;
+  color: #FF8000;
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -80,7 +82,7 @@ body {
 
 /* Button Styling */
 .butn {
-  width: 100%; /* Set the same width as input fields */
+  width: 50%; /* Set the same width as input fields */
   height: 50px;
   font-size: 20px;
   border-radius: 10px;
@@ -140,7 +142,7 @@ body {
   }
 
   .butn {
-    width: 100%;
+    width: 50%;
   }
 }
 
