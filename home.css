@@ -193,13 +193,7 @@ button{
     font-weight: 300;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
+ 
 .gallery h1{
     color: black;
     text-align: center;
@@ -283,7 +277,34 @@ body {
         
     }
     .gallery-item {
-        flex: 1 1 100%; /* 1 item per row on smaller screens */
+        flex: 1 1 100%; 
+    }
+
+    .branding{
+        height: 1100px;
+    }
+
+    .branding .wrapper{
+         
+        overflow:hidden;
+        display: block;
+        text-align: center;
+       
+    }
+    .wrapper .naming{
+        width: inherit;
+        text-align: center;
+        margin: 30px 0;
+    }
+    .wrapper .naming-desc{
+        width: inherit;
+    }
+    .wrapper .naming-desc p{
+        font-size: 16px;
+        
+    }
+    .icons{
+        display: block;
     }
 
 }
