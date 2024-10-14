@@ -126,7 +126,13 @@ button{
     border-radius: 0 5px 5x 0;
     padding: 0 40px;
 }
+button:hover{
+    background-color:#ff0000 ;
+    color: white;
+    transition: 1s;
+}
 .btn{
+    cursor: pointer;
     padding: 10px 20px;
     background-color: #FF8000;
     color: white;
@@ -134,7 +140,10 @@ button{
     outline: none;
     border-radius: 5px;
     font-size: 15px;
-    cursor: pointer;
+   
+}
+.btn:hover{
+    background-color: #ff0000;
 }
  
 .branding{
@@ -252,6 +261,10 @@ button{
     padding: 10px 20px;
     border-radius: 3px;
     font-weight: 400;
+    cursor: pointer;
+}
+.description button:hover{
+    background-color: #ff0000;
 }
 .gallery-item img:hover{
     transform: scale(1.25);
