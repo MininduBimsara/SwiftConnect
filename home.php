@@ -67,7 +67,7 @@ define("APPURL" , "http://localhost/SwiftConnect");
        <div class="branding">
            <div class="wrapper">
                 <div class="naming">
-                     <h1>Swift<span>Connect</span></h1>
+                     <h1><i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span></h1>
                 </div>
                      <div class="naming-desc">
                         <p style="color: black;">SwiftConnect  is the largest and most experienced Domestic Courier Service Company in the Island handling time sensitive documents and packages for corporate and individual clients for over 34 years. Over the years it has hamessed its dedication and devotion towards the customer concerns. Its services and operational systems are tailor made which could cater to the varying needs of the customers. Speed, Security, Reliability and Accountability are considered paramount in its services afforded to every customer.</p>
