@@ -18,7 +18,7 @@
 
     <div class="footer_container">
         <div class="footer_links">
-            <div class="foote_link-wrapper">
+            <div class="footer_link-wrapper">
                 <div class="footer_link-items">
                     <h2>About Us</h2>
                     <a href="/">How It Works</a>
@@ -35,7 +35,7 @@
                     <a href="/">Sponsorships</a>
                 </div>
             </div>
-            <div class="foote_link-wrapper">
+            <div class="footer_link-wrapper">
                 <div class="footer_link-items">
                     <h2>Videos</h2>
                     <a href="/">Submit Video</a>

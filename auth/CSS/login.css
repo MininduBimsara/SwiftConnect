@@ -1,13 +1,21 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
   background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
   background-size: cover;
   background-position: center;
-  margin: 10px; /* Added px */
-  padding: 0;
+  /* margin: 10px; */
+  /* padding: 0; */
   font-family: Arial, sans-serif;
-  background-color: white; /* Optional */
+  background-color: white; 
 }
 
+/* Page Content */
 .page-content {
   min-height: 100vh; /* Full height for the page */
   display: flex;
@@ -21,10 +29,11 @@ body {
   width: 100%;
 }
 
+/* Jumbotron Styling */
 .jumbotron {
   padding: 50px 20px;
-  background-color: #b2f4f8ba;
-  color: rgb(0, 0, 0);
+  background-color: #FF8000;
+  color: white;
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -35,46 +44,72 @@ body {
   background-image: url("assets/img/bg-header.jpg");
   background-size: cover;
   background-position: center;
-} /* Added missing closing brace */
+}
 
+/* Card Styling */
 .card-login {
   width: 70%;
   max-width: 500px;
-  background-color: rgb(253, 140, 109);
+  background-color: #FF8000;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(213, 117, 0, 0.858);
   margin-top: 20px;
   margin-right: auto; 
-  margin-left: auto; /* Corrected shorthand */
+  margin-left: auto; 
 }
 
 .card-body {
   padding: 20px;
 }
 
+/* Form Group Styling */
 .form-group {
   margin-bottom: 15px; /* Space between form groups */
 }
 
+/* Form Control Styling (Email and Password Inputs) */
 .form-control {
-  width: 80%; /* Full width for input fields */
+  width: 100%; /* Full width for input fields */
   height: 40px;
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
+  margin: 0 auto; /* Center align */
 }
 
+/* Button Styling */
 .btn {
-  width: 170px;
+  width: 100%; /* Set the same width as input fields */
   height: 50px;
   font-size: 20px;
   border-radius: 10px;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto; /* Center align */
 }
 
-.lead {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(16, 16, 110);
+/* Remember Me and Forgot Password */
+.remember-forgot .col-md-12 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password-link {
+  color: white; 
+  font-size: 16px; 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center;
+}
+
+.forgot-password-link i {
+  margin-right: 5px; 
+  font-size: 18px; 
+}
+
+.forgot-password-link:hover {
+  color: #f0f0f0; 
 }
 
 #checkbox0 {
@@ -85,6 +120,7 @@ body {
   font-size: 15px;
 }
 
+/* Responsive Styling for Tablets and Mobiles */
 @media screen and (max-width: 768px) {
   /* Tablet and mobile styles */
   .jumbotron {
@@ -97,8 +133,9 @@ body {
     margin-right: auto;
   }
 
-  .form-control {
-    width: 100%;
+  .form-control,
+  .btn {
+    width: 100%; /* Full width for input fields and button */
   }
 
   .btn {
@@ -108,10 +145,6 @@ body {
 
 @media screen and (max-width: 480px) {
   /* Mobile specific styles */
-  .lead {
-    font-size: 16px;
-  }
-
   h1 {
     font-size: 24px;
   }
