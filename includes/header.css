@@ -1,168 +1,98 @@
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar {
-    background-color: #007bff; /* Blue background */
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
+.main-section {
+  font-family: Arial, sans-serif;
+  background-image: url(assets/images/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.logo-content {
+  display: flex;
+  gap: 0;
 }
 
-.navbar-brand img {
-    height: 40px;
-    width: auto;
+.overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.navbar-toggler {
-    display: none;
-    background: none;
-    border: none;
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-collapse {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; /* Aligns items vertically */
-    flex-grow: 1;
+nav h1 {
+  color: #22313f;
+  font-size: 24px;
+  margin-left: 80px;
+}
+nav h1 span {
+  color: #ff0000;
+}
+nav h1 i {
+  color: black;
 }
 
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+nav ul {
+  list-style-type: none;
 }
 
-.nav-item {
-    margin-left: 20px;
+nav ul li {
+  display: inline;
+  margin-left: 30px;
 }
 
-.nav-link {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease-in-out;
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
+nav ul li a:hover {
+  color: #f0a500;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
+.hamburger {
+  font-size: 30px;
+
+  display: none;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
+.btn {
+  padding: 10px 20px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul li {
     display: block;
-}
-
-.avatar-header img {
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    object-fit: cover;
-}
-
-.scrolled {
-    background-color: #0056b3; /* Darker blue on scroll */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .navbar-collapse {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #007bff;
-    }
-
-    .navbar-collapse.active {
-        display: flex;
-    }
-
-    .nav-item {
-
-        margin-bottom: 15px;
-        width: 100%;
-
-    }
-
-    .nav-link {
-        width: 100%;
-    }
-
-    .navbar-toggler {
-        display: block;
-        cursor: pointer;
-        background-color: transparent;
-        border: none;
-        font-size: 24px;
-        color: white;
-    }
-
-    .navbar-toggler-icon {
-        width: 30px;
-        height: 3px;
-        background-color: white;
-        position: relative;
-    }
-
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: white;
-        left: 0;
-        transition: 0.3s;
-    }
-
-    .navbar-toggler-icon::before {
-        top: -8px;
-    }
-
-    .navbar-toggler-icon::after {
-        top: 8px;
-    }
-
-    .navbar-toggler.active .navbar-toggler-icon {
-        background-color: transparent;
-    }
-
-    .navbar-toggler.active .navbar-toggler-icon::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .navbar-toggler.active .navbar-toggler-icon::after {
-        transform: rotate(-45deg);
-        top: 0;
-    }
-}
-
-/* Avatar and Dropdown for logged-in users */
-.avatar-header {
-    display: inline-block;
-    margin-right: 10px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }
