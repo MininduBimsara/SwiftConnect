@@ -49,6 +49,7 @@
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +57,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    
+    <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../../includes/footer.css">
 
@@ -71,7 +74,7 @@
                 style="background-image: url('<?php echo APPURL;?>/assets/img/bg-header.jpg');">
                 <div class="container">
                     <h1 class="pt-5">
-                        Register Page
+                        REGISTER
                     </h1>
 
 
@@ -110,18 +113,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <!-- <div class="col-md-12">
+                                     <div class="col-md-12">
                                         <div class="checkbox">
                                             <input id="checkbox0" type="checkbox" name="terms">
                                             <label for="checkbox0" class="mb-0">I Agree with <a href="terms.html"
                                                     class="text-light">Terms & Conditions</a> </label>
                                         </div>
-                                    </div> -->
+                                    </div> 
                                 </div>
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
                                         <button type="submit" name="submit"
-                                            class="btn btn-primary btn-block text-uppercase">Register</button>
+                                            class="btn btn-primary btn-block text-uppercase">REGISTER</button>
                                     </div>
                                 </div>
                             </form>
