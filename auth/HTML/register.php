@@ -4,7 +4,7 @@
 
     // if(isset($_SESSION['username'])){
         
-    //     echo "<script> window.location.href ='".APPURL."'; </script>";
+    //     echo "<script> window.location.href ='".APPURL."'; </script>";     
         
     // }
     
@@ -19,7 +19,7 @@
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            $password = $_POST['password'];         
             $image = "user.png";
 
             $insert = $conn->prepare("INSERT INTO users(fullname, email, username, mypassword, image) VALUES

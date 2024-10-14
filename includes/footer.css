@@ -12,7 +12,7 @@
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -29,11 +29,12 @@
   width: 100%;
   max-width: 1000px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .footer_link-wrapper {
-  display: flex;
+   display: flex;
+   
 }
 
 .footer_link-items {

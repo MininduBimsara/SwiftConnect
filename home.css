@@ -4,15 +4,21 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
+.main-section {
+
     font-family: Arial, sans-serif;
-    background-image: url(assets/images/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg) ; /* Replace with your image path */
-    background-size: cover;
+    background-image: url(assets/images/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg);
     background-position: center;
-    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
-    position: relative;
+    
+    
+    
+}
+.logo-content{
+    display: flex;
+    gap: 0;
 }
 
 .overlay {
@@ -39,6 +45,9 @@ nav h1 {
     color: #FF8000;
     font-size: 24px;
     margin-left: 80px;
+}
+nav h1 span{
+    color: #7fa99b;
 }
 
 nav ul {
@@ -124,7 +133,123 @@ button{
     font-size: 15px;
     cursor: pointer;
 }
+ 
+.branding{
+    
+    height: 500px;
+    background-color:#FF8000;
+    margin: 80px 0;
+    color: white;
+    overflow: hidden;
+    
+}
+.branding .wrapper{
+    height: inherit;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    line-height: 20px;
+    color: white;
+    font-family: 'Afacad Flux';
 
+}
+.wrapper .naming{
+    width: 30%;
+    
+}
+.naming span{
+    color: #01352c;
+}
+.wrapper .naming-desc{
+    width: 70%;
+    font-size: 20px;
+    line-height: 30px;
+    
+}
+.wrapper .naming-desc p{
+    color: white;
+   
+    text-align: justify;
+    
+}
+.icons{
+    color: black;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between
+    
+}
+.icon{
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+.icons i{
+    font-size: 100px;
+    
+}
+.icon.h3{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery h1{
+    color: black;
+    text-align: center;
+}
+.gallery .wrapper{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+.description p{
+    text-align: justify;
+}
+.description button{
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: 400;
+}
+.gallery-item img:hover{
+    transform: scale(1.25);
+    transition: 1s;
+}
+ 
+ 
 
 @media (max-width: 768px) {
     nav ul li {
@@ -156,6 +281,9 @@ button{
     }
     nav{
         
+    }
+    .gallery-item {
+        flex: 1 1 100%; /* 1 item per row on smaller screens */
     }
 
 }
