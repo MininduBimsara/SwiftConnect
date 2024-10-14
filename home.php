@@ -54,5 +54,5 @@ define("APPURL" , "http://localhost/SwiftConnect");
         </div>
     </div>
     </div>
-    <div class="cl" style="height: 1000px;"></div>
+  
     <?php require "includes/footer.php"; ?>
