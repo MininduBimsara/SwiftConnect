@@ -1,7 +1,7 @@
 <?php require "../../config/config.php"; ?>
 <?php
 
-    define("APPURL" , "http://localhost/SwiftConnect");
+     define("APPURL" , "http://localhost/SwiftConnect");
 
 
     // if(isset($_SESSION['username'])){
@@ -61,6 +61,7 @@
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../../includes/footer.css">
+    
 
 </head>
 
