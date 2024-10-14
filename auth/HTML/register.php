@@ -73,9 +73,7 @@
                     <h1 class="pt-5">
                         Register Page
                     </h1>
-                    <p class="lead">
-                        Save time and leave the groceries to us.
-                    </p>
+
 
                     <div class="card card-login mb-5">
                         <div class="card-body">

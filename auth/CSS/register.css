@@ -20,6 +20,11 @@ body {
       justify-content: center; 
       width: 100%;
   }
+
+  .pt-5{
+    margin: 3px;
+    padding: 5px;
+  }
   
   .jumbotron {
     padding: 50px 20px; /* Padding around the jumbotron */
