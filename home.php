@@ -114,7 +114,7 @@ define("APPURL" , "http://localhost/SwiftConnect");
             <div class="description">
                   <h4>Corporate Main Bag Services</h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est dignissimos numquam! Est aspernatur architecto aliquid?</p>
-                  <button>VIEW MORE</button>
+                  <!-- <button>VIEW MORE</button> -->
              </div>
 
        </div>
