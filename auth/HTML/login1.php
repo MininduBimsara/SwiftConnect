@@ -1,5 +1,6 @@
 <?php
-    define("APPURL" , "http://localhost/SwiftConnect");
+
+
 
 require "../../config/config.php";  
 
@@ -40,6 +41,13 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+
+<?php 
+
+include "../../includes/header.php";
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +60,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
+
 
 <body>
     <div id="page-content" class="page-content">
@@ -94,7 +103,7 @@ if (isset($_POST['submit'])) {
                                 <!-- Submit Button -->
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
-                                        <button type="submit" name="submit" class="btn btn-primary">LOGIN</button>
+                                        <button type="submit" name="submit" class="butn btn-primary">LOGIN</button>
                                     </div>
                                 </div>
                             </form>

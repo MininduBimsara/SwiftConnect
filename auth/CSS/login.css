@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
   background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
   background-size: cover;
@@ -17,7 +18,7 @@ body {
 
 /* Page Content */
 .page-content {
-  min-height: 100vh; /* Full height for the page */
+  min-height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +79,7 @@ body {
 }
 
 /* Button Styling */
-.btn {
+.butn {
   width: 100%; /* Set the same width as input fields */
   height: 50px;
   font-size: 20px;
@@ -134,22 +135,22 @@ body {
   }
 
   .form-control,
-  .btn {
+  .butn {
     width: 100%; /* Full width for input fields and button */
   }
 
-  .btn {
+  .butn {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   /* Mobile specific styles */
-  h1 {
+  .pt-5 {
     font-size: 24px;
   }
 
-  .btn {
+  .butn {
     font-size: 16px;
   }
 
