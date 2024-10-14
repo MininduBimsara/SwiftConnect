@@ -42,7 +42,9 @@
 
                       </ul>
                       <li class="hamburger"><i class='bx bx-menu'></i></li>
-                      <button class="btn">login</button>
+                      <div class="log-btn">
+                    <button>login</button>
+             </div>
                   </nav>
 
               </div>

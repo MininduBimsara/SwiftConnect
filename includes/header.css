@@ -7,7 +7,11 @@
 body .main-section {
   font-family: Arial, sans-serif;
   
-  height: 5vh;
+  
+  
+  
+   
+  
 }
 .logo-content {
   display: flex;
@@ -50,7 +54,7 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 nav ul li a {
@@ -69,7 +73,7 @@ nav ul li a:hover {
   display: none;
 }
 
-body nav .btn {
+button {
   padding: 10px 20px;
   background-color: #ff8000;
   color: white;
@@ -78,6 +82,10 @@ body nav .btn {
   border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
+}
+.log-btn button{
+   background-color:#ff8000;
+   color: white;
 }
 
 @media (max-width: 768px) {
