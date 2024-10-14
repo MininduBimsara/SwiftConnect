@@ -1,7 +1,7 @@
 /* General Styling */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
 }
 
@@ -9,8 +9,8 @@ body {
   background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
   background-size: cover;
   background-position: center;
-  /* margin: 10px; */
-  /* padding: 0; */
+  margin: 0%;
+  padding: 0%;
   font-family: Arial, sans-serif;
   background-color: white; 
 }
