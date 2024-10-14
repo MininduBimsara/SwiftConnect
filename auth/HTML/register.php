@@ -1,7 +1,11 @@
+
+
+
+
 <?php require "../../config/config.php"; ?>
 <?php
 
-     define("APPURL" , "http://localhost/SwiftConnect");
+    //  define("APPURL" , "http://localhost/SwiftConnect");
 
 
     // if(isset($_SESSION['username'])){
@@ -20,9 +24,9 @@
                 
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
-            $username = $_POST['username'];
+            $username = $_POST['username'];                     
             $password = $_POST['password'];         
-            $image = "user.png";
+            $image = "user.png";                                                      
 
             $insert = $conn->prepare("INSERT INTO users(fullname, email, username, mypassword, image) VALUES
             (:fullname, :email, :username, :mypassword, :image)");
@@ -66,7 +70,7 @@
 </head>
 
 <body>
-
+<?php require "../../includes/header.php"; ?>
 
     <!-- stepping back to grab the includes folder-->
     <div id="page-content" class="page-content">
@@ -74,20 +78,22 @@
             <div class="jumbotron jumbotron-bg text-center rounded-0"
                 style="background-image: url('<?php echo APPURL;?>/assets/img/bg-header.jpg');">
                 <div class="container">
-                    <h1 class="pt-5">
-                        REGISTER
-                    </h1>
-
+                   
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
                             <form class="form-horizontal" method="POST" action="register.php">
+                               
+                                 <div class="head">
+                                    <h1>Register</h1>
+                                </div>
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
                                         <input class="form-control" name="fullname" type=" text" required=""
                                             placeholder="Full Name">
                                     </div>
                                 </div>
+                              
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
                                         <input class="form-control" name="email" type="email" required=""
@@ -122,12 +128,11 @@
                                         </div>
                                     </div> 
                                 </div>
-                                <div class="form-group row text-center mt-4">
-                                    <div class="col-md-12">
-                                        <button type="submit" name="submit"
-                                            class="btn btn-primary btn-block text-uppercase">REGISTER</button>
-                                    </div>
-                                </div>
+                                
+                                   <div class="btnn">
+                                       <button>register</button>
+                                   </div>
+                                
                             </form>
                         </div>
                     </div>
