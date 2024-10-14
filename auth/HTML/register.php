@@ -1,6 +1,8 @@
-
 <?php require "../../config/config.php"; ?>
 <?php
+
+    define("APPURL" , "http://localhost/SwiftConnect");
+
 
     // if(isset($_SESSION['username'])){
         
@@ -55,11 +57,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../CSS/register.css">
+    <link rel="stylesheet" href="../../includes/footer.css">
+
 </head>
 
 <body>
 
-    <?php require "../../includes/header.php"; ?>
 
     <!-- stepping back to grab the includes folder-->
     <div id="page-content" class="page-content">
@@ -133,4 +136,5 @@
     <?php require "../../includes/footer.php"; ?>
 
 </body>
+
 </html>
