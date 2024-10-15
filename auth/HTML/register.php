@@ -1,58 +1,48 @@
+
+<?php require "../../config/config.php"; ?>
 <?php
-    include_once "../../config/config.php";
+
+    // if(isset($_SESSION['username'])){
+        
+    //     echo "<script> window.location.href ='".APPURL."'; </script>";     
+        
+    // }
     
     if (isset($_POST['submit'])) {
-        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
-            echo "<script>alert('One or more inputs are empty');</script>";
-        } else {
-            if ($_POST['password'] == $_POST['confirm_password']) {
+        if(empty($_POST['fullname']) OR empty($_POST['email']) OR empty($_POST['password']) OR empty($_POST['username'])){
+            echo "<script>alert('one or more inputs are empty');</script>";
+        }
+        else{
 
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+            if($_POST['password'] == $_POST['confirm_password']){
+                
+            $fullname = $_POST['fullname'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];         
+            $image = "user.png";
 
-                // Check if username or email already exists
-                $check_user_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
-                $result = mysqli_query($conn, $check_user_query);
+            $insert = $conn->prepare("INSERT INTO users(fullname, email, username, mypassword, image) VALUES
+            (:fullname, :email, :username, :mypassword, :image)");
+            
+            $insert->execute([
+                ":fullname" => $fullname,
+                ":email" => $email,
+                ":username" => $username,
+                ":mypassword" => password_hash($password, PASSWORD_DEFAULT),
+                ":image" => $image
+               
+            ]);
 
-                if (mysqli_num_rows($result) > 0) {
-                    echo "<script>alert('Username or email already exists!');</script>";
-                } else {
-                    // Image upload
-                    $image = $_FILES['image']['name'];
-                    $image_tmp = $_FILES['image']['tmp_name'];
-                    $image_folder = "user_images/" . $image;
-                    $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+            // header("location: ".APPURL."/login.php");
 
-                    $image_ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-
-                    if (!in_array($image_ext, $allowed_extensions)) {
-                        echo "<script>alert('Invalid image format. Only jpg, jpeg, png, and gif are allowed.');</script>";
-                    } else {
-                        // Move image
-                        if (move_uploaded_file($image_tmp, $image_folder)) {
-
-                            // Insert user data into the database
-                            $insert_query = "INSERT INTO users (username, name, email, password, image) 
-                                            VALUES ('$username', '$name', '$email', '$password_hashed', '$image')";
-                            $result_insert = mysqli_query($conn, $insert_query);
-                            if($result_insert) {
-                                echo "<script>window.location.href = 'login.php';</script>";
-                            } else {
-                                echo "<script>alert('Failed to create account.');</script>";
-                            }
-
-                        } else {
-                            echo "<script>alert('Failed to upload image.');</script>";
-                        }
-                    }
-                }
-
-            } else {
-                echo "<script>alert('Passwords do not match!');</script>";
+            echo "<script> window.location.href = 'login.php'; </script>";
+            
+            }else{
+            echo "<script>alert('password doesn't match!!!');</script>";
             }
+            
+           
         }
     }
 ?>
@@ -65,15 +55,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="../CSS/register.css">
+    
     <link rel="stylesheet" href="../../includes/header.css">
-    <link rel="stylesheet" href="../../includes/footer.css">
-
+    <link rel="stylesheet" href="../CSS/register.css">
 </head>
 
 <body>
 
-    <?php include_once "../../includes/header.php"; ?>
+    <?php require "../../includes/header.php"; ?>
 
     <div id="page-content" class="page-content">
         <div class="banner">
@@ -84,21 +73,18 @@
                         Register Page
                     </h1>
                     <p class="lead">
-                        Create a new account
+                        Save time and leave the groceries to us.
                     </p>
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
-                            <form class="form-horizontal" method="POST" action="register.php" enctype="multipart/form-data">
-                                <!-- Full Name Input -->
+                            <form class="form-horizontal" method="POST" action="register.php">
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
                                         <input class="form-control" name="name" type="text" required=""
                                             placeholder="Full Name">
                                     </div>
                                 </div>
-
-                                <!-- Email Input -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
                                         <input class="form-control" name="email" type="email" required=""
@@ -129,22 +115,26 @@
                                             placeholder="Confirm Password">
                                     </div>
                                 </div>
-
-                                <!-- Image Upload Input -->
-                                <div class="form-group row file-upload-wrapper">
-                                    <div class="col-md-12">
-                                        <label for="image" class="file-upload-label file-upload-text">Upload profile image</label>
-                                        <input class="form-control file-upload-input" name="image" type="file" required="">
-                                    </div>
+                                <div class="form-group row">
+                                    <!-- <div class="col-md-12">
+                                        <div class="checkbox">
+                                            <input id="checkbox0" type="checkbox" name="terms">
+                                            <label for="checkbox0" class="mb-0">I Agree with <a href="terms.html"
+                                                    class="text-light">Terms & Conditions</a> </label>
+                                        </div>
+                                    </div> -->
                                 </div>
-
-                                <!-- Submit Button -->
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
                                         <button type="submit" name="submit"
                                             class="btn btn-primary btn-block text-uppercase">Register</button>
                                     </div>
                                 </div>
+                                
+                                   <div class="btnn">
+                                       <button>register</button>
+                                   </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -156,4 +146,5 @@
     <?php include_once "../../includes/footer.php"; ?>
 
 </body>
+
 </html>

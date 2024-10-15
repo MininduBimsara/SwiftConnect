@@ -1,310 +1,305 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-section {
-
-    font-family: Arial, sans-serif;
-    background-image: url(assets/images/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    
-    
-    
+  font-family: Arial, sans-serif;
+  background-image: url(assets/images/home.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
-.logo-content{
-    display: flex;
-    gap: 0;
+
+.logo-content {
+  display: flex;
+  gap: 0;
 }
 
 .overlay {
-     
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav h1 {
-    color: #FF8000;
-    font-size: 24px;
-    margin-left: 80px;
+  color: #22313f;
+  font-size: 24px;
+  margin-left: 80px;
 }
-nav h1 span{
-    color: #7fa99b;
+nav h1 span {
+  color: #ff0000;
+}
+nav h1 i {
+  color: black;
 }
 
 nav ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 nav ul li {
-    display: inline;
-    margin-left: 30px;
+  display: inline;
+  margin-left: 30px;
 }
 
 nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: #f0a500;
+  color: #f0a500;
 }
 
-.hamburger{
-    font-size: 30px;
-    
-    display: none;
+.hamburger {
+  font-size: 30px;
+
+  display: none;
 }
 
-.wrapper{
-    margin-left: 100px;
-    margin-right: 100px;
-    height: 100%;
-    width: inherit;
-   
-
+.wrapper {
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 100%;
+  width: inherit;
 }
 .header-content {
-    
-    margin-top: 200px;
-    color: black;
-    font-size: 25px;
+  margin-top: 200px;
+  color: black;
+  font-size: 25px;
 }
-span{
-    color: #FF8000;
-}
-
- 
- 
-.body-content_paragraph{
-    font-size: 20px;
+span {
+  color: #ff8000;
 }
 
- 
-
- 
-.status{
-    display: flex;
-    margin-top: 15px;
-    
-    
-}
-input,button{
-    padding: 10px;
-}
-input{
-  
-    border: 1px solid #FF8000;
-}
-button{
-    background-color: #FF8000;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 0 5px 5x 0;
-    padding: 0 40px;
-}
-.btn{
-    padding: 10px 20px;
-    background-color: #FF8000;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-}
- 
-.branding{
-    
-    height: 500px;
-    background-color:#FF8000;
-    margin: 80px 0;
-    color: white;
-    overflow: hidden;
-    
-}
-.branding .wrapper{
-    height: inherit;
-    display: flex;
-    justify-content:space-between;
-    align-items:center;
-    line-height: 20px;
-    color: white;
-    font-family: 'Afacad Flux';
-
-}
-.wrapper .naming{
-    width: 30%;
-    
-}
-.naming span{
-    color: #01352c;
-}
-.wrapper .naming-desc{
-    width: 70%;
-    font-size: 20px;
-    line-height: 30px;
-    
-}
-.wrapper .naming-desc p{
-    color: white;
-   
-    text-align: justify;
-    
-}
-.icons{
-    color: black;
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between
-    
-}
-.icon{
-    text-align:center;
-    display: flex;
-    flex-direction: column;
-}
-.icons i{
-    font-size: 100px;
-    
-}
-.icon.h3{
-    font-size: 20px;
-    font-weight: 300;
+.body-content_paragraph {
+  font-size: 20px;
 }
 
- 
-.gallery h1{
-    color: black;
-    text-align: center;
+.status {
+  display: flex;
+  margin-top: 15px;
 }
-.gallery .wrapper{
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+input,
+button {
+  padding: 10px;
+}
+input {
+  border: 1px solid #ff8000;
+}
+button {
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5x 0;
+  padding: 0 40px;
+}
+button:hover {
+  background-color: #ff0000;
+  color: white;
+  transition: 1s;
+}
+.btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.btn:hover {
+  background-color: #ff0000;
+}
+
+.branding {
+  height: 500px;
+  background-color: #ff8000;
+  margin: 80px 0;
+  color: white;
+  overflow: hidden;
+}
+.branding .wrapper {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+  color: white;
+  font-family: "Afacad Flux";
+}
+.wrapper .naming {
+  width: 30%;
+  color: #22313f;
+}
+.naming h1 {
+  font-size: 40px;
+}
+.naming h1 i {
+  color: black;
+}
+.naming span {
+  color: #ff0000;
+}
+.wrapper .naming-desc {
+  width: 70%;
+  font-size: 20px;
+  line-height: 30px;
+}
+.wrapper .naming-desc p {
+  color: white;
+
+  text-align: justify;
+}
+.icons {
+  color: black;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.icons i {
+  font-size: 100px;
+}
+.icon.h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.gallery h1 {
+  color: #ff0000;
+  text-align: center;
+}
+.gallery .wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .gallery-item {
-    width: 500px;
-    
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    
-    overflow: hidden;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .description {
-    padding: 20px;
-    text-align: center;
-    font-size: 16px;
-    color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: black;
 }
-.description p{
-    text-align: justify;
+.description p {
+  text-align: justify;
 }
-.description button{
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-weight: 400;
+.description h4 {
+  color: #22313f;
+  margin-bottom: 10px;
 }
-.gallery-item img:hover{
-    transform: scale(1.25);
-    transition: 1s;
+.description button {
+  background-color: #ff8000;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-weight: 400;
+  cursor: pointer;
 }
- 
- 
+.description button:hover {
+  background-color: #ff0000;
+}
+.gallery-item img:hover {
+  transform: scale(1.25);
+  transition: 1s;
+}
 
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        text-align: center;
-        margin: 10px 0;
-    }
+  nav ul li {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
 
-    .header-content h2 {
-        font-size: 36px;
-    }
+  .header-content h2 {
+    font-size: 36px;
+  }
 
-    .header-content p {
-        font-size: 16px;
-    }
-    ul{
-        display: none;
-    }
-    .hamburger{
-        display: block;
-    }
-    .wrapper{
-        margin-left: 50px;
-        margin-right: 50px;
-        height: 100%;
-        width: inherit;
-        font-size: 15px;
-        
-    }
-    nav{
-        
-    }
-    .gallery-item {
-        flex: 1 1 100%; 
-    }
+  .header-content p {
+    font-size: 16px;
+  }
+  ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .wrapper {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100%;
+    width: inherit;
+    font-size: 15px;
+  }
+  nav {
+  }
+  .gallery-item {
+    flex: 1 1 100%;
+  }
 
-    .branding{
-        height: 1100px;
-    }
+  .branding {
+    height: 1100px;
+  }
 
-    .branding .wrapper{
-         
-        overflow:hidden;
-        display: block;
-        text-align: center;
-       
-    }
-    .wrapper .naming{
-        width: inherit;
-        text-align: center;
-        margin: 30px 0;
-    }
-    .wrapper .naming-desc{
-        width: inherit;
-    }
-    .wrapper .naming-desc p{
-        font-size: 16px;
-        
-    }
-    .icons{
-        display: block;
-    }
-
+  .branding .wrapper {
+    overflow: hidden;
+    display: block;
+    text-align: center;
+  }
+  .wrapper .naming {
+    width: inherit;
+    text-align: center;
+    margin: 30px 0;
+  }
+  .wrapper .naming-desc {
+    width: inherit;
+  }
+  .wrapper .naming-desc p {
+    font-size: 16px;
+  }
+  .icons {
+    display: block;
+  }
 }
