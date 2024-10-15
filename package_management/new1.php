@@ -4,147 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weight</title>
-    <style>
-    body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-
-    .container {
-        max-width: 960px;
-        margin: 20px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .image {}
-
-    .cards {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #fff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .cardss img {
-        width: 60px;
-        height: 60px;
-        margin-right: 20px;
-    }
-
-    .cards .content {
-        flex: 1;
-    }
-
-    .cards .content h2 {
-        margin-bottom: 10px;
-    }
-
-    .cards .content p {
-        margin-bottom: 5px;
-    }
-
-    .cards .content span {
-        font-weight: bold;
-    }
-
-    .cards .price {
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-
-    .btns-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    .btns {
-        background-color: #dc3545;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btns:hover {
-        background-color: #c82333;
-    }
-    </style>
+    <title>Package Management Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="container">
-        <h1>Weight</h1>
-        <div class="cards">
-            <img src="../assets/images/new folder/envelop.jpg" class="image" alt="Envelope">
-            <div class="content">
-                <h2>Envelope</h2>
-                <p>50 to 500 gr</p>
-                <p>38 x 26.5 x 3.2 cm</p>
-                <span class="price">€ 3.15</span>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl w-full">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Package Management</h1>
+        <form id="packageForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input type="text" id="firstName" name="firstName"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        required aria-required="true">
+                    <p class="mt-1 text-sm text-red-600 hidden" id="firstNameError"></p>
+                </div>
+                <div>
+                    <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    <input type="text" id="lastName" name="lastName"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        required aria-required="true">
+                    <p class="mt-1 text-sm text-red-600 hidden" id="lastNameError"></p>
+                </div>
+                <div>
+                    <label for="company" class="block text-sm font-medium text-gray-700">Company</label>
+                    <input type="text" id="company" name="company"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                </div>
+                <div>
+                    <label for="postalCode" class="block text-sm font-medium text-gray-700">Postal Code</label>
+                    <input type="text" id="postalCode" name="postalCode"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        required aria-required="true">
+                    <p class="mt-1 text-sm text-red-600 hidden" id="postalCodeError"></p>
+                </div>
+                <div class="md:col-span-2">
+                    <label for="additionalInfo" class="block text-sm font-medium text-gray-700">Additional
+                        Information</label>
+                    <textarea id="additionalInfo" name="additionalInfo" rows="3"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        required aria-required="true">
+                    <p class="mt-1 text-sm text-red-600 hidden" id="emailError"></p>
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        required aria-required="true">
+                    <p class="mt-1 text-sm text-red-600 hidden" id="phoneError"></p>
+                </div>
             </div>
-        </div>
-        <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
-                alt="Mailbox Parcel">
-            <div class="content">
-                <h2>Mailbox parcel</h2>
-                <p>Maximum 2 kg</p>
-                <p>35 x 25 x 3 cm</p>
-                <span class="price">€ 5.95</span>
+            <div class="mt-4">
+                <label class="inline-flex items-center">
+                    <input type="checkbox"
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        name="dhlServicePoint">
+                    <span class="ml-2 text-sm text-gray-600">At a DHL ServicePoint (Free)</span>
+                </label>
             </div>
-        </div>
-        <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
-                alt="Small parcel">
-            <div class="content">
-                <h2>Small parcel</h2>
-                <p>Maximum 5 kg</p>
-                <p>45 x 35 x 5 cm</p>
-                <span class="price">€ 9.95</span>
+            <div class="flex justify-between mt-8">
+                <button type="button"
+                    class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors"
+                    aria-label="Go back to previous step">Previous</button>
+                <button type="submit"
+                    class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors"
+                    aria-label="Proceed to checkout">Proceed to Checkout</button>
             </div>
-        </div>
-        <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
-                alt="Medium parcel">
-            <div class="content">
-                <h2>Medium parcel</h2>
-                <p>Maximum 10 kg</p>
-                <p>60 x 40 x 10 cm</p>
-                <span class="price">€ 14.95</span>
-            </div>
-        </div>
-        <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
-                alt="Large parcel">
-            <div class="content">
-                <h2>Large parcel</h2>
-                <p>Maximum 20 kg</p>
-                <p>80 x 60 x 15 cm</p>
-                <span class="price">€ 24.95</span>
-            </div>
-        </div>
-        <div class="btns-container">
-            <button class="btns">Calculate</button>
-        </div>
+        </form>
     </div>
+    <script>
+    document.getElementById('packageForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fields = ['firstName', 'lastName', 'postalCode', 'email', 'phone'];
+        let isValid = true;
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            const error = document.getElementById(field + 'Error');
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('border-red-500');
+                error.textContent = 'This field is required';
+                error.classList.remove('hidden');
+            } else {
+                input.classList.remove('border-red-500');
+                error.classList.add('hidden');
+            }
+        });
+        if (isValid) {
+            alert('Form submitted successfully!');
+        }
+    });
+    </script>
 </body>
 
 </html>
