@@ -28,6 +28,8 @@
         margin-bottom: 20px;
     }
 
+    .image {}
+
     .cards {
         display: flex;
         justify-content: space-between;
@@ -91,7 +93,7 @@
     <div class="container">
         <h1>Weight</h1>
         <div class="cards">
-            <img src="../assets/images/new folder/envelop.jpg" class="envelop" alt="Envelope">
+            <img src="../assets/images/new folder/envelop.jpg" class="image" alt="Envelope">
             <div class="content">
                 <h2>Envelope</h2>
                 <p>50 to 500 gr</p>
@@ -100,7 +102,8 @@
             </div>
         </div>
         <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" alt="Mailbox Parcel">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
+                alt="Mailbox Parcel">
             <div class="content">
                 <h2>Mailbox parcel</h2>
                 <p>Maximum 2 kg</p>
@@ -109,7 +112,8 @@
             </div>
         </div>
         <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" alt="Small parcel">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
+                alt="Small parcel">
             <div class="content">
                 <h2>Small parcel</h2>
                 <p>Maximum 5 kg</p>
@@ -118,7 +122,8 @@
             </div>
         </div>
         <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" alt="Medium parcel">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
+                alt="Medium parcel">
             <div class="content">
                 <h2>Medium parcel</h2>
                 <p>Maximum 10 kg</p>
@@ -127,7 +132,8 @@
             </div>
         </div>
         <div class="cards">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" alt="Large parcel">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/59/package-1296169_960_720.png" class="image"
+                alt="Large parcel">
             <div class="content">
                 <h2>Large parcel</h2>
                 <p>Maximum 20 kg</p>

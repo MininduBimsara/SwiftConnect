@@ -1,139 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f4f4f4;
-        padding: 20px;
-    }
-
-    .container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .package {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .destination {
-        margin-bottom: 20px;
-    }
-
-    .select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
-
-    .shipping {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-    }
-
-    .option {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        width: 48%;
-        text-align: center;
-    }
-
-    .option img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
-    }
-
-    .option h3 {
-        margin-bottom: 10px;
-    }
-
-    .option p {
-        margin-bottom: 10px;
-    }
-
-    .option ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .option li {
-        margin-bottom: 10px;
-    }
-
-    .option li::before {
-        content: "\2713";
-        margin-right: 10px;
-        color: #4CAF50;
-    }
-    </style>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Management</title>
+    <link rel="stylesheet" href="new.css">
 </head>
 
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Photo</h1>
-        </div>
-        <div class="package">
-            <h2>Package</h2>
-        </div>
-        <div class="destination">
-            <select class="select">
-                <option value="">Select Destination</option>
-                <option value="usa">USA</option>
-                <option value="canada">Canada</option>
-                <option value="mexico">Mexico</option>
-            </select>
-        </div>
-        <div class="shipping">
-            <div class="option">
-                <img src="../assets/images/happy-woman-receiving-food-from-grocery-store-taking-package-from-courier-her-gate-shipping-delivery-service-concept_74855-11832.jpg"
-                    alt="Shipping Option 1">
-                <h3>Shipping Option 1</h3>
-                <p>Fast and reliable shipping</p>
-                <ul>
-                    <li>Delivered in 3-5 business days</li>
-                    <li>Tracking number provided</li>
-                    <li>Signature upon delivery</li>
-                </ul>
+<body class="body-container">
+    <div class="form-container">
+        <h1 class="form-title">Package Management</h1>
+        <form id="packageForm" class="form">
+            <div>
+                <label for="destination" class="label">Delivery Destination</label>
+                <input type="text" id="destination" name="destination" class="input" placeholder="Enter destination"
+                    required aria-label="Delivery Destination">
             </div>
-            <div class="option">
-                <img src="../assets/images/close-up-man-delivering-pack_23-2149103391.jpg" alt="Shipping Option 2">
-                <h3>Shipping Option 2</h3>
-                <p>Affordable and efficient shipping</p>
-                <ul>
-                    <li>Delivered in 5-7 business days</li>
-                    <li>Tracking number provided</li>
-                    <li>No signature upon delivery</li>
-                </ul>
+            <div>
+                <label class="label">Package Type</label>
+                <div class="package-grid">
+                    <div class="package-option" data-type="envelope">
+                        <img src="https://images.unsplash.com/photo-1593435221502-c5d7bfc26cab?auto=format&fit=crop&w=100&q=80"
+                            alt="Envelope" class="package-image">
+                        <p class="package-title">Envelope</p>
+                        <p class="package-details">Max 0.5kg, 25x35cm</p>
+                        <p class="package-price">€3.95</p>
+                    </div>
+                    <div class="package-option" data-type="parcel">
+                        <img src="https://images.unsplash.com/photo-1595964069480-5bc00eb9b25e?auto=format&fit=crop&w=100&q=80"
+                            alt="Parcel" class="package-image">
+                        <p class="package-title">Parcel</p>
+                        <p class="package-details">Max 2kg, 35x25x3cm</p>
+                        <p class="package-price">€5.95</p>
+                    </div>
+                    <div class="package-option" data-type="big-parcel">
+                        <img src="https://images.unsplash.com/photo-1628436174665-c8424c5f0ef6?auto=format&fit=crop&w=100&q=80"
+                            alt="Big Parcel" class="package-image">
+                        <p class="package-title">Big Parcel</p>
+                        <p class="package-details">Max 5kg, 50x40x20cm</p>
+                        <p class="package-price">€8.95</p>
+                    </div>
+                    <div class="package-option" data-type="box">
+                        <img src="https://images.unsplash.com/photo-1595079676077-f88a1b0b1d3e?auto=format&fit=crop&w=100&q=80"
+                            alt="Box" class="package-image">
+                        <p class="package-title">Box</p>
+                        <p class="package-details">Max 10kg, 60x50x40cm</p>
+                        <p class="package-price">€12.95</p>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div id="error-message" class="error-message hidden"></div>
+            <button type="submit" class="submit-button" aria-label="Calculate">Calculate</button>
+        </form>
     </div>
+    <script>
+    const form = document.getElementById('packageForm');
+    const packageOptions = document.querySelectorAll('.package-option');
+    const errorMessage = document.getElementById('error-message');
+    let selectedPackage = null;
 
+    packageOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            packageOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedPackage = option.getAttribute('data-type');
+            errorMessage.classList.add('hidden');
+        });
+    });
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!selectedPackage) {
+            errorMessage.textContent = 'Please select a package type.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+        alert('Package selection submitted successfully!');
+    });
+    </script>
 </body>
 
 </html>
