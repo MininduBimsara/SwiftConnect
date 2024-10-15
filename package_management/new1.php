@@ -50,7 +50,7 @@
             <div class="checkbox-container">
                 <label class="checkbox-label">
                     <input type="checkbox" name="dhlServicePoint" class="checkbox">
-                    <span class="checkbox-text">At a DHL ServicePoint (Free)</span>
+                    <span class="checkbox-text">At a SwiftConnect ServicePoint (Free)</span>
                 </label>
             </div>
             <div class="form-footer">

@@ -6,7 +6,7 @@ body, html {
 }
 
 .gradient-bg {
-    background: linear-gradient(to right, #ebf8ff, #e9d5ff);
+    background: linear-gradient(to right, #ebf8ff, #ffcf9f);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@ body, html {
 }
 
 .submit-button {
-    background-color: #5a67d8;
+    background-color: #ff8000;
     color: white;
 }
 
