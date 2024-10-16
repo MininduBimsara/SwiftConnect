@@ -5,7 +5,7 @@ body, html {
 }
 /* General layout */
 .body-container {
-    background-color: #f3f4f6;
+    background-color: #e1ddd7;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@ body, html {
 .label {
     font-size: 0.875rem;
     font-weight: 500;
-    color: #374151;
+    color: #64503c;
     margin-bottom: 0.5rem;
 }
 
@@ -55,8 +55,8 @@ body, html {
 
 .input:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+    border-color: #eb8525;
+    box-shadow: 0 0 0 2px rgba(248, 128, 8, 0.5);
 }
 
 /* Dropdown styles */
@@ -73,14 +73,17 @@ body, html {
 
 .dropdown:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+    border-color: #eb9225;
+    box-shadow: 0 0 0 2px rgba(235, 149, 37, 0.5);
 }
 
 .dropdown option {
     padding: 0.5rem;
 }
 
+#destination{
+    border-color: #f38704;
+}
 /* Package grid */
 .package-grid {
     display: grid;
@@ -89,8 +92,8 @@ body, html {
 }
 
 .package-option {
-    background-color: #eff6ff;
-    border: 2px solid #bfdbfe;
+    background-color: #ffecd18b;
+    border: 2px solid #ffc48c;
     border-radius: 0.5rem;
     padding: 1rem;
     cursor: pointer;
@@ -99,12 +102,12 @@ body, html {
 }
 
 .package-option:hover {
-    background-color: #dbeafe;
+    background-color: #fac26daf;
 }
 
 .package-option.selected {
-    border-color: #2563eb;
-    background-color: #dbeafe;
+    border-color: #f98a29;
+    background-color: #fdbd5eaf;
 }
 
 .package-image {
@@ -121,7 +124,7 @@ body, html {
 
 .package-details {
     font-size: 0.75rem;
-    color: #6b7280;
+    color: #9b5b01;
 }
 
 .package-price {
@@ -142,7 +145,7 @@ body, html {
 /* Button */
 .submit-button {
     width: 100%;
-    background-color: #ff8000;
+    background-color: #ff8c00;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
@@ -151,7 +154,7 @@ body, html {
 }
 
 .submit-button:hover {
-    background-color: #1d4ed8;
+    background-color: #ee7402;
 }
 
 /* Responsive adjustments */
