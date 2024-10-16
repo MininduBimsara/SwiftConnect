@@ -68,6 +68,8 @@
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../../includes/footer.css">
+   
+    
 
 </head>
 
@@ -101,7 +103,7 @@
                                 <!-- Email Input -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
-                                        <input class="form-control" name="email" type="email" required=""
+                                        <input class="form-control" name="email" type="email" required=""  
                                             placeholder="Email">
                                     </div>
                                 </div>
