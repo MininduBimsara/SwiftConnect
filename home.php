@@ -155,14 +155,15 @@ define("APPURL" , "http://localhost/SwiftConnect");
     </div>
 
 
-<div class="about-us">
-    <h1>About Us</h1>
-        <div class="about">
-          <div class="wrapper">
-           <div class="about-para">
-               <p>Pronto Lanka (Private) Ltd. was incorporated in 1987 with the approval granted by then Foreign Investment Advisory Committee for the provision of Logistics Support Service. Pronto was able to earn its reputation for efficiency and reliability from its inception, servicing many industries in the country, including Corporate Sector, Banking, Finance, Insurance, Legal, Healthcare, Entertainment, Government, Plantation, Manufacturing Industry and also the Individual consumer market counting over 34 years of experience in the courier/logistics field. It has thus acquired adequate expertise and experience over the years to provide its services with superior quality and maintain market leadership in domestic express delivery. The company has grown into a strong brand in the logistic industry in Sri Lanka, recognized for its customized services, Speed, Security, Reliability and Accountability with a large branch network distributed across the country. We are committed to continually enhancing our operations across the region while pursuing opportunities for business growth in emerging markets. We undertake packages for collection or delivery; whether you are an individual, small business or a large enterprise, we provide affordable logistic solutions. There are no set size or weight limits, and we are ready to surpass all boundaries in giving you the freedom and convenience of sending items to any location in Sri Lanka.</p>
-           </div>
-</div>
+ 
+    
+     <div class="about-us">
+           <h1>About Us</h1>
+             <div class="wrapper">
+               <div class="about-para">
+                  <p>SwiftConnect (Private) Ltd. was incorporated in 2018 with the approval granted by then Foreign Investment Advisory Committee for the provision of Logistics Support Service. SwiftConnect was able to earn its reputation for efficiency and reliability from its inception, servicing many industries in the country, including Corporate Sector, Banking, Finance, Insurance, Legal, Healthcare, Entertainment, Government, Plantation, Manufacturing Industry and also the Individual consumer market counting over 34 years of experience in the courier/logistics field. It has thus acquired adequate expertise and experience over the years to provide its services with superior quality and maintain market leadership in domestic express delivery. The company has grown into a strong brand in the logistic industry in Sri Lanka, recognized for its customized services, Speed, Security, Reliability and Accountability with a large branch network distributed across the country. We are committed to continually enhancing our operations across the region while pursuing opportunities for business growth in emerging markets. We undertake packages for collection or delivery; whether you are an individual, small business or a large enterprise, we provide affordable logistic solutions. There are no set size or weight limits, and we are ready to surpass all boundaries in giving you the freedom and convenience of sending items to any location in Sri Lanka.</p>
+              </div>
+    </div>
            
        </div>
 

@@ -182,7 +182,11 @@ button:hover {
   flex-direction: column;
 }
 .icons i {
-  font-size: 100px;
+  font-size: 60px;
+}
+.icon i:hover{
+  color: #22313f;
+  transition: .5s ease;
 }
 .icon.h3 {
   font-size: 20px;
@@ -247,18 +251,11 @@ button:hover {
   transform: scale(1.25);
   transition: 1s;
 }
-.about{
-  margin: 100px 0;
-  height: 500px;
-  background: url(assets/images/delivery-concept-portrait-happy-african-american-delivery-man-holding-box-package-showing-thumps-up-isolated-grey-studio-background-copy-space.jpg);
-  background-position:top;
-  background-repeat: no-repeat;
-  background-size: cover;
-   
-  
+
+.about-us{
+  margin: 50px 0;
 }
-
-
+ 
 .about-us h1{
    text-align: center;
    margin: 40px;
@@ -266,26 +263,13 @@ button:hover {
  
   
 }
-.about .wrapper{
-   
-}
-
- 
- 
-
 .wrapper .about-para{
-  height: 500px;
-  margin-left: 600px;
-  
-}
-.about-para p{
   text-align: justify;
-  padding: 60px;
 }
-
  
  
-@media (max-width: 768px) {
+ 
+@media (max-width: 1200px) {
   nav ul li {
     display: block;
     text-align: center;
@@ -313,8 +297,7 @@ button:hover {
     width: inherit;
     font-size: 15px;
   }
-  nav {
-  }
+  
   .gallery-item {
     flex: 1 1 100%;
   }
@@ -338,26 +321,18 @@ button:hover {
   }
   .wrapper .naming-desc p {
     font-size: 16px;
+    
   }
   .icons {
     display: block;
   }
-  .about{
-    background: none;
-    border: none;
-
+  .icon i{
+    margin: 20px;
   }
-  .wrapper .about-para{
-    margin-top: -50px;
-    margin-left: 0;
-    width: 100%;
+}
+@media (max-width: 800px){
     
-    
-  }
-  .about-para p{
-    padding: 0;
-  }
-  .about-us h1{
-   
-  }
+}
+@media (max-width: 600px){
+  
 }
