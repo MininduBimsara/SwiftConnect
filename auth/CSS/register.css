@@ -75,6 +75,8 @@ body {
   font-size: 15px;
   text-align: center;
   margin: 0 auto; /* Center align */
+  border: none;
+  outline: none;
 }
 
 /* Button Styling */
@@ -121,6 +123,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  
 }
 
 
