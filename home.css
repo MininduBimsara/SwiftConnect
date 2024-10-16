@@ -138,6 +138,7 @@ button:hover {
   overflow: hidden;
 }
 .branding .wrapper {
+  
   height: inherit;
   display: flex;
   justify-content: space-between;
@@ -253,11 +254,15 @@ button:hover {
   background-position:top;
   background-repeat: no-repeat;
   background-size: cover;
+   
+  
 }
+
 
 .about-us h1{
    text-align: center;
    margin: 40px;
+   color: #ff0000;
  
   
 }
@@ -269,13 +274,13 @@ button:hover {
  
 
 .wrapper .about-para{
+  height: 500px;
   margin-left: 600px;
-  margin-top: 50px;
   
-  
-  
-  
-  
+}
+.about-para p{
+  text-align: justify;
+  padding: 60px;
 }
 
  
@@ -337,7 +342,22 @@ button:hover {
   .icons {
     display: block;
   }
-  .about-us .wrapper{
-      
+  .about{
+    background: none;
+    border: none;
+
+  }
+  .wrapper .about-para{
+    margin-top: -50px;
+    margin-left: 0;
+    width: 100%;
+    
+    
+  }
+  .about-para p{
+    padding: 0;
+  }
+  .about-us h1{
+   
   }
 }
