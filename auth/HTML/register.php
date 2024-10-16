@@ -68,11 +68,8 @@
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../../includes/footer.css">
-<<<<<<< HEAD
    
     
-=======
->>>>>>> 69f9663f2f78baba8a3cd0eb460883fd542f8097
 
 </head>
 
