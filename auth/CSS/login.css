@@ -72,6 +72,8 @@ body {
   font-size: 15px;
   text-align: center;
   margin: 0 auto; 
+  border: none;
+  outline: none;
 }
 
 .butn {
