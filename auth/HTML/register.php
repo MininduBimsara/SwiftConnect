@@ -95,12 +95,7 @@
                                 <!-- Full Name Input -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
-<<<<<<< HEAD
-                                        
-                                        <input class="form-control" name="fullname" type=" text" required="" 
-=======
                                         <input class="form-control" name="name" type="text" required=""
->>>>>>> 69f9663f2f78baba8a3cd0eb460883fd542f8097
                                             placeholder="Full Name">
                                     </div>
                                 </div>
