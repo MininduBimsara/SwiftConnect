@@ -117,21 +117,24 @@ body, html {
 }
 
 .previous-button {
-    background-color: #e2e8f0;
-    color: #4a5568;
+    background-color: #ffd8b1ec;
+    color: #ff8000;
+    font-weight: bold;
 }
 
 .previous-button:hover {
-    background-color: #cbd5e0;
+    background-color: #ff850cf0;
+    color: rgb(255, 255, 255);
 }
 
 .submit-button {
-    background-color: #ff8000;
+    background-color: #fb8e21;
     color: white;
+    font-weight: bold;
 }
 
 .submit-button:hover {
-    background-color: #4c51bf;
+    background-color: #db5f00f2;
 }
 
 /* Error Styles */

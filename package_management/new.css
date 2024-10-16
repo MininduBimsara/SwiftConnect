@@ -5,7 +5,7 @@ body, html {
 }
 /* General layout */
 .body-container {
-    background-color: #e1ddd7;
+    background: linear-gradient(to right, #ebf8ff, #ffcf9f);
     min-height: 100vh;
     display: flex;
     align-items: center;
