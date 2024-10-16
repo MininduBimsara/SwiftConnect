@@ -1,0 +1,150 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gradient-bg {
+    background: linear-gradient(to right, #ebf8ff, #ffcf9f);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.span-cols {
+    grid-column: span 2;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.input-field, .textarea-field {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #d2d6dc;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-field:focus, .textarea-field:focus {
+    border-color: #5a67d8;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.3);
+}
+
+.textarea-field {
+    resize: vertical;
+}
+
+.error-message {
+    margin-top: 5px;
+    color: #e53e3e;
+    font-size: 0.875rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.checkbox-container {
+    margin-top: 15px;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.checkbox-text {
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+/* Buttons */
+.previous-button, .submit-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.previous-button {
+    background-color: #ffd8b1ec;
+    color: #ff8000;
+    font-weight: bold;
+}
+
+.previous-button:hover {
+    background-color: #ff850cf0;
+    color: rgb(255, 255, 255);
+}
+
+.submit-button {
+    background-color: #fb8e21;
+    color: white;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #db5f00f2;
+}
+
+/* Error Styles */
+.error-border {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.3);
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
