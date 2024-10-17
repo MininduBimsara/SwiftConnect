@@ -61,7 +61,6 @@ include "../../includes/header.php";
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 
-
 <body>
     <div id="page-content" class="page-content">
         <div class="banner">
