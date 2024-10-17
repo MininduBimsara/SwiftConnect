@@ -1,12 +1,10 @@
 <?php
 
-
-
 require "../../config/config.php";  
-
 
 if (isset($_SESSION['username'])) {
     echo "<script> window.location.href ='" . APPURL . "'; </script>";
+    exit(); 
 }
 
 if (isset($_POST['submit'])) {
@@ -14,22 +12,30 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('One or more inputs are empty');</script>";
     } else {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        // Optional: Validate email format
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "<script>alert('Invalid email format');</script>";
+            exit();
+        }
+        
         $password = $_POST['password'];
 
-        $login = $conn->prepare("SELECT * FROM users WHERE email = ?");
-        $login->bind_param("s", $email);
-        $login->execute();
-        $result = $login->get_result();
+        $query = "SELECT * FROM users WHERE email = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if ($result->num_rows > 0) {
-            $fetch = $result->fetch_assoc();
-
+        if (mysqli_num_rows($result) > 0) {
+            $fetch = mysqli_fetch_assoc($result);
             if (password_verify($password, $fetch['mypassword'])) {
+                // Set session variables
                 $_SESSION['username'] = $fetch['username'];
                 $_SESSION['email'] = $fetch['email'];
                 $_SESSION['user_id'] = $fetch['id'];
                 $_SESSION['image'] = $fetch['image'];
                 echo "<script> window.location.href ='" . APPURL . "'; </script>";
+                exit();
             } else {
                 echo "<script>alert('Email or password is wrong');</script>";
             }
@@ -37,7 +43,8 @@ if (isset($_POST['submit'])) {
             echo "<script>alert('Email or password is incorrect');</script>";
         }
 
-        $login->close();
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
     }
 }
 ?>
@@ -66,7 +73,7 @@ include "../../includes/header.php";
         <div class="banner">
             <div class="jumbotron jumbotron-bg" style="background-image: url('');">
                 <div class="container">
-                    <h1 class="pt-5">LOGIN</h1><br>
+                    <h1 class="pt-5">Login</h1><br>
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
@@ -97,12 +104,12 @@ include "../../includes/header.php";
                                         <a href="login.html" class="forgot-password-link">
                                             <i class="fa fa-lock"></i> Forgot password?</a>
                                     </div>
-                                </div>
+                                </div><br>
 
                                 <!-- Submit Button -->
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
-                                        <button type="submit" name="submit" class="butn btn-primary">LOGIN</button>
+                                        <button type="submit" name="submit" class="butn btn-primary">Login</button>
                                     </div>
                                 </div>
                             </form>
