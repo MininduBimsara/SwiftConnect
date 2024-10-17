@@ -35,11 +35,50 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  background-color:rgba(255,255,255, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 50px 10px;
+  
+}
+
+.sidebar li{
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+.sidebar li:hover:not(:first-child){
+  background-color: #ff8000;
+  border-radius: 50px;
+  transition: 0.5s;
+   
+}
+.sidebar li a{
+  width: 100%;
+  
+}
+.sidebar li a:hover{
+  color: white;
+}
+.sidebar li i{
+  font-size: 30px;
+}
 
 nav h1 {
   color: #22313f;
   font-size: 24px;
   margin-left: 80px;
+  
 }
 nav h1 span {
   color: #ff0000;
@@ -203,7 +242,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* padding: 20px; */
+  
 }
 
 .gallery-item {
@@ -253,7 +292,7 @@ button:hover {
 }
 
 .about-us{
-  margin: 50px 0;
+  margin: 80px 0;
 }
  
 .about-us h1{
@@ -274,6 +313,9 @@ button:hover {
     display: block;
     text-align: center;
     margin: 10px 0;
+  }
+  nav h1{
+    margin-left: 30px;
   }
   
 

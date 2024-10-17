@@ -56,7 +56,7 @@
         }
     }
 ?>
-
+ <?php include_once "../../includes/header.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,7 @@
 
 <body>
 
-    <?php include_once "../../includes/header.php"; ?>
+   
 
     <div id="page-content" class="page-content">
         <div class="banner">
