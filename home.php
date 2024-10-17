@@ -37,9 +37,19 @@ define("APPURL" , "http://localhost/SwiftConnect");
                         <li><a href="#">About</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Contact</a></li>
-
+                        
                     </ul>
-                    <li class="hamburger"><i class='bx bx-menu'></i></li>
+                    <ul class="sidebar">
+                        <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+                    <div class="hamburger">
+                        <i class='bx bx-menu' onclick="showsidebar()"></i>
+                    </div>
                     <button class="btn">login</button>
                 </nav>
 
@@ -171,7 +181,17 @@ define("APPURL" , "http://localhost/SwiftConnect");
     </div>
 
 
+<script>
+    function showsidebar(){
+        const sidebar=document.querySelector(".sidebar")
+        sidebar.style.display='flex';
 
+    }
+    function closesidebar(){
+        const sidebar=document.querySelector(".sidebar")
+        sidebar.style.display='none'
+    }
+</script>
 
 </body>
 

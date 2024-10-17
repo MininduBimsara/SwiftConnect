@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Management Site</title>
     <link rel="stylesheet" href="new1.css">
+    <link rel="stylesheet" href="../../includes/header.css">
+    
 </head>
 
 <body class="gradient-bg">
+
     <div class="form-container">
         <h1 class="form-title">Package Management</h1>
         <form id="packageForm" class="form-content">

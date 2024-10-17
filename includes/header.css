@@ -61,6 +61,44 @@ nav ul li a {
 nav ul li a:hover {
   color: #f0a500;
 }
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  background-color:rgba(255,255,255, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 50px 10px;
+  
+}
+
+.sidebar li{
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+.sidebar li:hover:not(:first-child){
+  background-color: #ff8000;
+  border-radius: 50px;
+  transition: 0.5s;
+   
+}
+.sidebar li a{
+  width: 100%;
+  
+}
+.sidebar li a:hover{
+  color: white;
+}
+.sidebar li i{
+  font-size: 30px;
+}
 
 .hamburger {
   font-size: 30px;

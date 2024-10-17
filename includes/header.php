@@ -3,6 +3,7 @@
     session_start();
     define("APPURL" , "http://localhost/SwiftConnect");
 
+
     ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -20,6 +21,9 @@
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
       <script src="https://kit.fontawesome.com/a295b70770.js" crossorigin="anonymous"></script>
+      <style>
+        
+      </style>
 
   </head>
 
@@ -41,7 +45,14 @@
                           <li><a href="#">Contact</a></li>
 
                       </ul>
-                      <li class="hamburger"><i class='bx bx-menu'></i></li>
+                      <ul class="sidebar">
+                        <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                      <div class="hamburger"><i onclick="showsidebar()"class='bx bx-menu'></i></div>
                       <div class="log-btn">
                     <button>login</button>
              </div>
@@ -51,6 +62,17 @@
           </header>
       </div>
 
+      <script>
+    function showsidebar(){
+        const sidebar=document.querySelector(".sidebar")
+        sidebar.style.display='flex';
+
+    }
+    function closesidebar(){
+        const sidebar=document.querySelector(".sidebar")
+        sidebar.style.display='none'
+    }
+</script>
   </body>
 
   </html>

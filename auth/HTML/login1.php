@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         $result = $login->get_result();
 
         if ($result->num_rows > 0) {
-            $fetch = $result->fetch_assoc();
+            $fetch = $result->fetch_assoc();   
 
             if (password_verify($password, $fetch['mypassword'])) {
                 $_SESSION['username'] = $fetch['username'];
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
 <?php 
 
-include "../../includes/header.php";
+    include "../../includes/header.php";
 
 
 ?>
