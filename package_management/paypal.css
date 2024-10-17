@@ -8,10 +8,10 @@ body {
 .container {
     text-align: center;
     max-width: 1000px;
-    width: 100%;
+    width: 50%;
     padding-top: 200px; /* Increased this value for more space between header and content */
     margin: 0 auto;
-    margin-bottom: 180px; /* Space above the footer */
+    padding-bottom: 180px; /* Space above the footer */
 }
 
 h1 {
@@ -57,7 +57,7 @@ button[name="credit"]:hover {
 
 @media (max-width: 768px) { 
     .container {
-        padding-top: 70px;
+        padding-top: 150px;
         text-align: center; 
         width: 90%; 
     }
