@@ -6,12 +6,12 @@ body {
 }
 
 .container {
-    text-align: right;
+    text-align: center;
     max-width: 1000px;
     width: 100%;
-    padding-top: 100px; /* Increased this value for more space between header and content */
-    margin: 30px;
-    margin-bottom: 50px; /* Space above the footer */
+    padding-top: 200px; /* Increased this value for more space between header and content */
+    margin: 0 auto;
+    margin-bottom: 180px; /* Space above the footer */
 }
 
 h1 {
