@@ -1,6 +1,53 @@
+<?php
+    session_start();
+    define("APPURL" , "http://localhost/SwiftConnect");
+
+
+    require "../config/config.php";  
+
+    if (isset($_SESSION['username'])) {
+        echo "<script> window.location.href ='" . APPURL . "'; </script>";
+        exit(); 
+    }
+
+    if(!isset($_POST['firstName']) && !isset($_POST['lastName']) && !isset($_POST['company']) 
+        && !isset($_POST['postalCode']) && !isset($_POST['additionalInfo']) && !isset($_POST['email']) && !isset($_POST['phone'])){
+
+            
+    }
+    else{
+        
+        $fname = $_POST['firstName'];
+        $lname = $_POST['lastName'];
+        $company = $_POST['company'];
+        $postalCode = $_POST['postalCode'];
+        $description = $_POST['additionalInfo'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "INSERT INTO orders(fname,lname,company_name,Postal_code,description,email,phone_number,user_id) VALUES ('$fname',' $lname','$company','$postalCode','$description','$email','$phone','$user_id')";
+
+
+        if($conn->query($sql)){
+            echo "Order placed successfully";
+        }
+        else{
+            echo "Error";
+        }
+        
+    }
 
 
 
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +57,7 @@
     <title>Package Management Site</title>
     <link rel="stylesheet" href="new1.css">
     <link rel="stylesheet" href="../../includes/header.css">
-    
+
 </head>
 
 <body class="gradient-bg">
@@ -32,6 +79,8 @@
                 <div>
                     <label for="company" class="label">Company</label>
                     <input type="text" id="company" name="company" class="input-field">
+                    <p class="error-message hidden" id="companyError"></p>
+
                 </div>
                 <div>
                     <label for="postalCode" class="label">Postal Code</label>
@@ -55,7 +104,7 @@
             </div>
             <div class="checkbox-container">
                 <label class="checkbox-label">
-                    <input type="checkbox" name="dhlServicePoint" class="checkbox">
+                    <input type="checkbox" name="SwiftConnectServicePoint" class="checkbox">
                     <span class="checkbox-text">At a SwiftConnect ServicePoint (Free)</span>
                 </label>
             </div>
@@ -68,7 +117,9 @@
     <script>
     document.getElementById('packageForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const fields = ['firstName', 'lastName', 'postalCode', 'email', 'phone'];
+        const fields = ['firstName', 'lastName', 'company',
+            'postalCode', 'email', 'phone'
+        ];
         let isValid = true;
         fields.forEach(field => {
             const input = document.getElementById(field);
