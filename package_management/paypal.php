@@ -43,14 +43,14 @@ include "../includes/header.php";
 
     </head>
     <body>
-
+<div class="container">
     <h1>PAY WITH PAYPAL</h1>
     <h2>Save time and leave the groceries to us!</h2>
   
         
         <div id="paypal-button-container"></div>
         <p id="result-message"></p>
-
+        </div>
         
         <!-- Initialize the JS-SDK -->
         <script
