@@ -8,10 +8,10 @@ body {
 .container {
     text-align: center;
     max-width: 1000px;
-    width: 50%;
-    padding-top: 200px; /* Increased this value for more space between header and content */
+    width: 60%;
+    padding-top: 190px;
     margin: 0 auto;
-    padding-bottom: 180px; /* Space above the footer */
+    padding-bottom: 100px;
 }
 
 h1 {
@@ -26,45 +26,11 @@ h2 {
     margin-bottom: 30px;
 }
 
-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    width: 70%;
-    padding: 15px 30px;
-    font-size: 19px !important; /* Force the font size */
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
-}
-
-button#paypal {
-    background-color: #ff6600;
-}
-
-button#paypal:hover {
-    background-color: #e65c00;
-}
-
-button[name="credit"] {
-    background-color: #ff8533;
-}
-
-button[name="credit"]:hover {
-    background-color: #e67300;
-}
-
 @media (max-width: 768px) { 
     .container {
-        padding-top: 150px;
+        padding-top: 100px;
         text-align: center; 
         width: 90%; 
-    }
-
-    button {
-        width: 90%; 
-        font-size: 20px !important; 
     }
 
     h1 {
@@ -74,4 +40,14 @@ button[name="credit"]:hover {
     h2 {
         font-size: 20px;
     }
+
+    #paypal-button-container {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+#paypal-button-container {
+    width: 70%;
+    margin-left: 15%;
 }
