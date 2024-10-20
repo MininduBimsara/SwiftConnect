@@ -10,39 +10,36 @@
         exit(); 
     }
 
-    if(!isset($_POST['firstName']) && !isset($_POST['lastName']) && !isset($_POST['company']) 
-        && !isset($_POST['postalCode']) && !isset($_POST['additionalInfo']) && !isset($_POST['email']) && !isset($_POST['phone'])){
+    if(isset($_POST['submit-button'])){
 
-            
-    }
-    else{
-        
-        $fname = $_POST['firstName'];
-        $lname = $_POST['lastName'];
-        $company = $_POST['company'];
-        $postalCode = $_POST['postalCode'];
-        $description = $_POST['additionalInfo'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $user_id = $_SESSION['user_id'];
+        if(!isset($_POST['firstName']) && !isset($_POST['lastName']) && !isset($_POST['company']) 
+            && !isset($_POST['postalCode']) && !isset($_POST['additionalInfo']) && !isset($_POST['email']) && !isset($_POST['phone'])){
 
-        $sql = "INSERT INTO orders(fname,lname,company_name,Postal_code,description,email,phone_number,user_id) VALUES ('$fname',' $lname','$company','$postalCode','$description','$email','$phone','$user_id')";
-
-
-        if($conn->query($sql)){
-            echo "Order placed successfully";
+                
         }
         else{
-            echo "Error";
+            
+            $fname = $_POST['firstName'];
+            $lname = $_POST['lastName'];
+            $company = $_POST['company'];
+            $postalCode = $_POST['postalCode'];
+            $description = $_POST['additionalInfo'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $user_id = $_SESSION['user_id'];
+
+            $sql = "INSERT INTO orders(fname,lname,company_name,Postal_code,description,email,phone_number,user_id) VALUES ('$fname',' $lname','$company','$postalCode','$description','$email','$phone','$user_id')";
+
+
+            if($conn->query($sql)){
+                echo "Order placed successfully";
+            }
+            else{
+                echo "Error";
+            }
+            
         }
-        
     }
-
-
-
-
-
-
 
 
 
