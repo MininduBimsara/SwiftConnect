@@ -8,8 +8,8 @@ body {
 .container {
     text-align: center;
     max-width: 1000px;
-    width: 50%;
-    padding-top: 150px;
+    width: 60%;
+    padding-top: 190px;
     margin: 0 auto;
     padding-bottom: 100px;
 }
@@ -26,36 +26,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-/*
-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    width: 70%;
-    padding: 15px 30px;
-    font-size: 19px !important;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
-}
-
-button#paypal {
-    background-color: #ff6600;
-}
-
-button#paypal:hover {
-    background-color: #e65c00;
-}
-
-button[name="credit"] {
-    background-color: #ff8533;
-}
-
-button[name="credit"]:hover {
-    background-color: #e67300;
-}
-*/
 @media (max-width: 768px) { 
     .container {
         padding-top: 100px;
@@ -63,11 +33,6 @@ button[name="credit"]:hover {
         width: 90%; 
     }
 
-    /*button {
-        width: 90%; 
-        font-size: 18px !important; 
-    }
-*/
     h1 {
         font-size: 28px;
     }
@@ -86,4 +51,3 @@ button[name="credit"]:hover {
     width: 70%;
     margin-left: 15%;
 }
-
