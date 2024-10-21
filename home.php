@@ -20,6 +20,9 @@ define("APPURL" , "http://localhost/SwiftConnect");
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://kit.fontawesome.com/a295b70770.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -51,6 +54,7 @@ define("APPURL" , "http://localhost/SwiftConnect");
                         <i class='bx bx-menu' onclick="showsidebar()"></i>
                     </div>
                     <button class="btn">login</button>
+                    
                 </nav>
 
             </div>
@@ -68,13 +72,14 @@ define("APPURL" , "http://localhost/SwiftConnect");
 
                 <div class="status">
                     <input type="text" placeholder="Enter customer code" class="input">
-                    <button class="Check-btn">Check your package status</button>
+                    <button class="check-btn">Check your package status</button>
                 </div>
             </div>
         </div>
     </div>
 
-
+ <section id="section">
+    <h1 class="headings">Branding</h1>
     <div class="branding">
         <div class="wrapper">
             <div class="naming">
@@ -112,10 +117,12 @@ define("APPURL" , "http://localhost/SwiftConnect");
             </div>
         </div>
     </div>
+ </section>
 
 
+ <section id="section">
     <div class="gallery">
-        <h1>Our Services</h1>
+        <h1 class="headings">Our Services</h1>
         <div class="wrapper">
             <div class="gallery-item">
                 <img src=" assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
@@ -163,12 +170,13 @@ define("APPURL" , "http://localhost/SwiftConnect");
             </div>
         </div>
     </div>
+ </section>
 
 
  
-    
+<section id="section">
      <div class="about-us">
-           <h1>About Us</h1>
+        <h1 class="headings">About Us</h1>
            <div class="about-container">
              <div class="wrapper">
                <div class="about-para">
@@ -181,6 +189,7 @@ define("APPURL" , "http://localhost/SwiftConnect");
 
 
     </div>
+</section>
 
 
 <script>

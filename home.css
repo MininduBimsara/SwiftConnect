@@ -108,8 +108,8 @@ nav ul li a:hover {
 
 .hamburger {
   font-size: 30px;
-
   display: none;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -138,11 +138,14 @@ span {
 input,
 button {
   padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
 }
 input {
   border: 1px solid #ff8000;
 }
-button {
+.check-btn{
   background-color: #ff8000;
   color: white;
   border: none;
@@ -167,6 +170,9 @@ button:hover {
 }
 .btn:hover {
   background-color: #ff0000;
+}
+#section{
+  margin: 80px 0;
 }
 
 .branding {
@@ -232,13 +238,13 @@ button:hover {
   font-weight: 300;
 }
 
-.gallery h1 {
+.headings{
   margin-top: 40px;
   color: #ff0000;
   text-align: center;
 }
 .gallery .wrapper {
-  margin-top: 80px;
+   margin-top: 80px; 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -290,29 +296,20 @@ button:hover {
   transform: scale(1.25);
   transition: 1s;
 }
-
-.about-us{
-  margin: 80px 0;
-  
-}
  
-.about-us h1{
-   text-align: center;
-   margin: 40px;
-   color: #ff0000;
  
-  
-}
 .about-container{
+  margin-top: 80px;
   background: linear-gradient(to right, #ebf8ff, #ffcf9f);
   padding: 40px 0;
   
 }
 .wrapper .about-para{
   text-align: justify;
+  font-family: 'Rethink Sans',sans-serif;
 }
 .wrapper .about-para p{
-  
+  font-family: 'Rethink Sans',sans-serif;
 }
  
  
