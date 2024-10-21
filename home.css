@@ -293,6 +293,7 @@ button:hover {
 
 .about-us{
   margin: 80px 0;
+  
 }
  
 .about-us h1{
@@ -302,8 +303,16 @@ button:hover {
  
   
 }
+.about-container{
+  background: linear-gradient(to right, #ebf8ff, #ffcf9f);
+  padding: 40px 0;
+  
+}
 .wrapper .about-para{
   text-align: justify;
+}
+.wrapper .about-para p{
+  
 }
  
  
