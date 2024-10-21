@@ -21,7 +21,7 @@
 </div>
 
 <!-- Initialize the JS-SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=test&buyer-country=US&currency=USD&components=buttons&disable-funding=venmo,paylater" data-sdk-integration-source="developer-studio"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AY3C-o8GNXsro2aKEY2LJnEtT0Pnqtr57B6nQeL7aq-6dO2jZmid3lR8QH9kWJ9XweZjd8rJ4tTGkHYS&buyer-country=US&currency=USD&components=buttons&disable-funding=venmo,paylater" data-sdk-integration-source="developer-studio"></script>
 <script src="app.js"></script>
 
 <?php include "../includes/footer.php"; ?>
