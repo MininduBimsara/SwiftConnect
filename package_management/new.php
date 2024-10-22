@@ -1,3 +1,14 @@
+<?php
+    include_once '../config/config.php';
+
+
+    if (isset($_POST['submit'])) {
+        $destination = $_POST['destination'];
+        $weight_range = $_POST['weight_range'];
+        $selected_package = $_POST['selected_package'];
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,62 +18,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Management</title>
     <link rel="stylesheet" href="../includes/header.css">
+    <link rel="stylesheet" href="../includes/footer.css">
     <link rel="stylesheet" href="new.css">
 </head>
 
-<body class="body-container">
-    <div class="form-container">
-        <h1 class="form-title">Package Management</h1>
-        <form id="packageForm" class="form">
-            <div>
-                <label for="destination" class="label">Delivery Destination</label>
-                <select id="destination" name="destination" class="dropdown" required aria-label="Delivery Destination">
-                    <option value="" disabled selected>Select a destination</option>
-                    <option value="Seoul">Seoul</option>
-                    <option value="Busan">Busan</option>
-                    <option value="Colombo">Colombo</option>
-                    <option value="Galle">Galle</option>
-                    <option value="Kandy">Kandy</option>
-                    <option value="Incheon">Incheon</option>
-                </select>
-            </div>
-            <div>
-                <label class="label">Package Type</label>
-                <div class="package-grid">
-                    <div class="package-option" data-type="envelope">
-                        <img src="../assets/images/new folder/envelop.jpg" alt="Envelope" class="package-image">
-                        <p class="package-title">Envelope</p>
-                        <p class="package-details">Max 0.5kg, 25x35cm</p>
-                        <p class="package-price">€3.95</p>
-                    </div>
-                    <div class="package-option" data-type="parcel">
-                        <img src="../assets/images/new folder/parcel.jpg" alt="Parcel" class="package-image">
-                        <p class="package-title">Parcel</p>
-                        <p class="package-details">Max 2kg, 35x25x3cm</p>
-                        <p class="package-price">€5.95</p>
-                    </div>
-                    <div class="package-option" data-type="big-parcel">
-                        <img src="../assets/images/new folder/big_parcel.jpg" alt="Big Parcel" class="package-image">
-                        <p class="package-title">Big Parcel</p>
-                        <p class="package-details">Max 5kg, 50x40x20cm</p>
-                        <p class="package-price">€8.95</p>
-                    </div>
-                    <div class="package-option" data-type="box">
-                        <img src="../assets/images/new folder/mailbox.jpg" alt="Box" class="package-image">
-                        <p class="package-title">Box</p>
-                        <p class="package-details">Max 10kg, 60x50x40cm</p>
-                        <p class="package-price">€12.95</p>
+<body>
+    
+    <?php include_once '../includes/header.php'; ?>
+
+    <div class="body-container">
+        <div class="form-container">
+            <h1 class="form-title">Package Management</h1>
+            <form id="packageForm" class="form" method="POST" action="next1.php">
+                
+                <div>
+                    <label for="destination" class="label">Delivery Destination</label>
+                    <select id="destination" name="destination" class="dropdown" required aria-label="Delivery Destination">
+                        <option value="" disabled selected>Select a destination</option>
+                        <?php
+                            //GET SERVICE CENTERS
+                            $select_destinations = "SELECT * FROM servicecenter";
+                            $result_destinations = mysqli_query($conn, $select_destinations);
+                            while($row_destination = mysqli_fetch_assoc($result_destinations)) {
+                                $center_id = $row_destination['center_id'];
+                                $center_name = $row_destination['center_name'];
+
+                                echo "<option value='$center_id'>$center_name</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="weight_range" class="label">Weight Range</label>
+                    <select id="weight_range" name="weight_range" class="dropdown" required aria-label="Delivery Destination">
+                        <option value="" disabled selected>Select weight range</option>
+                        <?php
+                            //GET WEIGHT RANGES
+                            $select_weight_ranges = "SELECT * FROM weight_range";
+                            $result_weight_ranges = mysqli_query($conn, $select_weight_ranges);
+                            while($row_weight_ranges = mysqli_fetch_assoc($result_weight_ranges)) {
+                                $weight_range_id = $row_weight_ranges['weight_range_id'];
+                                $min_weight = $row_weight_ranges['min_weight'];
+                                $max_weight = $row_weight_ranges['max_weight'];
+
+                                echo "<option value='$weight_range_id'>$min_weight - $max_weight</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="label">Package Type</label>
+                    <div class="package-grid">
+
+                        <?php
+                            //GET CATEGORIES
+                            $select_categories = "SELECT * FROM categories";
+                            $result_categories = mysqli_query($conn, $select_categories);
+
+                            while ($row_categories = mysqli_fetch_assoc($result_categories)) {
+                                $category_id = $row_categories['category_id'];
+                                $name = $row_categories['name'];
+                                $dimensions = $row_categories['dimentions'];
+                                $image = $row_categories['image'];
+
+                                echo "
+                                <div class='package-option' data-type='$category_id'>
+                                    <img src='../assets/images/new folder/$image' alt='$name' class='package-image'>
+                                    <p class='package-title'>$name</p>
+                                    <p class='package-details'>$dimensions</p>
+                                </div>";
+                            }
+                        ?>
                     </div>
                 </div>
-            </div>
-            <div id="error-message" class="error-message hidden"></div>
-            <button type="submit" class="submit-button" aria-label="Calculate">Calculate</button>
-        </form>
+
+                <input type="hidden" name="selected_package" id="selected_package" value="">
+
+                <div id="error-message" class="error-message hidden"></div>
+                <button type="submit" name="submit" class="submit-button" aria-label="Calculate">Next</button>
+            </form>
+        </div>
     </div>
+
+    <?php include_once '../includes/footer.php'; ?>
+
     <script>
     const form = document.getElementById('packageForm');
     const packageOptions = document.querySelectorAll('.package-option');
     const errorMessage = document.getElementById('error-message');
+    const selectedPackageInput = document.getElementById('selected_package');
     let selectedPackage = null;
 
     packageOptions.forEach(option => {
@@ -70,18 +116,18 @@
             packageOptions.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
             selectedPackage = option.getAttribute('data-type');
+            selectedPackageInput.value = selectedPackage;
             errorMessage.classList.add('hidden');
         });
     });
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
         if (!selectedPackage) {
+            e.preventDefault();
             errorMessage.textContent = 'Please select a package type.';
             errorMessage.classList.remove('hidden');
             return;
         }
-        alert('Package selection submitted successfully!');
     });
     </script>
 </body>
