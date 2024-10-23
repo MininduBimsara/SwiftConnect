@@ -2,7 +2,7 @@
     include_once "../../config/config.php";
     
     if (isset($_POST['submit'])) {
-        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
+        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username']) || empty($_POST['country']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
             echo "<script>alert('One or more inputs are empty');</script>";
         } else {
             if ($_POST['password'] == $_POST['confirm_password']) {
@@ -12,6 +12,7 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+                $country = $_POST['country'];
 
                 // Check if username or email already exists
                 $check_user_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
@@ -35,8 +36,8 @@
                         if (move_uploaded_file($image_tmp, $image_folder)) {
 
                             // Insert user data into the database
-                            $insert_query = "INSERT INTO users (username, name, email, password, image) 
-                                            VALUES ('$username', '$name', '$email', '$password_hashed', '$image')";
+                            $insert_query = "INSERT INTO users (username, name, email, password, country, image) 
+                                            VALUES ('$username', '$name', '$email', '$password_hashed', '$country', '$image')";
                             $result_insert = mysqli_query($conn, $insert_query);
                             if($result_insert) {
                                 echo "<script>window.location.href = 'login.php';</script>";
@@ -65,10 +66,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../../includes/footer.css">
-    <!-- <link rel="stylesheet" href="../CSS/register.css"> -->
     
    
     
@@ -134,6 +134,14 @@
                                     </div>
                                 </div>
 
+                                <!-- Country Input -->
+                                <div class="form-group row mt-3">
+                                    <div class="col-md-12">
+                                        <input class="form-control" name="country" type="text" required=""
+                                            placeholder="Country">
+                                    </div>
+                                </div>
+
                                 <!-- Image Upload Input -->
                                 <div class="form-group row file-upload-wrapper">
                                     <div class="col-md-12">
@@ -142,13 +150,21 @@
                                     </div>
                                 </div>
 
+                                <!-- Remember Me and Forgot Password -->
+                                <div class="form-group row remember-forgot">
+                                    <div class="col-md-12 d-flex justify-content-between align-items-center">
+                                        <a href="login.html" class="forgot-password-link">
+                                        <i class="fa fa-user"></i>Already have account? Login</a>
+                                    </div>
+                                </div><br>
+
                                 <!-- Submit Button -->
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
-                                        <button type="submit" name="submit"
-                                            class="btn btn-primary btn-block text-uppercase">Register</button>
+                                        <button type="submit" name="submit" class="butn btn-primary">Register</button>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
