@@ -20,6 +20,8 @@ body, html {
     padding: 2rem;
     max-width: 40rem;
     width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .form-title {

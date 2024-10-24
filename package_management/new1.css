@@ -14,6 +14,15 @@ body, html {
     padding: 20px;
 }
 
+.body-container {
+    background: linear-gradient(to right, #ebf8ff, #ffcf9f);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
 .form-container {
     background-color: white;
     border-radius: 10px;
@@ -21,6 +30,8 @@ body, html {
     padding: 40px;
     max-width: 800px;
     width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .form-title {

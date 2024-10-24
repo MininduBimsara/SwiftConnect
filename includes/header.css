@@ -19,6 +19,7 @@ body .main-section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 nav {
@@ -29,6 +30,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 body nav h1 {
