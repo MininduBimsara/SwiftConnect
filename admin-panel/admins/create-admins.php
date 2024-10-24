@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         $password = $_POST['password'];
 
         // Insert data into MySQL using MySQLi
-        $query = "INSERT INTO admins (email, adminname, mypassword) VALUES (?, ?, ?)";
+        $query = "INSERT INTO admins (email, name, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($query);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bind_param("sss", $email, $adminname, $hashedPassword);

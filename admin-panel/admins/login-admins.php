@@ -30,10 +30,10 @@ if (isset($_POST['submit'])) {
             $fetch = $result->fetch_assoc();
 
             // Verify password
-            if (password_verify($password, $fetch['mypassword'])) {
-                $_SESSION['adminname'] = $fetch['adminname'];
+            if (password_verify($password, $fetch['password'])) {
+                $_SESSION['adminname'] = $fetch['name'];
                 $_SESSION['email'] = $fetch['email'];
-                $_SESSION['admin_id'] = $fetch['id'];
+                $_SESSION['admin_id'] = $fetch['admin_id'];
 
                 // Redirect to admin dashboard
                 echo "<script> window.location.href ='".ADMINURL."'; </script>";

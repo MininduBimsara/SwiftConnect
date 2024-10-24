@@ -42,8 +42,8 @@ if ($result->num_rows > 0) {
                         <?php if (!empty($alladmins)) : ?>
                             <?php foreach ($alladmins as $admin) : ?>
                                 <tr>
-                                    <th scope="row"><?php echo $admin['id']; ?></th>
-                                    <td><?php echo $admin['adminname']; ?></td>
+                                    <th scope="row"><?php echo $admin['admin_id']; ?></th>
+                                    <td><?php echo $admin['name']; ?></td>
                                     <td><?php echo $admin['email']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
