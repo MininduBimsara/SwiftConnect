@@ -1,23 +1,21 @@
-/* General Styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-image: url("delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-hand-truck-holding-box-isolated-grey-studio-background-copy-space_1258-102315.jpg");
+  background: linear-gradient(to right, #ebf8ff, #ffcf9f);
   background-size: cover;
   background-position: center;
-  /* margin: 10px; */
-  /* padding: 0; */
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  background-color: white; 
 }
 
-/* Page Content */
 .page-content {
-  min-height: 100vh; /* Full height for the page */
+  min-height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,15 +27,17 @@ body {
   width: 100%;
 }
 
-/* Jumbotron Styling */
 .jumbotron {
-  padding: 50px 20px;
-  background-color: #FF8000;
-  color: white;
+  padding: 80px 30px; /* Increased padding for more space */
+  color: #FF8000;
   text-align: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px; /* Increased max-width for larger container */
   position: relative;
+}
+
+.mb-0 {
+  color: white;
 }
 
 .jumbotron-bg {
@@ -46,51 +46,77 @@ body {
   background-position: center;
 }
 
-/* Card Styling */
 .card-login {
-  width: 70%;
-  max-width: 500px;
+  width: 70%; /* Increased width for larger container */
+  max-width: 600px; /* Adjust as needed */
   background-color: #FF8000;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(213, 117, 0, 0.858);
-  margin-top: 20px;
-  margin-right: auto; 
-  margin-left: auto; 
+  margin: 20px auto; /* Centered margin */
 }
 
 .card-body {
-  padding: 20px;
+  padding: 50px;
 }
 
-/* Form Group Styling */
 .form-group {
-  margin-bottom: 15px; /* Space between form groups */
+  margin-bottom: 15px; 
 }
 
-/* Form Control Styling (Email and Password Inputs) */
 .form-control {
-  width: 100%; /* Full width for input fields */
-  height: 40px;
+  width: 100%; 
+  height: 45px; /* Increased height for better touch targets */
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
-  margin: 0 auto; /* Center align */
+  margin: 0 auto; 
   border: none;
   outline: none;
 }
 
-/* Button Styling */
-.btn {
-  width: 100%; /* Set the same width as input fields */
+.butn {
+  width: 100%; 
   height: 50px;
   font-size: 20px;
   border-radius: 10px;
   font-weight: bold;
   display: block;
-  margin: 0 auto; /* Center align */
+  margin: 0 auto; 
+  background-color: #ebf8ff;
+  color: rgb(81, 77, 73);
 }
 
-/* File Upload Input Styling */
+.remember-forgot .col-md-12 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password-link {
+  color: white; 
+  font-size: 16px; 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center;
+}
+
+.forgot-password-link i {
+  margin-right: 5px; 
+  font-size: 18px; 
+}
+
+.forgot-password-link:hover {
+  color: #f0f0f0; 
+}
+
+#checkbox0 {
+  transform: scale(1.5);
+}
+
+.text-light {
+  font-size: 15px;
+}
+
 .file-upload-wrapper {
   position: relative;
   width: 100%; 
@@ -127,74 +153,32 @@ body {
 }
 
 
-
-/* Remember Me and Forgot Password */
-.remember-forgot .col-md-12 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
- 
-.forgot-password-link {
-  color: white; 
-  font-size: 16px; 
-  text-decoration: none; 
-  display: flex; 
-  align-items: center;
-}
-
-.forgot-password-link i {
-  margin-right: 5px; 
-  font-size: 18px; 
-}
-
-.forgot-password-link:hover {
-  color: #f0f0f0; 
-}
-
-#checkbox0 {
-  transform: scale(1.5);
-}
-
-.text-light {
-  font-size: 15px;
-}
-
-/* Responsive Styling for Tablets and Mobiles */
 @media screen and (max-width: 768px) {
-  /* Tablet and mobile styles */
   .jumbotron {
-    padding: 30px 10px;
+      padding: 50px 15px; /* Adjusted padding */
   }
 
   .card-login {
-    width: 90%; /* Reduce width for smaller screens */
-    margin-left: auto;
-    margin-right: auto;
+      width: 90%; 
   }
 
   .form-control,
-  .btn {
-    width: 100%; /* Full width for input fields and button */
-  }
-
-  .btn {
-    width: 100%;
+  .butn {
+      width: 100%; 
   }
 }
 
 @media screen and (max-width: 480px) {
-  /* Mobile specific styles */
-  h1 {
-    font-size: 24px;
+  .pt-5 {
+      font-size: 24px;
   }
 
-  .btn {
-    font-size: 16px;
+  .butn {
+      font-size: 16px;
   }
 
   .form-control {
-    font-size: 14px;
-    height: 35px;
+      font-size: 14px;
+      height: 35px;
   }
 }
