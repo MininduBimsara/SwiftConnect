@@ -1,0 +1,18 @@
+/* General styles for alerts and buttons */
+.alert {
+    padding: 15px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}

@@ -1,0 +1,41 @@
+/* style.css */
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand {
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    margin-left: 20px;
+}
+
+.navbar .dropdown-menu {
+    background-color: #343a40;
+}
+
+.navbar .dropdown-item {
+    color: #fff !important;
+}
+
+/* General Layout */
+#container-fluid {
+    padding-top: 70px;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
