@@ -80,7 +80,7 @@
                             while ($row_categories = mysqli_fetch_assoc($result_categories)) {
                                 $category_id = $row_categories['category_id'];
                                 $name = $row_categories['name'];
-                                $dimensions = $row_categories['dimentions'];
+                                $dimensions = $row_categories['dimensions'];
                                 $image = $row_categories['image'];
 
                                 echo "
