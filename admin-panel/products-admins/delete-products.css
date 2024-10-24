@@ -1,0 +1,19 @@
+/* style.css */
+
+/* Custom styles for delete confirmation page */
+.card {
+    margin-top: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

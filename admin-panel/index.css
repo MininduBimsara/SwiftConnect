@@ -1,0 +1,24 @@
+/* style.css */
+
+/* Card styling */
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 18px;
+    margin-top: 10px;
+}

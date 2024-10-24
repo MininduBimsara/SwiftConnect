@@ -1,0 +1,21 @@
+/* style.css */
+
+/* Custom Styles for Update Order Page */
+.card {
+    margin-top: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Add other custom styles as needed */

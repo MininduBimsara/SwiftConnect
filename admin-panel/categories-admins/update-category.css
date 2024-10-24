@@ -1,0 +1,22 @@
+/* style.css */
+
+/* General Form and Button Styling */
+.form-outline {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    width: 100px;
+    background-color: #007bff;
+    border: none;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+    resize: none;
+}
