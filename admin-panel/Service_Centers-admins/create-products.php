@@ -11,25 +11,20 @@ $categoriesQuery = $conn->query("SELECT * FROM categories");
 $allcategories = $categoriesQuery->fetch_all(MYSQLI_ASSOC);
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['Title']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['category_id']) || empty($_POST['exp_date'])) {
+    if (empty($_POST['center_name']) || empty($_POST['country']) || empty($_POST['city']) || empty($_POST['category_id']) || empty($_POST['exp_date'])) {
         echo "<script>alert('One or more inputs are empty');</script>";
     } else {
-        $Title = $_POST['Title'];
-        $price = $_POST['price'];
-        $description = $_POST['description'];
-        $category_id = $_POST['category_id'];
-        $exp_date = $_POST['exp_date'];
-        $image = $_FILES['image']['name'];
+        $center_name = $_POST['center_name'];
+        $country = $_POST['country'];
+        $city = $_POST['city'];
+        $address = $_POST['address'];
+        $contact_number = $_POST['contact_number'];
+        $center_rate = $_POST['center_rate'];
 
-        $dir = "img-products/" . basename($image);
-
-        $insert = $conn->prepare("INSERT INTO products (Title, price, description, category_id, exp_date, image) VALUES (?, ?, ?, ?, ?, ?)");
-        $insert->bind_param("sdssss", $Title, $price, $description, $category_id, $exp_date, $image);
+        $insert = $conn->prepare("INSERT INTO servicecenter (center_name, country, city, address, contact_number, center_rate) VALUES (?, ?, ?, ?, ?, ?)");
+        $insert->bind_param("sdssss", $center_name, $country, $city, $address, $contact_number, $center_rate);
         $insert->execute();
 
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $dir)) {
-            echo "<script> window.location.href = '".ADMINURL."/products-admins/show-products.php'; </script>";
-        }
     }
 }
 ?>
@@ -44,50 +39,40 @@ if (isset($_POST['submit'])) {
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Create Products</h5>
                 <form method="POST" action="create-products.php" enctype="multipart/form-data">
-                    <!-- Title input -->
+                    
+                <!-- Center input -->
                     <div class="form-outline mb-4 mt-4">
-                        <label>Title</label>
-                        <input type="text" name="Title" class="form-control" placeholder="title" />
+                        <label>Center Name</label>
+                        <input type="text" name="center_name" class="form-control" placeholder="center name" />
                     </div>
 
-                    <!-- Price input -->
+                    <!-- country input -->
                     <div class="form-outline mb-4 mt-4">
-                        <label>Price</label>
-                        <input type="text" name="price" class="form-control" placeholder="price" />
+                        <label>Country</label>
+                        <input type="text" name="country" class="form-control" placeholder="country" />
                     </div>
 
-                    <!-- Description input -->
+                    <!-- city input -->
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" class="form-control" rows="3" placeholder="description"></textarea>
+                        <label>City</label>
+                        <input type="text" name="city" class="form-control" placeholder="city"></input>
                     </div>
-
-                    <!-- Category input -->
+                    <!-- Address input -->
                     <div class="form-group">
-                        <label>Select Category</label>
-                        <select name="category_id" class="form-control">
-                            <option>--select category--</option>
-                            <?php foreach($allcategories as $category): ?>
-                            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        <label>Address</label>
+                        <textarea name="address" class="form-control" rows="3" placeholder="address"></textarea>
                     </div>
 
-                    <!-- Expiration date input -->
+                    <!-- contact number input -->
                     <div class="form-group">
-                        <label>Select Expiration Date</label>
-                        <select name="exp_date" class="form-control">
-                            <option>--select expiration date--</option>
-                            <option>2024-11-11</option>
-                            <option>2025-12-23</option>
-                            <option>2026-06-23</option>
-                        </select>
+                        <label>Contact Number</label>
+                        <input type="text" name="city" class="form-control" placeholder="Contact number"></input>
                     </div>
 
-                    <!-- Image input -->
-                    <div class="form-outline mb-4 mt-4">
-                        <label>Image</label>
-                        <input type="file" name="image" class="form-control" />
+                    <!-- rate input -->
+                    <div class="form-group">
+                        <label>Center Rate</label>
+                        <input type="text" name="center_rate" class="form-control" placeholder="Center Rate"></input>
                     </div>
 
                     <!-- Submit button -->

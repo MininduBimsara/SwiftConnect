@@ -51,7 +51,7 @@ $service_center = $conn->query("SELECT * FROM servicecenter");
                                 <?php echo $center['center_rate']; ?>
                             </td>
                             <td>
-                                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/delete-products.php?id=<?php echo $center['id']; ?>" 
+                                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/delete-products.php?id=<?php echo $center['center_id']; ?>" 
                                    class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
