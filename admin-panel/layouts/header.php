@@ -43,6 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo ADMINURL; ?>/orders-admins/show-orders.php">Orders</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo ADMINURL; ?>/Service_Centers-admins/show-orders.php">Service Centers</a>
+                        </li>
                     </ul>
                     <?php endif; ?>
                     <ul class="navbar-nav ml-md-auto d-md-flex">
