@@ -2,40 +2,67 @@
 <?php require "../../config/config.php"; ?>
 
 <?php
-// Redirect to login if admin is not logged in
-// if(!isset($_SESSION['adminname'])) {
-//     echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
-//     exit;
-// }
-
 // Handle form submission
 if (isset($_POST['submit'])) {
-    if(empty($_POST['name']) || empty($_POST['icon']) || empty($_POST['description'])) {
-        echo "<script>alert('One or more inputs are empty');</script>";
+    // Check if essential fields are empty
+    if (empty($_POST['name'])) {
+        echo "<script>alert('Name cannot be empty');</script>";
     } else {
-        $name = $_POST['name'];
-        $icon = $_POST['icon'];
-        $description = $_POST['description'];
-        $image = $_FILES['image']['name'];
-        $target_dir = "img-category/" . basename($image);
+        // Escape inputs to prevent SQL injection
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $dimensions = $_POST['dimensions'];
 
-        // Insert data using MySQLi
-        $stmt = $conn->prepare("INSERT INTO categories (name, icon, description, image) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $name, $icon, $description, $image);
-
-        if($stmt->execute() && move_uploaded_file($_FILES['image']['tmp_name'], $target_dir)) {
-            echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-categories.php'; </script>";
+        // Validate dimensions format (e.g., "25*35 cm" or "50*40*20 cm")
+        if (empty($dimensions) || !preg_match('/^\d+(\*\d+){1,2}\s*cm$/', $dimensions)) {
+            echo "<script>alert('Dimensions format is invalid. Please use the format: <width>*<height> cm or <width>*<height>*<depth> cm');</script>";
         } else {
-            echo "<script>alert('Error while creating the category');</script>";
-        }
+            $dimensions = mysqli_real_escape_string($conn, $dimensions);
+            $image = $_FILES['image']['name'];
+            $target_dir = "img-category/";
+            $target_file = $target_dir . basename($image);
 
-        $stmt->close();
+            // Ensure the target directory exists
+            if (!is_dir($target_dir)) {
+                if (!mkdir($target_dir, 0777, true)) {
+                    echo "<script>alert('Failed to create upload directory');</script>";
+                    exit;
+                }
+            }
+
+            // Attempt to move the uploaded file and check if successful
+            if ($image && move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+                // Insert data into the database only if the file upload is successful
+                $query = "INSERT INTO categories (name, image, dimensions) VALUES ('$name', '$image', '$dimensions')";
+                if (mysqli_query($conn, $query)) {
+                    echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-categories.php'; </script>";
+                } else {
+                    echo "<script>alert('Error while creating the category in the database: " . mysqli_error($conn) . "');</script>";
+                    // Optionally, remove the uploaded file if database insertion fails
+                    unlink($target_file);
+                }
+            } else {
+                echo "<script>alert('Image upload failed. Check directory permissions and file type.');</script>";
+            }
+        }
     }
 }
 ?>
+
 <!-- header.php -->
 <head>
     <link rel="stylesheet" href="create-category.css">
+    <script>
+        // Function to validate dimensions input
+        function validateForm() {
+            var dimensions = document.forms["categoryForm"]["dimensions"].value;
+            var regex = /^\d+(\*\d+){1,2}\s*cm$/;
+            if (!regex.test(dimensions)) {
+                alert("Dimensions format is invalid. Please use the format: <width>*<height> cm or <width>*<height>*<depth> cm");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
 </head>
 
 <div class="row">
@@ -43,24 +70,21 @@ if (isset($_POST['submit'])) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Create Categories</h5>
-                <form method="POST" action="create-category.php" enctype="multipart/form-data">
+                <form name="categoryForm" method="POST" action="create-category.php" enctype="multipart/form-data" onsubmit="return validateForm();">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
                         <input type="text" name="name" class="form-control" placeholder="Name" />
                     </div>
-                    <!-- Icon input -->
+
+                    <!-- Dimensions input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="icon" class="form-control" placeholder="Icon" />
+                        <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (e.g., 25*35 cm)" required pattern="^\d+(\*\d+){1,2}\s*cm$" title="Format: <width>*<height> cm or <width>*<height>*<depth> cm" />
                     </div>
-                    <!-- Description input -->
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
-                    </div>
+
                     <!-- Image input -->
                     <div class="form-outline mb-4 mt-4">
                         <label>Image</label>
-                        <input type="file" name="image" class="form-control" />
+                        <input type="file" name="image" class="form-control" required />
                     </div>
 
                     <!-- Submit button -->
