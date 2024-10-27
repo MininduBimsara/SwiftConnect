@@ -17,10 +17,10 @@ if(isset($_GET['id'])) {
 
     // Check if any category is found
     if ($select->num_rows > 0) {
-        $categories = $select->fetch_assoc(); // Fetch category details
+        $service_center = $select->fetch_assoc(); // Fetch category details
     } else {
         // If no category is found, set categories as null and display a message later
-        $categories = null;
+        $service_center = null;
     }
 
     // Update category when form is submitted
@@ -34,11 +34,11 @@ if(isset($_GET['id'])) {
             $dimentions = $_POST['dimentions'];
 
             // Update query using MySQLi
-            $update = $conn->prepare("UPDATE categories SET name=?, image=?, dimentions=? WHERE category_id=?");
+            $update = $conn->prepare("UPDATE servicecenter SET center_name=?, image=?, dimentions=? WHERE category_id=?");
             $update->bind_param("sssi", $name, $image, $dimentions, $id);
 
             if ($update->execute()) {
-                echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-categories.php'; </script>";
+                echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-Service_Centers.php'; </script>";
             } else {
                 echo "<script>alert('Error updating category');</script>";
             }
@@ -55,23 +55,24 @@ if(isset($_GET['id'])) {
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title mb-5 d-inline">Update Category</h5>
+                <h5 class="card-title mb-5 d-inline">Update Service Center</h5>
+
                 <?php if($categories): ?>
                 <form method="POST" action="update-category.php?id=<?php echo $id; ?>">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="name" value="<?php echo $categories['name']; ?>" class="form-control" placeholder="Name" />
+                        <input type="text" name="name" value="<?php echo $service_center['name']; ?>" class="form-control" placeholder="Name" />
                     </div>
 
                     <!-- Icon input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="image" value="<?php echo $categories['image']; ?>" class="form-control" placeholder="Image" />
+                        <input type="text" name="image" value="<?php echo $service_center['image']; ?>" class="form-control" placeholder="Image" />
                     </div>
 
                     <!-- Description input -->
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="dimentions" placeholder="Description" class="form-control" id="dimentions" rows="3"><?php echo $categories['dimentions']; ?></textarea>
+                        <textarea name="dimentions" placeholder="Dimentions" class="form-control" id="dimentions" rows="3"><?php echo $service_center['dimentions']; ?></textarea>
                     </div>
 
                     <!-- Submit button -->

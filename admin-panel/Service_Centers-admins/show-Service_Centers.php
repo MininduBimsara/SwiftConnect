@@ -12,14 +12,14 @@ $service_center = $conn->query("SELECT * FROM servicecenter");
 ?>
 <!-- header.php -->
 <head>
-    <link rel="stylesheet" href="show-products.css">
+    <link rel="stylesheet" href="show-Service_Centers.css">
 </head>
 <div class="row">
     <div class="col">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-4 d-inline">Service Centers</h5>
-                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/create-products.php" class="btn btn-primary mb-4 text-center float-right">Create Products</a>
+                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/create-Service_Centers.php" class="btn btn-primary mb-4 text-center float-right">Create Service Centers</a>
 
                 <table class="table">
                     <thead>
@@ -32,6 +32,7 @@ $service_center = $conn->query("SELECT * FROM servicecenter");
                             <th scope="col">Contact Number</th>
                             <th scope="col">Rate</th>
                             <th scope="col">Delete</th>
+                            <th scope="col">Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,8 +52,12 @@ $service_center = $conn->query("SELECT * FROM servicecenter");
                                 <?php echo $center['center_rate']; ?>
                             </td>
                             <td>
-                                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/delete-products.php?id=<?php echo $center['center_id']; ?>" 
+                                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/delete-Service_Centers.php?id=<?php echo $center['center_id']; ?>" 
                                    class="btn btn-danger">Delete</a>
+                            </td>
+                            <td>
+                                <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/update-Service_Centers.php?id=<?php echo $center['center_id']; ?>" 
+                                   class="btn btn-update">Update</a>
                             </td>
                         </tr>
                         <?php endwhile; ?>

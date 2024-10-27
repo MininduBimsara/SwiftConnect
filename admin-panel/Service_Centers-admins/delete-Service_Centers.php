@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
     $delete = $conn->query("DELETE FROM products WHERE id='$id'");
     
     if ($delete) {
-        echo "<script> window.location.href = '".ADMINURL."/products-admins/show-products.php'; </script>";
+        echo "<script> window.location.href = '".ADMINURL."/products-admins/show-Service_Centers.php'; </script>";
     } else {
         echo "<script>alert('Failed to delete product');</script>";
     }
@@ -30,6 +30,6 @@ if (isset($_GET['id'])) {
 ?>
 <!-- header.php -->
 <head>
-    <link rel="stylesheet" href="delete-products.css">
+    <link rel="stylesheet" href="delete-Service_Centers.css">
 </head>
 <?php require "../layouts/footer.php"; ?>

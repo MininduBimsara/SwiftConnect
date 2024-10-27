@@ -14,6 +14,11 @@
     background-color: #0056b3;
 }
 
+.btn-update {
+    background-color: #fad900;
+    color: white;
+}
+
 .btn-danger {
     background-color: #dc3545;
 }

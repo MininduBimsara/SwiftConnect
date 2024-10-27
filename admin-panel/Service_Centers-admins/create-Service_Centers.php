@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
 ?>
 <!-- header.php -->
 <head>
-    <link rel="stylesheet" href="create-products.css">
+    <link rel="stylesheet" href="create-Service_Centers.css">
 </head>
 
 <div class="row">
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Create Products</h5>
-                <form method="POST" action="create-products.php" enctype="multipart/form-data">
+                <form method="POST" action="create-Service_Centers.php" enctype="multipart/form-data">
                     
                 <!-- Center input -->
                     <div class="form-outline mb-4 mt-4">
