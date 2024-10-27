@@ -3,12 +3,12 @@
 
 <?php 
 
-// if(!isset($_SESSION['adminname'])){
+// if (!isset($_SESSION['adminname'])) {
 //     echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
 //     exit;
 // }
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     
     $id = $_GET['id'];
 
@@ -16,27 +16,43 @@ if(isset($_GET['id'])) {
     $select = $conn->query("SELECT * FROM categories WHERE category_id='$id'");
 
     // Check if any category is found
-    if ($select->num_rows > 0) {
-        $categories = $select->fetch_assoc(); // Fetch category details
+    if ($select && $select->num_rows > 0) {
+        $category = $select->fetch_assoc(); // Fetch category details
     } else {
-        // If no category is found, set categories as null and display a message later
-        $categories = null;
+        echo "<p class='text-danger'>Category not found.</p>";
+        exit;
     }
 
     // Update category when form is submitted
     if (isset($_POST['submit'])) {
         
-        if(empty($_POST['name']) || empty($_POST['image']) || empty($_POST['dimentions'])){
-            echo "<script>alert('One or more inputs are empty');</script>";
+        if (empty($_POST['name']) || empty($_POST['dimensions'])) {
+            echo "<script>alert('Name or Dimensions cannot be empty');</script>";
         } else {
             $name = $_POST['name'];
-            $image = $_POST['image'];
-            $dimentions = $_POST['dimentions'];
+            $dimensions = $_POST['dimensions'];
+
+            if (!empty($_FILES['image']['name'])) {
+                $image = $_FILES['image']['name'];
+                $target_dir = "img-category/";
+                $target_file = $target_dir . basename($image);
+
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+                    $old_image = $category['image'];
+                    if ($old_image && file_exists($target_dir . $old_image)) {
+                        unlink($target_dir . $old_image);
+                    }
+                } else {
+                    echo "<script>alert('Image upload failed');</script>";
+                    exit;
+                }
+            } else {
+                $image = $category['image'];
+            }
 
             // Update query using MySQLi
-            $update = $conn->prepare("UPDATE categories SET name=?, image=?, dimentions=? WHERE category_id=?");
-            $update->bind_param("sssi", $name, $image, $dimentions, $id);
-
+            $update = $conn->prepare("UPDATE categories SET name=?, image=?, dimensions=? WHERE category_id=?");
+            $update->bind_param("sssi", $name, $image, $dimensions, $id);
             if ($update->execute()) {
                 echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-categories.php'; </script>";
             } else {
@@ -46,7 +62,7 @@ if(isset($_GET['id'])) {
     }
 }
 ?>
-<!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="update-category.css">
 </head>
@@ -56,24 +72,24 @@ if(isset($_GET['id'])) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Update Category</h5>
-                <?php if($categories): ?>
-                <form method="POST" action="update-category.php?id=<?php echo $id; ?>">
+                <?php if ($category): ?>
+                <form method="POST" action="update-category.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="name" value="<?php echo $categories['name']; ?>" class="form-control" placeholder="Name" />
+                        <input type="text" name="name" value="<?php echo htmlspecialchars($category['name']); ?>" class="form-control" placeholder="Name" />
                     </div>
 
-                    <!-- Icon input -->
+                     <!-- Dimensions input -->
+                     <div class="form-outline mb-4 mt-4">
+                        <input type="text" name="dimensions" value="<?php echo htmlspecialchars($category['dimensions']); ?>" class="form-control" placeholder="Dimensions" />
+                    </div>
+
+                    <!-- Image input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="image" value="<?php echo $categories['image']; ?>" class="form-control" placeholder="Image" />
+                        <label>Image</label>
+                        <input type="file" name="image" class="form-control" />
                     </div>
-
-                    <!-- Description input -->
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="dimentions" placeholder="Description" class="form-control" id="dimentions" rows="3"><?php echo $categories['dimentions']; ?></textarea>
-                    </div>
-
+                   
                     <!-- Submit button -->
                     <button type="submit" name="submit" class="btn btn-primary mb-4">Update</button>
                 </form>
