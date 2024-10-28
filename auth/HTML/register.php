@@ -1,3 +1,4 @@
+<?php include_once "../../includes/header.php"; ?>
 <?php
     include_once "../../config/config.php";
     
@@ -39,8 +40,9 @@
                             $insert_query = "INSERT INTO users (username, name, email, password, country, image) 
                                             VALUES ('$username', '$name', '$email', '$password_hashed', '$country', '$image')";
                             $result_insert = mysqli_query($conn, $insert_query);
+                            
                             if($result_insert) {
-                                echo "<script>window.location.href = 'login.php';</script>";
+                                echo "<script>window.location.href = 'login1.php';</script>";
                             } else {
                                 echo "<script>alert('Failed to create account.');</script>";
                             }
@@ -57,7 +59,7 @@
         }
     }
 ?>
- <?php include_once "../../includes/header.php"; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,15 +71,15 @@
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../../includes/footer.css">
-    
-   
-    
+
+
+
 
 </head>
 
 <body>
 
-   
+
 
     <div id="page-content" class="page-content">
         <div class="banner">
@@ -93,7 +95,8 @@
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
-                            <form class="form-horizontal" method="POST" action="register.php" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" action="register.php"
+                                enctype="multipart/form-data">
                                 <!-- Full Name Input -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
@@ -105,7 +108,7 @@
                                 <!-- Email Input -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
-                                        <input class="form-control" name="email" type="email" required=""  
+                                        <input class="form-control" name="email" type="email" required=""
                                             placeholder="Email">
                                     </div>
                                 </div>
@@ -145,8 +148,10 @@
                                 <!-- Image Upload Input -->
                                 <div class="form-group row file-upload-wrapper">
                                     <div class="col-md-12">
-                                        <label for="image" class="file-upload-label file-upload-text">Upload profile image</label>
-                                        <input class="form-control file-upload-input" name="image" type="file" required="">
+                                        <label for="image" class="file-upload-label file-upload-text">Upload profile
+                                            image</label>
+                                        <input class="form-control file-upload-input" name="image" type="file"
+                                            required="">
                                     </div>
                                 </div>
 
@@ -154,7 +159,7 @@
                                 <div class="form-group row remember-forgot">
                                     <div class="col-md-12 d-flex justify-content-between align-items-center">
                                         <a href="login.html" class="forgot-password-link">
-                                        <i class="fa fa-user"></i>Already have account? Login</a>
+                                            <i class="fa fa-user"></i>Already have account? Login</a>
                                     </div>
                                 </div><br>
 
@@ -176,4 +181,5 @@
     <?php include_once "../../includes/footer.php"; ?>
 
 </body>
+
 </html>

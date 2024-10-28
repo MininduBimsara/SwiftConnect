@@ -1,3 +1,9 @@
+<?php 
+
+include "../../includes/header.php";
+
+
+?>
 <?php
 
 require "../../config/config.php";  
@@ -49,12 +55,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php 
 
-include "../../includes/header.php";
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +78,7 @@ include "../../includes/header.php";
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
-                            <form class="form-horizontal" method="post" action="login.php">
+                            <form class="form-horizontal" method="post" action="">
                                 <!-- Email Field -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
