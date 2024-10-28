@@ -37,43 +37,7 @@ $num_centers = $centerResult->fetch_assoc();
 <head>
     <link rel="stylesheet" href="index.css">
 </head>
-<<<<<<< HEAD
-=======
-<div class="row">
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Service Centers</h5>
-                <p class="card-text">Number of Service Centers: <?php echo $num_centers['serviceCenters_num']; ?></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Orders</h5>
-                <p class="card-text">Number of orders: <?php echo $num_orders['orders_num']; ?></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Categories</h5>
-                <p class="card-text">Number of categories: <?php echo $num_categories['categories_num']; ?></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Admins</h5>
-                <p class="card-text">Number of admins: <?php echo $num_admins['admins_num']; ?></p>
-            </div>
-        </div>
-    </div>
-</div>
->>>>>>> b0ba2b3862d111fc7d214f2efcd8938051db2125
+
 
 <body>
     <?php require "layouts/header.php"; ?>
@@ -82,8 +46,8 @@ $num_centers = $centerResult->fetch_assoc();
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Products</h5>
-                    <!-- <p class="card-text">Number of products: <?php echo $num_products['products_num']; ?></p> -->
+                    <h5 class="card-title">Service Centers</h5>
+                    <p class="card-text">Number of Service Centers: <?php echo $num_centers['serviceCenters_num']; ?></p>
                 </div>
             </div>
         </div>
