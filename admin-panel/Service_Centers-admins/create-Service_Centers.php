@@ -11,7 +11,7 @@ $categoriesQuery = $conn->query("SELECT * FROM categories");
 $allcategories = $categoriesQuery->fetch_all(MYSQLI_ASSOC);
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['center_name']) || empty($_POST['country']) || empty($_POST['city']) || empty($_POST['category_id']) || empty($_POST['exp_date'])) {
+    if (empty($_POST['center_name']) || empty($_POST['country']) || empty($_POST['city']) || empty($_POST['address']) || empty($_POST['contact_number']) || empty($_POST['center_rate'])) {
         echo "<script>alert('One or more inputs are empty');</script>";
     } else {
         $center_name = $_POST['center_name'];
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title mb-5 d-inline">Create Products</h5>
+                <h5 class="card-title mb-5 d-inline">Create Service Centers</h5>
                 <form method="POST" action="create-Service_Centers.php" enctype="multipart/form-data">
                     
                 <!-- Center input -->
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
                     <!-- contact number input -->
                     <div class="form-group">
                         <label>Contact Number</label>
-                        <input type="text" name="city" class="form-control" placeholder="Contact number"></input>
+                        <input type="text" name="contact_number" class="form-control" placeholder="Contact number"></input>
                     </div>
 
                     <!-- rate input -->
