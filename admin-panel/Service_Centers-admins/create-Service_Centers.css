@@ -1,23 +1,94 @@
-/* style.css */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Custom Styles for Create Product Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Card Styles */
 .card {
-    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .card-title {
+    font-size: 24px;
     font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-.form-outline {
-    margin-top: 20px;
+/* Form Control Styles */
+.form-outline, .form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Label Styles */
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: white;
+    border: none;
 }
 
 .btn-primary {
     background-color: #007bff;
-    border: none;
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

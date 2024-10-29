@@ -3,7 +3,7 @@
     require "../../config/config.php"; 
 
     // Start session and check for admin login
-    session_start();
+
     // if (!isset($_SESSION['adminname'])) {
     //     echo "<script> window.location.href ='" . ADMINURL . "/admins/login-admins.php'; </script>";
     // }
