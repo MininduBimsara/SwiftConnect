@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 
         if (mysqli_num_rows($result) > 0) {
             $fetch = mysqli_fetch_assoc($result);
-            if (password_verify($password, $fetch['mypassword'])) {
+            if (password_verify($password, $fetch['password'])) {
                 // Set session variables
                 $_SESSION['username'] = $fetch['username'];
                 $_SESSION['email'] = $fetch['email'];
