@@ -1,46 +1,102 @@
 /* style.css */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
 
-.table th, .table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.table th {
-    background-color: #f2f2f2;
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
     color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
+/* Card Styling */
 .card {
+    background-color: #fff;
+    border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+    margin: 20px;
+    padding: 20px;
 }
 
 .card-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #333;
+    margin-bottom: 15px;
 }
 
+/* Button Styling */
 .btn-primary {
     background-color: #007bff;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
 }
 
-.card-body {
-    padding: 20px;
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table td {
+    color: #495057;
+}
+
+/* Row Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex: 1;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.float-right {
+    float: right;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .col {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
