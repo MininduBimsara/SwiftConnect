@@ -1,31 +1,20 @@
 /* General Styling */
-body {
+.container {
     font-family: 'Arial', sans-serif;
     background-color: #f3f4f6;
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Container for centering */
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-    margin-top: 60px;
-}
-
 /* Row Styling */
 .row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+
 }
 
 /* Column Styling */
@@ -67,14 +56,8 @@ body {
 
 .card-text {
     font-size: 20px;
-    color: #007bff;
+    color: #ff8000;
     font-weight: 500;
     margin-top: 10px;
 }
-
-/* Hover Effects */
-.card:hover .card-title {
-    color: #007bff;
-}
-
-
+        
