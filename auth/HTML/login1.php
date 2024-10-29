@@ -1,3 +1,8 @@
+<?php 
+
+include "../../includes/header.php";
+
+?>
 <?php
 
 require "../../config/config.php";  
@@ -28,7 +33,7 @@ if (isset($_POST['submit'])) {
 
         if (mysqli_num_rows($result) > 0) {
             $fetch = mysqli_fetch_assoc($result);
-            if (password_verify($password, $fetch['mypassword'])) {
+            if (password_verify($password, $fetch['password'])) {
                 // Set session variables
                 $_SESSION['username'] = $fetch['username'];
                 $_SESSION['email'] = $fetch['email'];
@@ -49,12 +54,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php 
 
-include "../../includes/header.php";
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +77,7 @@ include "../../includes/header.php";
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
-                            <form class="form-horizontal" method="post" action="login.php">
+                            <form class="form-horizontal" method="post" action="">
                                 <!-- Email Field -->
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">

@@ -3,23 +3,27 @@
 
 <?php
 // Redirect to login if admin is not logged in
+// Uncomment if session-based authentication is needed
 // if (!isset($_SESSION['adminname'])) {
 //     echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
 //     exit;
 // }
+$query = "SELECT category_id, name FROM categories";
+// Fetch categories using the mysqli connection from config.php
+$categories = mysqli_query($conn,$query);
 
-// Fetch categories using MySQLi
-$categories = $conn->query("SELECT * FROM categories");
-
-// Check if categories exist
-if ($categories->num_rows > 0) {
-    $allcategories = $categories->fetch_all(MYSQLI_ASSOC);
+// Check if categories exist and fetch them into an associative array
+$allcategories = [];
+if ($categories && mysqli_num_rows($categories) > 0) {
+    $allcategories = mysqli_fetch_all($categories, MYSQLI_ASSOC);
 }
 ?>
+
 <!-- header.php -->
 <head>
     <link rel="stylesheet" href="show-categories.css">
 </head>
+
 <div class="row">
     <div class="col">
         <div class="card">
@@ -39,18 +43,23 @@ if ($categories->num_rows > 0) {
                     <tbody>
                         <?php if (!empty($allcategories)) : ?>
                             <?php foreach ($allcategories as $categorie): ?>
-                            <tr>
-                                <th scope="row"><?php echo $categorie['id']; ?></th>
-                                <td><?php echo $categorie['name']; ?></td>
-                                <td>
-                                    <a href="update-category.php?id=<?php echo $categorie['id']; ?>"
-                                        class="btn btn-warning text-white">Update</a>
-                                </td>
-                                <td>
-                                    <a href="delete-category.php?id=<?php echo $categorie['id']; ?>"
+                                <tr>
+                                    <!-- Display the category ID, or 'N/A' if undefined -->
+                                    <th scope="row"><?php echo isset($categorie['category_id']) ? $categorie['category_id'] : 'N/A'; ?></th>
+                                    <!-- Display the category name, or 'Unnamed' if undefined -->
+                                    <td><?php echo isset($categorie['name']) ? $categorie['name'] : 'Unnamed'; ?></td>
+                                    <td>
+                                        <!-- Link to update the category, using '#' if ID is undefined -->
+                                        <a href="update-category.php?id=<?php echo isset($categorie['category_id']) ? $categorie['category_id'] : '#'; ?>"
+                                           class="btn btn-warning text-white">Update</a>
+                                    </td>
+                                    <td>
+                                        <!-- Link to delete the category, using '#' if ID is undefined -->
+                                        <a href="delete-category.php?category_id=<?php echo isset($categorie['category_id']) ? $categorie['category_id'] : '#'; ?>" 
                                         class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
+
+                                    </td>
+                                </tr>
                             <?php endforeach; ?>
                         <?php else : ?>
                             <tr>
