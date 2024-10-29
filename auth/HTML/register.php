@@ -60,7 +60,6 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,14 +71,9 @@
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../../includes/footer.css">
 
-
-
-
 </head>
 
 <body>
-
-
 
     <div id="page-content" class="page-content">
         <div class="banner">
