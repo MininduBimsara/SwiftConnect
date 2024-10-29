@@ -52,7 +52,7 @@
         <title>Package Management</title>
         <link rel="stylesheet" href="../includes/header.css">
         <link rel="stylesheet" href="../includes/footer.css">
-        <link rel="stylesheet" href="new1.css">
+        <link rel="stylesheet" href="delivery_details.css">
     </head>
 
     <body>

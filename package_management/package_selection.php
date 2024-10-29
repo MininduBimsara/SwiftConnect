@@ -9,7 +9,7 @@
         $weight_range = $_POST['weight_range'];
         $selected_package = $_POST['selected_package'];
 
-        echo "<script> window.location.href ='" . APPURL . "/package_management/new1.php'; </script>";
+        echo "<script> window.location.href ='" . APPURL . "/package_management/package_selectionre.php'; </script>";
     }
 
 ?>
@@ -23,7 +23,7 @@
         <title>Package Management</title>
         <link rel="stylesheet" href="../includes/header.css">
         <link rel="stylesheet" href="../includes/footer.css">
-        <link rel="stylesheet" href="new.css">
+        <link rel="stylesheet" href="package_selection.css">
     </head>
 
     <body>

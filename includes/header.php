@@ -54,7 +54,7 @@
                     </ul>
                       <div class="hamburger"><i onclick="showsidebar()"class='bx bx-menu'></i></div>
                       <div class="log-btn">
-                    <button>login</button>
+                    <button>Login</button>
              </div>
                   </nav>
 
