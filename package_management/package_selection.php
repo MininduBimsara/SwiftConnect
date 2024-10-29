@@ -23,7 +23,7 @@
         <title>Package Management</title>
         <link rel="stylesheet" href="../includes/header.css">
         <link rel="stylesheet" href="../includes/footer.css">
-        <link rel="stylesheet" href="new.css">
+        <link rel="stylesheet" href="package_selection.css">
     </head>
 
     <body>
