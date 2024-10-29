@@ -31,8 +31,11 @@ if(isset($_GET['id'])){
 
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="update-orders.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 <div class="row">
     <div class="col">
@@ -43,8 +46,10 @@ if(isset($_GET['id'])){
                     <div class="form-group mt-4">
                         <select name="status" class="form-control" id="exampleFormControlSelect1">
                             <option>--Select Order Status--</option>
-                            <option value="In progress" <?php echo $order['status'] == 'In progress' ? 'selected' : ''; ?>>In progress</option>
-                            <option value="Delivered" <?php echo $order['status'] == 'Delivered' ? 'selected' : ''; ?>>Delivered</option>
+                            <option value="In progress"
+                                <?php echo $order['status'] == 'In progress' ? 'selected' : ''; ?>>In progress</option>
+                            <option value="Delivered" <?php echo $order['status'] == 'Delivered' ? 'selected' : ''; ?>>
+                                Delivered</option>
                         </select>
                     </div>
                     <!-- Submit button -->

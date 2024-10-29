@@ -29,8 +29,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="create-Service_Centers.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 
 <div class="row">
@@ -39,8 +42,8 @@ if (isset($_POST['submit'])) {
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Create Service Centers</h5>
                 <form method="POST" action="create-Service_Centers.php" enctype="multipart/form-data">
-                    
-                <!-- Center input -->
+
+                    <!-- Center input -->
                     <div class="form-outline mb-4 mt-4">
                         <label>Center Name</label>
                         <input type="text" name="center_name" class="form-control" placeholder="center name" />
@@ -66,7 +69,8 @@ if (isset($_POST['submit'])) {
                     <!-- contact number input -->
                     <div class="form-group">
                         <label>Contact Number</label>
-                        <input type="text" name="contact_number" class="form-control" placeholder="Contact number"></input>
+                        <input type="text" name="contact_number" class="form-control"
+                            placeholder="Contact number"></input>
                     </div>
 
                     <!-- rate input -->

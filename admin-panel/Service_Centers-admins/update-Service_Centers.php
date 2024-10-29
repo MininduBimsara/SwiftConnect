@@ -50,8 +50,11 @@ if(isset($_GET['id'])) {
 }
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="update-category.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 
 <div class="row">
@@ -65,43 +68,51 @@ if(isset($_GET['id'])) {
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
                         <label>Center Name</label>
-                        <input type="text" name="name" value="<?php echo $service_center['center_name']; ?>" class="form-control" placeholder="Name" />
+                        <input type="text" name="name" value="<?php echo $service_center['center_name']; ?>"
+                            class="form-control" placeholder="Name" />
                     </div>
 
                     <!-- country input -->
                     <div class="form-outline mb-4 mt-4">
                         <label>Country</label>
-                        <input type="text" name="country" value="<?php echo $service_center['country']; ?>" class="form-control" placeholder="country" />
+                        <input type="text" name="country" value="<?php echo $service_center['country']; ?>"
+                            class="form-control" placeholder="country" />
                     </div>
 
                     <!-- city input -->
                     <div class="form-group">
                         <label>City</label>
-                        <input type="text" name="city" value="<?php echo $service_center['city']; ?>" class="form-control" placeholder="city"></input>
+                        <input type="text" name="city" value="<?php echo $service_center['city']; ?>"
+                            class="form-control" placeholder="city"></input>
                     </div>
                     <!-- Address input -->
                     <div class="form-group">
                         <label>Address</label>
-                        <textarea name="address" value="<?php echo $service_center['address']; ?>" class="form-control" rows="3" placeholder="address"></textarea>
+                        <textarea name="address" value="<?php echo $service_center['address']; ?>" class="form-control"
+                            rows="3" placeholder="address"></textarea>
                     </div>
 
                     <!-- contact number input -->
                     <div class="form-group">
                         <label>Contact Number</label>
-                        <input type="text" name="contact_number" value="<?php echo $service_center['contact_number']; ?>" class="form-control" placeholder="Contact number"></input>
+                        <input type="text" name="contact_number"
+                            value="<?php echo $service_center['contact_number']; ?>" class="form-control"
+                            placeholder="Contact number"></input>
                     </div>
 
                     <!-- rate input -->
                     <div class="form-group">
                         <label>Center Rate</label>
-                        <input type="text" name="center_rate" value="<?php echo $service_center['center_rate']; ?>" class="form-control" placeholder="Center Rate"></input>
+                        <input type="text" name="center_rate" value="<?php echo $service_center['center_rate']; ?>"
+                            class="form-control" placeholder="Center Rate"></input>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" name="submit" value="<?php echo $service_center['center_name']; ?>" class="btn btn-primary mb-4">Update</button>
+                    <button type="submit" name="submit" value="<?php echo $service_center['center_name']; ?>"
+                        class="btn btn-primary mb-4">Update</button>
                 </form>
                 <?php else: ?>
-                    <p class="text-danger">Category not found.</p>
+                <p class="text-danger">Category not found.</p>
                 <?php endif; ?>
             </div>
         </div>

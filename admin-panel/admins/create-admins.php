@@ -37,8 +37,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="create-admins.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 <div class="row">
     <div class="col">
@@ -53,12 +56,14 @@ if (isset($_POST['submit'])) {
 
                     <!-- Admin Name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" name="adminname" id="form2Example2" class="form-control" placeholder="Admin Name" />
+                        <input type="text" name="adminname" id="form2Example2" class="form-control"
+                            placeholder="Admin Name" />
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" name="password" id="form2Example3" class="form-control" placeholder="Password" />
+                        <input type="password" name="password" id="form2Example3" class="form-control"
+                            placeholder="Password" />
                     </div>
 
                     <!-- Submit button -->

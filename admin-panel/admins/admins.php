@@ -20,8 +20,11 @@ if ($result->num_rows > 0) {
 }
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="admins.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 
 <div class="row">
@@ -29,7 +32,8 @@ if ($result->num_rows > 0) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-4 d-inline">Admins</h5>
-                <a href="<?php echo ADMINURL; ?>/admins/create-admins.php" class="btn btn-primary mb-4 text-center float-right">Create Admins</a>
+                <a href="<?php echo ADMINURL; ?>/admins/create-admins.php"
+                    class="btn btn-primary mb-4 text-center float-right">Create Admins</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -40,17 +44,17 @@ if ($result->num_rows > 0) {
                     </thead>
                     <tbody>
                         <?php if (!empty($alladmins)) : ?>
-                            <?php foreach ($alladmins as $admin) : ?>
-                                <tr>
-                                    <th scope="row"><?php echo $admin['admin_id']; ?></th>
-                                    <td><?php echo $admin['name']; ?></td>
-                                    <td><?php echo $admin['email']; ?></td>
-                                </tr>
-                            <?php endforeach; ?>
+                        <?php foreach ($alladmins as $admin) : ?>
+                        <tr>
+                            <th scope="row"><?php echo $admin['admin_id']; ?></th>
+                            <td><?php echo $admin['name']; ?></td>
+                            <td><?php echo $admin['email']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
                         <?php else : ?>
-                            <tr>
-                                <td colspan="3" class="text-center">No admins found</td>
-                            </tr>
+                        <tr>
+                            <td colspan="3" class="text-center">No admins found</td>
+                        </tr>
                         <?php endif; ?>
                     </tbody>
                 </table>

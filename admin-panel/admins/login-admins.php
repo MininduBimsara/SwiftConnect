@@ -50,8 +50,11 @@ if (isset($_POST['submit'])) {
 
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="login-admins.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 <div class="row">
     <div class="col">

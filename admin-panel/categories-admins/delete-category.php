@@ -59,8 +59,11 @@ if (isset($_GET['category_id']) && is_numeric($_GET['category_id'])) {
 ?>
 
 <!-- Include additional CSS for page styling -->
+
 <head>
     <link rel="stylesheet" href="delete-category.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 
 <?php require "../layouts/footer.php"; ?>

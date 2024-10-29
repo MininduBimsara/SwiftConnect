@@ -34,8 +34,11 @@ $num_centers = $centerResult->fetch_assoc();
 
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="layouts/header.css">
+
 </head>
 
 
@@ -47,7 +50,8 @@ $num_centers = $centerResult->fetch_assoc();
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Service Centers</h5>
-                    <p class="card-text">Number of Service Centers: <?php echo $num_centers['serviceCenters_num']; ?></p>
+                    <p class="card-text">Number of Service Centers: <?php echo $num_centers['serviceCenters_num']; ?>
+                    </p>
                 </div>
             </div>
         </div>
