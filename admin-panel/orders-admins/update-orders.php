@@ -6,11 +6,11 @@ require "../../config/config.php";
 //     echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
 // }
 
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
+if(isset($_GET['order_id'])){
+    $id = $_GET['order_id'];
 
     // Fetch the order details
-    $query = $conn->query("SELECT * FROM orders WHERE id='$id'");
+    $query = $conn->query("SELECT * FROM orders WHERE order_id='$id'");
     $order = $query->fetch_assoc();
 
     if (isset($_POST['submit'])) {
