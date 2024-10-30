@@ -59,8 +59,8 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; //
                         </div>
                         <?php else: ?>
                         <div class="auth-buttons">
-                            <a href="login.php" class="button">Login</a>
-                            <a href="register.php" class="button">Register</a>
+                            <a href="../auth/HTML/login1.php" class="button">Login</a>
+                            <a href="../auth/HTML/register.php" class="button">Register</a>
                         </div>
                         <?php endif; ?>
                     </div>
