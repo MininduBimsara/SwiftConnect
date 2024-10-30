@@ -65,6 +65,8 @@ if (isset($_GET['id'])) {
 
 <head>
     <link rel="stylesheet" href="update-category.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 
 <div class="row">
@@ -76,12 +78,15 @@ if (isset($_GET['id'])) {
                 <form method="POST" action="update-category.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="name" value="<?php echo htmlspecialchars($category['name']); ?>" class="form-control" placeholder="Name" />
+                        <input type="text" name="name" value="<?php echo htmlspecialchars($category['name']); ?>"
+                            class="form-control" placeholder="Name" />
                     </div>
 
-                     <!-- Dimensions input -->
-                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="dimensions" value="<?php echo htmlspecialchars($category['dimensions']); ?>" class="form-control" placeholder="Dimensions" />
+                    <!-- Dimensions input -->
+                    <div class="form-outline mb-4 mt-4">
+                        <input type="text" name="dimensions"
+                            value="<?php echo htmlspecialchars($category['dimensions']); ?>" class="form-control"
+                            placeholder="Dimensions" />
                     </div>
 
                     <!-- Image input -->
@@ -89,12 +94,12 @@ if (isset($_GET['id'])) {
                         <label>Image</label>
                         <input type="file" name="image" class="form-control" />
                     </div>
-                   
+
                     <!-- Submit button -->
                     <button type="submit" name="submit" class="btn btn-primary mb-4">Update</button>
                 </form>
                 <?php else: ?>
-                    <p class="text-danger">Category not found.</p>
+                <p class="text-danger">Category not found.</p>
                 <?php endif; ?>
             </div>
         </div>

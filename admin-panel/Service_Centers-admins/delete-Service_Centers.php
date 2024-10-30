@@ -29,7 +29,10 @@ if (isset($_GET['id'])) {
 }
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="delete-Service_Centers.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 <?php require "../layouts/footer.php"; ?>

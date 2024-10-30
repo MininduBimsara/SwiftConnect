@@ -49,19 +49,23 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="create-category.css">
+    <link rel="stylesheet" href="../layouts/header.css">
     <script>
-        // Function to validate dimensions input
-        function validateForm() {
-            var dimensions = document.forms["categoryForm"]["dimensions"].value;
-            var regex = /^\d+(\*\d+){1,2}\s*cm$/;
-            if (!regex.test(dimensions)) {
-                alert("Dimensions format is invalid. Please use the format: <width>*<height> cm or <width>*<height>*<depth> cm");
-                return false; // Prevent form submission
-            }
-            return true; // Allow form submission
+    // Function to validate dimensions input
+    function validateForm() {
+        var dimensions = document.forms["categoryForm"]["dimensions"].value;
+        var regex = /^\d+(\*\d+){1,2}\s*cm$/;
+        if (!regex.test(dimensions)) {
+            alert(
+                "Dimensions format is invalid. Please use the format: <width>*<height> cm or <width>*<height>*<depth> cm"
+            );
+            return false; // Prevent form submission
         }
+        return true; // Allow form submission
+    }
     </script>
 </head>
 
@@ -70,7 +74,8 @@ if (isset($_POST['submit'])) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Create Categories</h5>
-                <form name="categoryForm" method="POST" action="create-category.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+                <form name="categoryForm" method="POST" action="create-category.php" enctype="multipart/form-data"
+                    onsubmit="return validateForm();">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
                         <input type="text" name="name" class="form-control" placeholder="Name" />
@@ -78,7 +83,9 @@ if (isset($_POST['submit'])) {
 
                     <!-- Dimensions input -->
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (e.g., 25*35 cm)" required pattern="^\d+(\*\d+){1,2}\s*cm$" title="Format: <width>*<height> cm or <width>*<height>*<depth> cm" />
+                        <input type="text" name="dimensions" class="form-control"
+                            placeholder="Dimensions (e.g., 25*35 cm)" required pattern="^\d+(\*\d+){1,2}\s*cm$"
+                            title="Format: <width>*<height> cm or <width>*<height>*<depth> cm" />
                     </div>
 
                     <!-- Image input -->

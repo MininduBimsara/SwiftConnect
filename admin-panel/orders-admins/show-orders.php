@@ -3,7 +3,7 @@
     require "../../config/config.php"; 
 
     // Start session and check for admin login
-    session_start();
+
     // if (!isset($_SESSION['adminname'])) {
     //     echo "<script> window.location.href ='" . ADMINURL . "/admins/login-admins.php'; </script>";
     // }
@@ -19,8 +19,11 @@
     $allOrders = $result->fetch_all(MYSQLI_ASSOC); // Fetch all orders as associative array
 ?>
 <!-- header.php -->
+
 <head>
     <link rel="stylesheet" href="show-orders.css">
+    <link rel="stylesheet" href="../layouts/header.css">
+
 </head>
 <div class="row">
     <div class="col">
@@ -54,10 +57,12 @@
                             <td><?php echo htmlspecialchars($Order['price']); ?></td>
                             <td><?php echo htmlspecialchars($Order['created_at']); ?></td>
                             <td>
-                                <a href="<?php echo ADMINURL; ?>/orders-admins/update-orders.php?id=<?php echo $Order['id']; ?>" class="btn btn-warning text-white mb-4">Update</a>
+                                <a href="<?php echo ADMINURL; ?>/orders-admins/update-orders.php?id=<?php echo $Order['id']; ?>"
+                                    class="btn btn-warning text-white mb-4">Update</a>
                             </td>
                             <td>
-                                <a href="delete-order.php?id=<?php echo $Order['id']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="delete-order.php?id=<?php echo $Order['id']; ?>"
+                                    class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
