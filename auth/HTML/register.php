@@ -1,6 +1,6 @@
 <?php include_once "../../includes/header.php"; ?>
 <?php
-    include_once "../../config/config.php";
+    include_once "../../config/config.php";         
     
     if (isset($_POST['submit'])) {
         if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username']) || empty($_POST['country']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {

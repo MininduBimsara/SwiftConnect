@@ -9,14 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../includes/footer.css"> -->
+    <link rel="stylesheet" href="../includes/footer.css?v=1.0">
 
-    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
 
 
     <div class="footer_container">
+        <div class="wrapper">
         <div class="footer_links">
             <div class="footer_link-wrapper">
                 <div class="footer_link-items">
@@ -34,8 +36,8 @@
                     <a href="/">Destination</a>
                     <a href="/">Sponsorships</a>
                 </div>
-            </div>
-            <div class="footer_link-wrapper">
+            <!-- </div> -->
+            <!-- <div class="footer_link-wrapper"> -->
                 <div class="footer_link-items">
                     <h2>Videos</h2>
                     <a href="/">Submit Video</a>
@@ -77,6 +79,7 @@
                     </a>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

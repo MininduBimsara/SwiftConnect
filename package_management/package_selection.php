@@ -142,15 +142,15 @@
         });
 
 
-        form.addEventListener('submit', (e) => {
-            if (!selectedPackage) {
-                e.preventDefault();
-                errorMessage.textContent = 'Please select a package type.';
-                errorMessage.classList.remove('hidden');
-                return;
-            }
-        });
-        </script>
-    </body>
+    form.addEventListener('submit', (e) => {
+        if (!selectedPackage) {
+            e.preventDefault();
+            errorMessage.textContent = 'Please select a package type.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+    });
+    </script>
+</body>
 
-    </html>
+</html>

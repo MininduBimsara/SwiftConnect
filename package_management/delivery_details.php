@@ -51,8 +51,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Package Management</title>
         <link rel="stylesheet" href="../includes/header.css">
+<<<<<<< HEAD:package_management/new1.php
+        <!-- <link rel="stylesheet" href="../includes/footer.css"> -->
+        <link rel="stylesheet" href="../includes/footer.css?v=1.0">
+        <link rel="stylesheet" href="new1.css">
+=======
         <link rel="stylesheet" href="../includes/footer.css">
         <link rel="stylesheet" href="delivery_details.css">
+>>>>>>> 1f33899c5a017226c5882104c24a4efb089cc4c9:package_management/delivery_details.php
     </head>
 
     <body>
