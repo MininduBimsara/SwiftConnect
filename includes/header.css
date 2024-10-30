@@ -47,11 +47,13 @@ nav h1 i {
 
 nav ul {
   list-style-type: none;
+
+
 }
 
 nav ul li {
   display: inline;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 nav ul li a {
@@ -138,6 +140,7 @@ button {
 /* Style for the dropdown when the user is logged in */
 .nav-item.dropdown {
     position: relative;
+    
 }
 
 .nav-link.dropdown-toggle {

@@ -12,7 +12,8 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>SwiftConnect – Your Gateway to Seamless Shipping.</title>
-      <link rel="stylesheet" href="../includes/header.css">
+      <!-- <link rel="stylesheet" href="../includes/header.css"> -->
+      <link rel="stylesheet" href="../includes/header.css?v=1.0">
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <link href="../assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,16 +41,18 @@
                       <ul>
                           <li><a href="#">Home</a></li>
                           <li><a href="#">About</a></li>
-                          <li><a href="#">Services</a></li>
+                          <li><a href="#">Service</a></li>
                           <li><a href="#">Contact</a></li>
+                           
 
                       </ul>
                       <ul class="sidebar">
                           <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
                           <li><a href="#">Home</a></li>
                           <li><a href="#">About</a></li>
-                          <li><a href="#">Services</a></li>
+                          <li><a href="#">Service</a></li>
                           <li><a href="#">Contact</a></li>
+                        
 
                           <?php if(!isset($_SESSION['username'])) : ?>
 
@@ -59,8 +62,8 @@
                           <li class="item">
                               <a href="<?php echo APPURL;?>/auth/login1.php" class="link">Login</a>
                           </li>
-
-                          <?php else: ?>
+                    
+                          <?php else: ?>        
 
                           <li class="item dropdown">
                               <a class="link dropdown-toggle" href="javascript:void(0)" id="userDropdown" role="button"
