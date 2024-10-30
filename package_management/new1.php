@@ -51,7 +51,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Package Management</title>
         <link rel="stylesheet" href="../includes/header.css">
-        <link rel="stylesheet" href="../includes/footer.css">
+        <!-- <link rel="stylesheet" href="../includes/footer.css"> -->
+        <link rel="stylesheet" href="../includes/footer.css?v=1.0">
         <link rel="stylesheet" href="new1.css">
     </head>
 
