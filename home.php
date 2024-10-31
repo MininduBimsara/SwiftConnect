@@ -4,7 +4,12 @@ define("APPURL", "http://localhost/SwiftConnect");
 
 $isLoggedIn = isset($_SESSION['user']); // Check if user is logged in
 $userName = $isLoggedIn ? $_SESSION['user']['username'] : null; // Assuming 'name' is part of user session data
-$userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; // Use default image if not provided
+$userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
+
+
+
+
+// Use default image if not provided
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,24 +67,28 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; //
 
                     <!-- User Account Section -->
                     <div class="account-section">
-                        <?php if ($isLoggedIn): ?>
+                        <?php if (isset($_SESSION['username'])): ?>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="<?= APPURL ?>/assets/images/<?= $userImage ?>" alt="User Image">
+                                    <img src="<?php echo APPURL;?>/assets/images/<?php echo $_SESSION['image']; ?>"
+                                        alt="User Image">
                                 </div>
-                                <span><?= $userName ?></span>
+                                <span><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Transaction History</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="logout.php">Logout</a>
+                                <a class="dropdown-item"
+                                    href="<?php echo APPURL;?>/users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
+                                    History</a>
+                                <a class="dropdown-item"
+                                    href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
+                                <a class="dropdown-item" href="<?php echo APPURL;?>/auth/HTML/logout.php">Logout</a>
                             </div>
                         </div>
                         <?php else: ?>
                         <div class="auth-buttons">
-                            <a href="auth/HTML/login1.php" class="button">Login</a>
-                            <a href="auth/HTML/register.php" class="button">Register</a>
+                            <a href="../auth/HTML/login1.php" class="button">Login</a>
+                            <a href="../auth/HTML/register.php" class="button">Register</a>
                         </div>
                         <?php endif; ?>
                     </div>

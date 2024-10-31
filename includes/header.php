@@ -53,9 +53,12 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; //
                                 <span><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Transaction History</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="logout.php">Logout</a>
+                                <a class="dropdown-item"
+                                    href="<?php echo APPURL;?>/users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
+                                    History</a>
+                                <a class="dropdown-item"
+                                    href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
+                                <a class="dropdown-item" href="<?php echo APPURL;?>/auth/HTML/logout.php">Logout</a>
                             </div>
                         </div>
                         <?php else: ?>

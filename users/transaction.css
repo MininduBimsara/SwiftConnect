@@ -1,0 +1,60 @@
+/* General styles */
+.page-content {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Banner styles */
+.banner-jumbotron {
+    background-image: url('../assets/img/bg-header.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: white;
+}
+
+.banner h1,
+.banner p {
+    color: #fff;
+}
+
+/* Table styles */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.transaction-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.transaction-table td {
+    background-color: #f8f9fa;
+}
+
+/* Alert message */
+.alert-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .banner-jumbotron {
+        padding: 60px 0;
+    }
+
+    .transaction-table, .transaction-table th, .transaction-table td {
+        font-size: 14px;
+    }
+}
