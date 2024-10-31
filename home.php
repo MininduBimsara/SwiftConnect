@@ -3,7 +3,7 @@ session_start();
 define("APPURL", "http://localhost/SwiftConnect");
 
 $isLoggedIn = isset($_SESSION['user']); // Check if user is logged in
-$userName = $isLoggedIn ? $_SESSION['user']['name'] : null; // Assuming 'name' is part of user session data
+$userName = $isLoggedIn ? $_SESSION['user']['username'] : null; // Assuming 'name' is part of user session data
 $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; // Use default image if not provided
 ?>
 <!DOCTYPE html>

@@ -43,13 +43,14 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; //
 
                     <!-- User Account Section -->
                     <div class="account-section">
-                        <?php if ($isLoggedIn): ?>
+                        <?php if (isset($_SESSION['username'])): ?>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="<?= APPURL ?>/assets/images/<?= $userImage ?>" alt="User Image">
+                                    <img src="<?php echo APPURL;?>/assets/images/<?php echo $_SESSION['image']; ?>"
+                                        alt="User Image">
                                 </div>
-                                <span><?= $userName ?></span>
+                                <span><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Transaction History</a>
