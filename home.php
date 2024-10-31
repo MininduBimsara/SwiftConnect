@@ -1,12 +1,7 @@
 <?php
 session_start();
+var_dump($_SESSION);
 define("APPURL", "http://localhost/SwiftConnect");
-
-$isLoggedIn = isset($_SESSION['user']); // Check if user is logged in
-$userName = $isLoggedIn ? $_SESSION['user']['username'] : null; // Assuming 'name' is part of user session data
-$userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
-
-
 
 
 // Use default image if not provided
@@ -24,7 +19,6 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
     <!-- <link rel="stylesheet" href="includes/footer.css"> -->
     <link rel="stylesheet" href="includes/footer.css?v=1.0">
 
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +53,7 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
                         <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Orders</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
 
@@ -78,17 +72,17 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item"
-                                    href="<?php echo APPURL;?>/users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
+                                    href="users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
                                     History</a>
                                 <a class="dropdown-item"
-                                    href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
-                                <a class="dropdown-item" href="<?php echo APPURL;?>/auth/HTML/logout.php">Logout</a>
+                                    href="users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
+                                <a class="dropdown-item" href="auth/HTML/logout.php">Logout</a>
                             </div>
                         </div>
                         <?php else: ?>
                         <div class="auth-buttons">
-                            <a href="../auth/HTML/login1.php" class="button">Login</a>
-                            <a href="../auth/HTML/register.php" class="button">Register</a>
+                            <a href="auth/HTML/login1.php" class="button">Login</a>
+                            <a href="auth/HTML/register.php" class="button">Register</a>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -259,6 +253,26 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg";
         const sidebar = document.querySelector(".sidebar")
         sidebar.style.display = 'none'
     }
+    // Function to toggle dropdown menu visibility
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.querySelector('.nav-link.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                event.preventDefault();
+                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' :
+                'block';
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        }
+    });
     </script>
 
 </body>
