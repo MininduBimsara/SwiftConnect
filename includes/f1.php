@@ -1,50 +1,85 @@
+<?php
+session_start();
+define("APPURL", "http://localhost/SwiftConnect");
+
+$isLoggedIn = isset($_SESSION['user']); // Check if user is logged in
+$userName = $isLoggedIn ? $_SESSION['user']['name'] : null; // Assuming 'name' is part of user session data
+$userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; // Use default image if not provided
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SwiftConnect – Your Gateway to Seamless Shipping.</title>
     <link rel="stylesheet" href="f1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="../assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a295b70770.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="cl" style="height: 1000px;"></div>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#faq">FAQs</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#privacy-policy">Privacy Policy</a></li>
-                    <li><a href="#terms-of-service">Terms of Service</a></li>
-                </ul>
-            </div>
 
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Email: <a href="mailto:support@swiftconnect.com">support@swiftconnect.com</a></p>
-                <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
-                <p>Address: 123 Swift St, Logistics City, LC 12345</p>
-            </div>
+    <div class="main-section">
+        <header>
+            <div class="overlay">
+                <nav>
+                    <div class="logo-content">
+                        <h1><i class="fa-brands fa-nfc-symbol"></i> Swift<span>Connect</span></h1>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="hamburger"><i onclick="showsidebar()" class='bx bx-menu'></i></div>
 
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com/SwiftConnect" target="_blank">Facebook</a></li>
-                    <li><a href="https://twitter.com/SwiftConnect" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.instagram.com/SwiftConnect" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/company/swiftconnect" target="_blank">LinkedIn</a></li>
-                </ul>
+                    <!-- User Account Section -->
+                    <div class="account-section">
+                        <?php if ($isLoggedIn): ?>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <div class="avatar-header">
+                                    <img src="<?= APPURL ?>/assets/images/<?= $userImage ?>" alt="User Image">
+                                </div>
+                                <span><?= $userName ?></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Transaction History</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="logout.php">Logout</a>
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <div class="auth-buttons">
+                            <a href="login.php" class="button">Login</a>
+                            <a href="register.php" class="button">Register</a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </nav>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 SwiftConnect. All rights reserved.</p>
-        </div>
-    </footer>
+        </header>
+    </div>
+
+    <script>
+    function showsidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = 'flex';
+    }
+
+    function closesidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = 'none';
+    }
+    </script>
 </body>
 
 </html>

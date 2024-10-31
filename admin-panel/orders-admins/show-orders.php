@@ -48,20 +48,20 @@
                     <tbody>
                         <?php foreach ($allOrders as $Order) : ?>
                         <tr>
-                            <th scope="row"><?php echo $Order['id']; ?></th>
-                            <td><?php echo htmlspecialchars($Order['name']); ?></td>
+                            <th scope="row"><?php echo $Order['order_id']; ?></th>
+                            <td><?php echo htmlspecialchars($Order['fname']); ?></td>
                             <td><?php echo htmlspecialchars($Order['lname']); ?></td>
                             <td><?php echo htmlspecialchars($Order['email']); ?></td>
-                            <td><?php echo htmlspecialchars($Order['country']); ?></td>
+                            <td><?php echo htmlspecialchars($Order['source_country']); ?></td>
                             <td><?php echo htmlspecialchars($Order['status']); ?></td>
                             <td><?php echo htmlspecialchars($Order['price']); ?></td>
                             <td><?php echo htmlspecialchars($Order['created_at']); ?></td>
                             <td>
-                                <a href="<?php echo ADMINURL; ?>/orders-admins/update-orders.php?id=<?php echo $Order['id']; ?>"
+                                <a href="<?php echo ADMINURL; ?>/orders-admins/update-orders.php?order_id=<?php echo $Order['order_id']; ?>"
                                     class="btn btn-warning text-white mb-4">Update</a>
                             </td>
                             <td>
-                                <a href="delete-order.php?id=<?php echo $Order['id']; ?>"
+                                <a href="delete-order.php?order_id=<?php echo $Order['order_id']; ?>"
                                     class="btn btn-danger">Delete</a>
                             </td>
                         </tr>

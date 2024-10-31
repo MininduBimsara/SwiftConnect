@@ -8,7 +8,7 @@ include "../../includes/header.php";
 require "../../config/config.php";  
 
 if (isset($_SESSION['username'])) {
-    echo "<script> window.location.href ='" . APPURL . "'; </script>";
+    echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
     exit(); 
 }
 
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['email'] = $fetch['email'];
                 $_SESSION['user_id'] = $fetch['id'];
                 $_SESSION['image'] = $fetch['image'];
-                echo "<script> window.location.href ='" . APPURL . "'; </script>";
+                echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
                 exit();
             } else {
                 echo "<script>alert('Email or password is wrong');</script>";

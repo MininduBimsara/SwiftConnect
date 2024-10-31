@@ -312,7 +312,55 @@ button:hover {
   font-family: 'Rethink Sans',sans-serif;
 }
  
- 
+ .auth-buttons {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.auth-buttons .button {
+    padding: 10px 25px;
+    background-color: #ff8000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: center;
+}
+
+/* Hover effect for buttons */
+.auth-buttons .button:hover {
+    background-color: #e67300;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Active effect for buttons */
+.auth-buttons .button:active {
+    background-color: #cc6600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+/* Separate button styles for Login and Register */
+.auth-buttons .button.login {
+    background-color: #ff8000;
+}
+
+.auth-buttons .button.register {
+    background-color: #ff5733;
+}
+
+.auth-buttons .button.register:hover {
+    background-color: #e64520;
+}
+
  
 @media (max-width: 1200px) {
   nav ul li {

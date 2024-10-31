@@ -1,6 +1,10 @@
 <?php
+session_start();
+var_dump($_SESSION);
+define("APPURL", "http://localhost/SwiftConnect");
 
-define("APPURL" , "http://localhost/SwiftConnect");
+
+// Use default image if not provided
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +28,8 @@ define("APPURL" , "http://localhost/SwiftConnect");
     <script src="https://kit.fontawesome.com/a295b70770.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -42,21 +47,46 @@ define("APPURL" , "http://localhost/SwiftConnect");
                         <li><a href="#">About</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Contact</a></li>
-                        
+
                     </ul>
                     <ul class="sidebar">
                         <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Orders</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
 
-                    <div class="hamburger">
-                        <i class='bx bx-menu' onclick="showsidebar()"></i>
+                    <div class="hamburger"><i onclick="showsidebar()" class='bx bx-menu'></i></div>
+
+                    <!-- User Account Section -->
+                    <div class="account-section">
+                        <?php if (isset($_SESSION['username'])): ?>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <div class="avatar-header">
+                                    <img src="<?php echo APPURL;?>/assets/images/<?php echo $_SESSION['image']; ?>"
+                                        alt="User Image">
+                                </div>
+                                <span><?php echo $_SESSION['username']; ?></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"
+                                    href="users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
+                                    History</a>
+                                <a class="dropdown-item"
+                                    href="users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
+                                <a class="dropdown-item" href="auth/HTML/logout.php">Logout</a>
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <div class="auth-buttons">
+                            <a href="auth/HTML/login1.php" class="button">Login</a>
+                            <a href="auth/HTML/register.php" class="button">Register</a>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                    <button class="btn">login</button>
-                    
+
                 </nav>
 
             </div>
@@ -80,131 +110,170 @@ define("APPURL" , "http://localhost/SwiftConnect");
         </div>
     </div>
 
- <section id="section">
-    <h1 class="headings">Branding</h1>
-    <div class="branding">
-        <div class="wrapper">
-            <div class="naming">
-                <h1><i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span></h1>
-            </div>
-            <div class="naming-desc">
-                <p style="color: black;">SwiftConnect is the largest and most experienced Domestic Courier Service
-                    Company in the Island handling time sensitive documents and packages for corporate and individual
-                    clients for over 34 years. Over the years it has hamessed its dedication and devotion towards the
-                    customer concerns. Its services and operational systems are tailor made which could cater to the
-                    varying needs of the customers. Speed, Security, Reliability and Accountability are considered
-                    paramount in its services afforded to every customer.</p>
-                <div class="icons">
-                    <div class="icon">
-                        <i class="fas fa-truck"></i>
-                        <h2>670+</h2>
-                        <h5>Vehicles</h5>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-solid fa-users"></i>
-                        <h2>890+</h2>
-                        <h5>Employees</h5>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-solid fa-business-time"></i>
-                        <h2>320+</h2>
-                        <h5>Vehicles</h5>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-solid fa-handshake"></i>
-                        <h2>650+</h2>
-                        <h5>Vehicles</h5>
+    <section id="section">
+        <h1 class="headings">Branding</h1>
+        <div class="branding">
+            <div class="wrapper">
+                <div class="naming">
+                    <h1><i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span></h1>
+                </div>
+                <div class="naming-desc">
+                    <p style="color: black;">SwiftConnect is the largest and most experienced Domestic Courier Service
+                        Company in the Island handling time sensitive documents and packages for corporate and
+                        individual
+                        clients for over 34 years. Over the years it has hamessed its dedication and devotion towards
+                        the
+                        customer concerns. Its services and operational systems are tailor made which could cater to the
+                        varying needs of the customers. Speed, Security, Reliability and Accountability are considered
+                        paramount in its services afforded to every customer.</p>
+                    <div class="icons">
+                        <div class="icon">
+                            <i class="fas fa-truck"></i>
+                            <h2>670+</h2>
+                            <h5>Vehicles</h5>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-users"></i>
+                            <h2>890+</h2>
+                            <h5>Employees</h5>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-business-time"></i>
+                            <h2>320+</h2>
+                            <h5>Vehicles</h5>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h2>650+</h2>
+                            <h5>Vehicles</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
- </section>
+    </section>
 
 
- <section id="section">
-    <div class="gallery">
-        <h1 class="headings">Our Services</h1>
-        <div class="wrapper">
-            <div class="gallery-item">
-                <img src=" assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
-                    alt="Description 1">
-                <div class="description">
-                    <h4>Corporate Main Bag Services</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
-                        sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
-                        dignissimos numquam! Est aspernatur architecto aliquid?</p>
-                    <button>VIEW MORE</button>
+    <section id="section">
+        <div class="gallery">
+            <h1 class="headings">Our Services</h1>
+            <div class="wrapper">
+                <div class="gallery-item">
+                    <img src=" assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
+                        alt="Description 1">
+                    <div class="description">
+                        <h4>Corporate Main Bag Services</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
+                            sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
+                            dignissimos numquam! Est aspernatur architecto aliquid?</p>
+                        <button>VIEW MORE</button>
+                    </div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src=" assets/images/close-up-man-delivering-pack_23-2149103391.jpg" alt="Description 2">
-                <div class="description">
-                    <h4>Corporate Main Bag Services</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
-                        sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
-                        dignissimos numquam! Est aspernatur architecto aliquid?</p>
-                    <button>VIEW MORE</button>
-                </div>
+                <div class="gallery-item">
+                    <img src=" assets/images/close-up-man-delivering-pack_23-2149103391.jpg" alt="Description 2">
+                    <div class="description">
+                        <h4>Corporate Main Bag Services</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
+                            sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
+                            dignissimos numquam! Est aspernatur architecto aliquid?</p>
+                        <button>VIEW MORE</button>
+                    </div>
 
-            </div>
-            <div class="gallery-item">
-                <img src=" assets/images/young-worker-loading-cardboard-boxes-delivery-van-communicating-with-his-colleague_637285-1268.jpg"
-                    alt="Description 3">
-                <div class="description">
-                    <h4>Corporate Main Bag Services</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
-                        sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
-                        dignissimos numquam! Est aspernatur architecto aliquid?</p>
-                    <button>VIEW MORE</button>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/young-delivery-man-holding-packages-while-communicating-mobile-phone-standing-street_637285-1278.jpg"
-                    alt="Description 4">
-                <div class="description">
-                    <h4>Corporate Main Bag Services</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
-                        sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
-                        dignissimos numquam! Est aspernatur architecto aliquid?</p>
-                    <button>VIEW MORE</button>
+                <div class="gallery-item">
+                    <img src=" assets/images/young-worker-loading-cardboard-boxes-delivery-van-communicating-with-his-colleague_637285-1268.jpg"
+                        alt="Description 3">
+                    <div class="description">
+                        <h4>Corporate Main Bag Services</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
+                            sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
+                            dignissimos numquam! Est aspernatur architecto aliquid?</p>
+                        <button>VIEW MORE</button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/young-delivery-man-holding-packages-while-communicating-mobile-phone-standing-street_637285-1278.jpg"
+                        alt="Description 4">
+                    <div class="description">
+                        <h4>Corporate Main Bag Services</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
+                            sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
+                            dignissimos numquam! Est aspernatur architecto aliquid?</p>
+                        <button>VIEW MORE</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
- </section>
+    </section>
 
 
- 
-<section id="section">
-     <div class="about-us">
-        <h1 class="headings">About Us</h1>
-           <div class="about-container">
-             <div class="wrapper">
-               <div class="about-para">
-                  <p>SwiftConnect (Private) Ltd. was incorporated in 2018 with the approval granted by then Foreign Investment Advisory Committee for the provision of Logistics Support Service. SwiftConnect was able to earn its reputation for efficiency and reliability from its inception, servicing many industries in the country, including Corporate Sector, Banking, Finance, Insurance, Legal, Healthcare, Entertainment, Government, Plantation, Manufacturing Industry and also the Individual consumer market counting over 34 years of experience in the courier/logistics field. It has thus acquired adequate expertise and experience over the years to provide its services with superior quality and maintain market leadership in domestic express delivery. The company has grown into a strong brand in the logistic industry in Sri Lanka, recognized for its customized services, Speed, Security, Reliability and Accountability with a large branch network distributed across the country. We are committed to continually enhancing our operations across the region while pursuing opportunities for business growth in emerging markets. We undertake packages for collection or delivery; whether you are an individual, small business or a large enterprise, we provide affordable logistic solutions. There are no set size or weight limits, and we are ready to surpass all boundaries in giving you the freedom and convenience of sending items to any location in Sri Lanka.</p>
-              </div>
-    </div>
-    </div>
-           
-       </div>
+
+    <section id="section">
+        <div class="about-us">
+            <h1 class="headings">About Us</h1>
+            <div class="about-container">
+                <div class="wrapper">
+                    <div class="about-para">
+                        <p>SwiftConnect (Private) Ltd. was incorporated in 2018 with the approval granted by then
+                            Foreign Investment Advisory Committee for the provision of Logistics Support Service.
+                            SwiftConnect was able to earn its reputation for efficiency and reliability from its
+                            inception, servicing many industries in the country, including Corporate Sector, Banking,
+                            Finance, Insurance, Legal, Healthcare, Entertainment, Government, Plantation, Manufacturing
+                            Industry and also the Individual consumer market counting over 34 years of experience in the
+                            courier/logistics field. It has thus acquired adequate expertise and experience over the
+                            years to provide its services with superior quality and maintain market leadership in
+                            domestic express delivery. The company has grown into a strong brand in the logistic
+                            industry in Sri Lanka, recognized for its customized services, Speed, Security, Reliability
+                            and Accountability with a large branch network distributed across the country. We are
+                            committed to continually enhancing our operations across the region while pursuing
+                            opportunities for business growth in emerging markets. We undertake packages for collection
+                            or delivery; whether you are an individual, small business or a large enterprise, we provide
+                            affordable logistic solutions. There are no set size or weight limits, and we are ready to
+                            surpass all boundaries in giving you the freedom and convenience of sending items to any
+                            location in Sri Lanka.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
-    </div>
-</section>
+        </div>
+    </section>
 
 
-<script>
-    function showsidebar(){
-        const sidebar=document.querySelector(".sidebar")
-        sidebar.style.display='flex';
+    <script>
+    function showsidebar() {
+        const sidebar = document.querySelector(".sidebar")
+        sidebar.style.display = 'flex';
 
     }
-    function closesidebar(){
-        const sidebar=document.querySelector(".sidebar")
-        sidebar.style.display='none'
+
+    function closesidebar() {
+        const sidebar = document.querySelector(".sidebar")
+        sidebar.style.display = 'none'
     }
-</script>
+    // Function to toggle dropdown menu visibility
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.querySelector('.nav-link.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                event.preventDefault();
+                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' :
+                'block';
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        }
+    });
+    </script>
 
 </body>
 
