@@ -9,7 +9,7 @@
         $weight_range = $_POST['weight_range'];
         $selected_package = $_POST['selected_package'];
 
-        echo "<script> window.location.href ='" . APPURL . "/package_management/package_selectionre.php'; </script>";
+        echo "<script> window.location.href ='" . APPURL . "/package_management/package_selection.php'; </script>";
     }
 
 ?>
@@ -142,15 +142,15 @@
         });
 
 
-    form.addEventListener('submit', (e) => {
-        if (!selectedPackage) {
-            e.preventDefault();
-            errorMessage.textContent = 'Please select a package type.';
-            errorMessage.classList.remove('hidden');
-            return;
-        }
-    });
-    </script>
-</body>
+        form.addEventListener('submit', (e) => {
+            if (!selectedPackage) {
+                e.preventDefault();
+                errorMessage.textContent = 'Please select a package type.';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+        });
+        </script>
+    </body>
 
-</html>
+    </html>
