@@ -9,7 +9,10 @@
     <meta charset="utf-8">
     <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="unique-header.css" rel="stylesheet">
+    <link href="unique-header.css" rel="stylesheet">  
+    <!-- header.css added -->
+    <!-- <link rel="stylesheet"  href="../layouts/header.css"> -->
+    <link rel="stylesheet" href="../layouts/header.css?v=1.0">
 </head>
 
 <body>
@@ -21,7 +24,7 @@
                     aria-controls="unique-navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="unique-toggler-icon">&#9776;</span>
                 </button>
-
+      
                 <div class="unique-collapse navbar-collapse" id="unique-navbarText">
                     <?php if(isset($_SESSION['adminname'])) : ?>
                     <ul class="unique-nav">

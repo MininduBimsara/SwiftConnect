@@ -66,15 +66,16 @@ body {
     list-style: none;
     gap: 10px;
     align-items: center; /* Align items in the center */
+    
 }
 
 /* Navbar links */
-.unique-nav {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-}
+/* .unique-nav { */
+    /* display: flex; */
+    /* list-style: none; */
+    /* gap: 20px; */
+    /* align-items: center; */
+/* } */
 
 .unique-dropdown-menu {
     display: none;
@@ -91,7 +92,7 @@ body {
 
 .unique-link {
   
-    color: white;
+    color: black;
     font-size: 18px;
     padding: 5px 10px;
     text-decoration: none;
