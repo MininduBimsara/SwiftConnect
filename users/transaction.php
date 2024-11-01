@@ -2,8 +2,6 @@
 require "../includes/header.php"; 
 require "../config/config.php"; 
 
-session_start();
-
 if (!isset($_SESSION['username'])) {
     echo "<script> window.location.href ='".APPURL."'; </script>";
     exit;
@@ -63,8 +61,8 @@ if (isset($_GET['id'])) {
                                 <?php if(count($data) > 0): ?>
                                 <?php foreach($data as $order): ?>
                                 <tr>
-                                    <td><?php echo $order['id']; ?></td>
-                                    <td><?php echo $order['name']; ?></td>
+                                    <td><?php echo $order['user_id']; ?></td>
+                                    <td><?php echo $order['fname'] . " " . $order['lname']; ?></td>
                                     <td><?php echo $order['created_at']; ?></td>
                                     <td>$<?php echo $order['price']; ?></td>
                                     <td><?php echo $order['status']; ?></td>
