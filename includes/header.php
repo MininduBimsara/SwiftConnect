@@ -32,10 +32,17 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                         <h1><i class="fa-brands fa-nfc-symbol"></i> Swift<span>Connect</span></h1>
                     </div>
                     <ul class="nav-links">
+<<<<<<< HEAD
                         <li><a href="<?php echo APPURL;?>/home.php">Home</a></li>
                         <li><a href="<?php echo APPURL;?>/about.php">About</a></li>
                         <li><a href="<?php echo APPURL;?>/package_management/package_selection.php">Orders</a></li>
                         <li><a href="#">Contact</a></li>
+=======
+                        <li><a href="#">Home</a></li>
+                        <li><a href="../about.php">About</a></li>
+                        <li><a href="../package_management/package_selection.php">Orders</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+>>>>>>> 45e958254d2afba65470ca7209529f0b0847e713
                     </ul>
 
                     <!-- Hamburger icon for mobile -->
