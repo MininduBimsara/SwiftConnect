@@ -20,7 +20,7 @@
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $user_id = $_SESSION['user_id'] ?? null; // check if user_id is set
-        $total_price = $_POST['total_price'];
+        $total_price = $_GET['total_price'] ?? 0;
 
         if($user_id) {
             $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id) 
@@ -102,7 +102,6 @@
                             <input type="checkbox" name="SwiftConnectServicePoint" class="checkbox">
                             <span class="checkbox-text">At a SwiftConnect ServicePoint (Free)</span>
                         </label>
-                        <input type="hidden" name="total_price" id="total_price" value="">
                     </div>
                     <div class="form-footer">
                         <button type="button" class="previous-button">Previous</button>
@@ -135,7 +134,6 @@
                     error.classList.add('hidden');
                 }
             });
-            document.getElementById('total_price').value = calculatePrices();
             // If all fields are valid, submit the form without preventing default
             if (isValid) {
                 e.target.submit(); // Submit the form if validation is successful

@@ -4,6 +4,6 @@
     session_unset();
     session_destroy();
                 
-    echo "<script> window.location.href ='http://localhost/FreshKit'; </script>";
+    echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
 
 ?>
