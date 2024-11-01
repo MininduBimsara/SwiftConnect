@@ -36,19 +36,18 @@ body nav h1 {
     font-size: 24px;
     margin-left: 80px;
 }
+
 body nav h1 span {
     color: #ff0000;
 }
 
 nav ul {
-  list-style-type: none;
-
-
+    list-style-type: none;
+    display: flex;
 }
 
 nav ul li {
-  display: inline;
-  margin-left: 40px;
+    margin-left: 40px;
 }
 
 nav ul.nav-links li a {
@@ -61,13 +60,14 @@ nav ul.nav-links li a:hover {
     color: #f0a500;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 500px;
     width: 100%;
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     z-index: 999;
     display: none;
@@ -77,11 +77,13 @@ nav ul.nav-links li a:hover {
     padding: 50px 10px;
 }
 
+/* Hamburger menu */
 .hamburger {
     font-size: 30px;
     display: none;
 }
 
+/* Authentication buttons */
 .auth-buttons {
     display: flex;
     gap: 15px;
@@ -100,25 +102,22 @@ nav ul.nav-links li a:hover {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
     text-align: center;
 }
 
-/* Hover effect for buttons */
+/* Button hover effects */
 .auth-buttons .button:hover {
     background-color: #e67300;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
 
-/* Active effect for buttons */
 .auth-buttons .button:active {
     background-color: #cc6600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: translateY(1px);
 }
 
-/* Separate button styles for Login and Register */
+/* Separate styles for login and register buttons */
 .auth-buttons .button.login {
     background-color: #ff8000;
 }
@@ -131,15 +130,11 @@ nav ul.nav-links li a:hover {
     background-color: #e64520;
 }
 
-
+/* Account section */
 .account-section .nav-item.dropdown {
     position: relative;
-<<<<<<< HEAD
-    
-=======
     display: flex;
     align-items: center;
->>>>>>> 44bd2ed28062c5928f19b622b104771403678f53
 }
 
 .dropdown-toggle {
@@ -198,16 +193,20 @@ nav ul.nav-links li a:hover {
     border-radius: 5px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav ul.nav-links li {
-        display: block;
+    nav ul.nav-links {
+        display: none;
+        flex-direction: column;
         text-align: center;
+    }
+    
+    nav ul.nav-links li {
         margin: 10px 0;
     }
-    .nav-links {
-        display: none;
-    }
+
     .hamburger {
         display: block;
+        cursor: pointer;
     }
 }
