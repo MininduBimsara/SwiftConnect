@@ -52,7 +52,7 @@ if(isset($_GET['id'])) {
 <!-- header.php -->
 
 <head>
-    <link rel="stylesheet" href="update-category.css">
+    <link rel="stylesheet" href="update-Service_Centers.css">
     <link rel="stylesheet" href="../layouts/header.css">
 
 </head>
