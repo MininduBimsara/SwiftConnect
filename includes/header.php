@@ -92,16 +92,15 @@ $userImage = $isLoggedIn ? $_SESSION['user']['image'] : "default-avatar.jpg"; //
                       </div>
                       <ul>
                           <li><a href="#">Home</a></li>
-                          <li><a href="#">About</a></li>
+                          <li><a href="../about.php">About</a></li>
                           <li><a href="#">Service</a></li>
                           <li><a href="#">Contact</a></li>
-                           
 
                       </ul>
                       <ul class="sidebar">
                           <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
                           <li><a href="#">Home</a></li>
-                          <li><a href="#">About</a></li>
+                          <li><a href="../about.php">About</a></li>
                           <li><a href="#">Service</a></li>
                           <li><a href="#">Contact</a></li>
                         
