@@ -1,0 +1,229 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* CSS Variables for Theme Colors */
+:root {
+    --primary-color: #ff8800; /* Orange */
+    --secondary-color: #fff3f3; /* Light background */
+    --text-color: #1e1e1e; /* Dark text */
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* White background for cleaner look */
+    color: var(--primary-color); /* Orange text color */
+}
+
+.jumbotron {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('assets/img/courier-bg.jpg') center center/cover no-repeat;
+}
+
+.jumbotron .container {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+
+.header-title {
+    padding-top: 10px;
+    font-size: 3em;
+    font-weight: bold;
+    color:#ff8000; /* Orange for header title */
+}
+
+.subtitle {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #454545;
+}
+
+/* Contact Section */
+.contact-sec {
+    margin-top: 30px;
+    background-color:#ffa332;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center align */
+    border: 2px solid #ffcab1; /* Orange border to match the theme */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-box, .info-box {
+    width: 48%;
+}
+.info-title{
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color:#fff5f5 /* Orange for form and info titles */
+}
+.form-title {
+    font-size: 1.8em;
+    font-weight: bold; /* Keep bold for emphasis */
+    margin-bottom: 10px;
+    color: #282727; /* Text color */
+    text-shadow: 
+        2px 2px 2px rgb(255, 102, 7), /* Dark shadow for depth */
+}
+
+
+.contact-box p, .info-box p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color:#3e3e3e;
+    font-weight: bold;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+textarea.input {
+    resize: vertical;
+}
+
+.btn-primary {
+    font-size: 17px;
+    font-weight: bold; /* Increased font weight */
+    background-color: #ffffff; /* White background for contrast */
+    color: #ff9500; /* Text color */
+    padding: 10px 20px;
+    border: 2px solid #ff9100; /* Solid border with contrast */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added transition for shadow and scale */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.btn-primary:hover {
+    background-color: #ff9500; /* Change to a darker orange on hover */
+    color: white; /* Change text color to white for better contrast */
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Info Box */
+.info-title {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Orange for info titles */
+}
+
+.info-box {
+    padding: 20px;
+    background-color: white;
+}
+
+.info-box p {
+    font-size: 1em;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+}
+
+.info-box i {
+    margin-right: 10px;
+    color: var(--primary-color); /* Orange for icons */
+}
+
+/* Map Section */
+.map-container {
+    margin: 20px auto;
+    max-width: 1300px;
+    padding: 10px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-sec {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contact-box, .info-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .header-title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .info-title, .form-title {
+        font-size: 1.5em;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .contact-sec {
+        padding: 15px;
+    }
+
+    .form-title, .info-title {
+        font-size: 1.3em;
+    }
+
+    .info-box p, .contact-box p {
+        font-size: 0.9em;
+    }
+}
