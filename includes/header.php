@@ -32,9 +32,9 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                         <h1><i class="fa-brands fa-nfc-symbol"></i> Swift<span>Connect</span></h1>
                     </div>
                     <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="../about.php">About</a></li>
-                        <li><a href="../package_management/package_selection.php">Orders</a></li>
+                        <li><a href="<?php echo APPURL;?>/home.php">Home</a></li>
+                        <li><a href="<?php echo APPURL;?>/about.php">About</a></li>
+                        <li><a href="<?php echo APPURL;?>/package_management/package_selection.php">Orders</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
 
@@ -63,8 +63,8 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                         </div>
                         <?php else: ?>
                         <div class="auth-buttons">
-                            <a href="../auth/HTML/login1.php" class="button">Login</a>
-                            <a href="../auth/HTML/register.php" class="button register">Register</a>
+                            <a href="<?php echo APPURL;?>/auth/HTML/login1.php" class="button">Login</a>
+                            <a href="<?php echo APPURL;?>/auth/HTML/register.php" class="button register">Register</a>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -73,14 +73,14 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                 <!-- Sidebar for mobile -->
                 <ul class="sidebar">
                     <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="../about.php">About</a></li>
-                    <li><a href="../package_management/package_selection.php">Orders</a></li>
+                    <li><a href="<?php echo APPURL;?>/home.php">Home</a></li>
+                    <li><a href="<?php echo APPURL;?>/about.php">About</a></li>
+                    <li><a href="<?php echo APPURL;?>/package_management/package_selection.php">Orders</a></li>
                     <li><a href="#">Contact</a></li>
 
                     <?php if (!$isLoggedIn): ?>
-                    <li><a href="../auth/HTML/login1.php">Login</a></li>
-                    <li><a href="../auth/HTML/register.php">Register</a></li>
+                    <li><a href="<?php echo APPURL;?>/auth/HTML/login1.php">Login</a></li>
+                    <li><a href="<?php echo APPURL;?>/auth/HTML/register.php">Register</a></li>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -89,13 +89,22 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
 
     <!-- JavaScript for Sidebar Toggle -->
     <script>
-    function showsidebar() {
-        document.querySelector(".sidebar").style.display = 'flex';
-    }
+    // JavaScript for Sidebar Toggle
+    document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+        const closeBtn = sidebar.querySelector(".bx-x");
 
-    function closesidebar() {
-        document.querySelector(".sidebar").style.display = 'none';
-    }
+        function toggleSidebar() {
+            sidebar.classList.toggle("active");
+        }
+
+        // Toggle sidebar when the hamburger icon is clicked
+        hamburger.addEventListener("click", toggleSidebar);
+
+        // Close sidebar when the close button inside sidebar is clicked
+        closeBtn.addEventListener("click", toggleSidebar);
+    });
     </script>
 </body>
 
