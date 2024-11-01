@@ -44,16 +44,16 @@ define("APPURL", "http://localhost/SwiftConnect");
                     </div>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="package_management/package_selection.php">Orders</a></li>
                         <li><a href="#">Contact</a></li>
 
                     </ul>
                     <ul class="sidebar">
                         <li onclick="closesidebar()"><i class='bx bx-x'></i></li>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Orders</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="package_management/package_selection.php">Orders</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
 
@@ -226,7 +226,7 @@ define("APPURL", "http://localhost/SwiftConnect");
             dropdownToggle.addEventListener('click', function(event) {
                 event.preventDefault();
                 dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' :
-                'block';
+                    'block';
             });
 
             // Close dropdown if clicked outside

@@ -8,39 +8,37 @@
     //     exit(); 
     // }
 
-    if(isset($_POST['submit-button'])){
+   if(isset($_POST['submit-button'])){
+    echo "Form submitted!"; 
+    if(isset($_POST['firstName'], $_POST['lastName'], $_POST['postalCode'], $_POST['email'], $_POST['phone'])) {
 
-        if(!isset($_POST['firstName']) && !isset($_POST['lastName']) && !isset($_POST['company']) 
-            && !isset($_POST['postalCode']) && !isset($_POST['additionalInfo']) && !isset($_POST['email']) && !isset($_POST['phone'])){
+        $fname = $_POST['firstName'];
+        $lname = $_POST['lastName'];
+        $company = $_POST['company'];
+        $postalCode = $_POST['postalCode'];
+        $description = $_POST['additionalInfo'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $user_id = $_SESSION['user_id'] ?? null; // check if user_id is set
+        $total_price = $_GET['total_price'] ?? 0;
 
-                
-        }
-        else{
-            
-            $fname = $_POST['firstName'];
-            $lname = $_POST['lastName'];
-            $company = $_POST['company'];
-            $postalCode = $_POST['postalCode'];
-            $description = $_POST['additionalInfo'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $user_id = $_SESSION['user_id'];
+        if($user_id) {
+            $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id) 
+                    VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id')";
 
-            $sql = "INSERT INTO orders(fname,lname,company_name,Postal_code,description,email,phone_number,user_id) VALUES ('$fname',' $lname','$company','$postalCode','$description','$email','$phone','$user_id')";
-
-
-            if($conn->query($sql)){
-                echo "Order placed successfully";
+            if ($conn->query($sql)) {
+                echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php?total_price=" . $total_price . "'; </script>";
+                exit;
+            } else {
+                echo "Error placing order: " . $conn->error;
             }
-            else{
-                echo "Error";
-            }
-            
+        } else {
+            echo "User ID not found. Please log in.";
         }
+    } else {
+        echo "All required fields must be filled.";
     }
-
-
-
+}
 
 ?>
     <!DOCTYPE html>
@@ -57,12 +55,10 @@
 
     <body>
 
-
-
         <div class="body-container">
             <div class="form-container">
                 <h1 class="form-title">Package Management</h1>
-                <form id="packageForm" class="form-content">
+                <form id="packageForm" class="form-content" method="POST" action="delivery_details.php">
                     <div class="grid-container">
                         <div>
                             <label for="firstName" class="label">First Name</label>
@@ -109,7 +105,7 @@
                     </div>
                     <div class="form-footer">
                         <button type="button" class="previous-button">Previous</button>
-                        <button type="submit" class="submit-button">Proceed to Checkout</button>
+                        <button type="submit" name="submit-button" class="submit-button">Proceed to Checkout</button>
                     </div>
                 </form>
             </div>
@@ -119,14 +115,15 @@
 
         <script>
         document.getElementById('packageForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const fields = ['firstName', 'lastName', 'company',
-                'postalCode', 'email', 'phone'
-            ];
+            // e.preventDefault(); // Prevent initial form submission
+
+            const fields = ['firstName', 'lastName', 'company', 'postalCode', 'email', 'phone'];
             let isValid = true;
+
             fields.forEach(field => {
                 const input = document.getElementById(field);
                 const error = document.getElementById(field + 'Error');
+
                 if (!input.value.trim()) {
                     isValid = false;
                     input.classList.add('error-border');
@@ -137,8 +134,11 @@
                     error.classList.add('hidden');
                 }
             });
+            // If all fields are valid, submit the form without preventing default
             if (isValid) {
-                alert('Form submitted successfully!');
+                e.target.submit(); // Submit the form if validation is successful
+            } else {
+                alert('Please fill in all required fields.');
             }
         });
         </script>
