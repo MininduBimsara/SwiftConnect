@@ -40,13 +40,15 @@ body nav h1 span {
     color: #ff0000;
 }
 
-nav ul.nav-links {
-    list-style-type: none;
+nav ul {
+  list-style-type: none;
+
+
 }
 
-nav ul.nav-links li {
-    display: inline;
-    margin-left: 10px;
+nav ul li {
+  display: inline;
+  margin-left: 40px;
 }
 
 nav ul.nav-links li a {
@@ -132,8 +134,12 @@ nav ul.nav-links li a:hover {
 
 .account-section .nav-item.dropdown {
     position: relative;
+<<<<<<< HEAD
+    
+=======
     display: flex;
     align-items: center;
+>>>>>>> 44bd2ed28062c5928f19b622b104771403678f53
 }
 
 .dropdown-toggle {

@@ -297,21 +297,6 @@ button:hover {
   transition: 1s;
 }
  
- 
-.about-container{
-  margin-top: 80px;
-  background: linear-gradient(to right, #ebf8ff, #ffcf9f);
-  padding: 40px 0;
-  
-}
-.wrapper .about-para{
-  text-align: justify;
-  font-family: 'Rethink Sans',sans-serif;
-}
-.wrapper .about-para p{
-  font-family: 'Rethink Sans',sans-serif;
-}
- 
  .auth-buttons {
     display: flex;
     gap: 15px;
