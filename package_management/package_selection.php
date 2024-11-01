@@ -37,7 +37,8 @@ if (isset($_POST['submit'])) {
                         <option value="" disabled selected>Select a destination</option>
                         <?php
                         // Get service centers with prices
-                        $select_destinations = "SELECT center_id, center_name, center_rate AS center_price FROM servicecenter";
+                        $user_country = $_SESSION['user_country'] ?? '';
+                        $select_destinations = "SELECT center_id, center_name, center_rate AS center_price FROM servicecenter WHERE country != '$user_country'";
                         $result_destinations = mysqli_query($conn, $select_destinations);
                         while ($row_destination = mysqli_fetch_assoc($result_destinations)) {
                             $center_id = $row_destination['center_id'];

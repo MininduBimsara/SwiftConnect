@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['email'] = $fetch['email'];
                 $_SESSION['user_id'] = $fetch['user_id'];
                 $_SESSION['image'] = $fetch['image'];
+                $_SESSION['user_country'] = $fetch['country'];
                 echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
                 exit();
             } else {

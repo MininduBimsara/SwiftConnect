@@ -46,7 +46,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <li><a href="#">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="package_management/package_selection.php">Orders</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.php">Contact</a></li>
 
                     </ul>
                     <ul class="sidebar">
@@ -54,7 +54,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <li><a href="#">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="package_management/package_selection.php">Orders</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
 
                     <div class="hamburger"><i onclick="showsidebar()" class='bx bx-menu'></i></div>
