@@ -13,6 +13,7 @@
     <!-- header.css added -->
     <!-- <link rel="stylesheet"  href="../layouts/header.css"> -->
     <link rel="stylesheet" href="../layouts/header.css?v=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -51,18 +52,20 @@
                                 href="<?php echo ADMINURL; ?>/Service_Centers-admins/show-Service_Centers.php">Service
                                 Centers</a>
                         </li>
-                    </ul>
+                    <!-- </ul> -->
                     <?php endif; ?>
-                    <ul class="ml-md-auto d-md-flex">
+                    <!-- <ul class="dropbox-selection"> -->
                         <?php if(!isset($_SESSION['adminname'])) : ?>
                         <li class="nav-item">
                             <a class="unique-link" href="<?php echo ADMINURL; ?>/admins/login-admins.php">Login</a>
                         </li>
                         <?php else: ?>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="margin-left: 40px;">
                             <a class="unique-dropdown-toggle" href="#" id="unique-navbarDropdown" role="button"
                                 onclick="toggleDropdown()">
-                                <?php echo $_SESSION['adminname']; ?>
+                                <?php echo $_SESSION['adminname'];  ?>
+                                <i class='bx bx-chevron-down'></i>
+
                             </a>
                             <div class="unique-dropdown-menu" id="dropdownMenu">
                                 <a class="unique-dropdown-item"
