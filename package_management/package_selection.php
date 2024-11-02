@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
     $selected_package = $_POST['selected_package'];
 
     $total_price = $_POST['total_price'] ?? 0;
-    echo "<script> window.location.href ='" . APPURL . "/package_management/delivery_details.php?total_price=$total_price'; </script>";
+    $_SESSION['total_price'] = $total_price;
+    echo "<script> window.location.href ='" . APPURL . "/package_management/delivery_details.php'; </script>";
 
 }
 ?>

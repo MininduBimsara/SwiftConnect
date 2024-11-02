@@ -1,4 +1,5 @@
-    <?php include_once '../includes/header.php'; ?>
+    <?php 
+    include_once '../includes/header.php'; ?>
     <?php
     
     require "../config/config.php";  
@@ -19,8 +20,8 @@
         $description = $_POST['additionalInfo'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $user_id = $_SESSION['user_id'] ?? null; // check if user_id is set
-        $total_price = $_GET['total_price'] ?? 0;
+        $user_id = $_SESSION['user_id']; // check if user_id is set
+    
 
         if($user_id) {
             $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id) 
@@ -60,8 +61,8 @@
             <div class="form-container">
                 <h1 class="form-title">Package Management</h1>
                 <form id="packageForm" class="form-content" method="POST" action="delivery_details.php">
-                     <!-- Hidden input for total_price -->
-                     <input type="hidden" name="total_price" value="<?php echo htmlspecialchars($total_price); ?>">
+                    <!-- Hidden input for total_price -->
+                    <input type="hidden" name="total_price" value="<?php echo ($total_price); ?>">
                     <div class="grid-container">
                         <div>
                             <label for="firstName" class="label">First Name</label>
