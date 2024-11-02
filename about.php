@@ -1,4 +1,4 @@
-<?php // include_once '../includes/header.php'; ?>
+<?php require "includes/header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <title>About Us - SwiftConnect</title>
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="includes/footer.css">
-    <link rel="stylesheet" href="../includes/header.css">
+    <link rel="stylesheet" href="includes/header.css">
 </head>
 <body>
     <section id="about-section">
