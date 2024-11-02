@@ -1,9 +1,6 @@
 <?php
 session_start();
 define("APPURL", "http://localhost/SwiftConnect");
-
-
-// Use default image if not provided
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +77,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="<?php echo APPURL;?>/assets/images/<?php echo $_SESSION['image']; ?>"
+                                    <img src="auth/html/user_images/<?php echo $_SESSION['image']; ?>"
                                         alt="User Image">
                                 </div>
                                 <span><?php echo $_SESSION['username']; ?></span>
