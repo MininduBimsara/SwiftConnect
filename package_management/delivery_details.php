@@ -27,8 +27,7 @@
                     VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id')";
 
             if ($conn->query($sql)) {
-                var_dump($total_price);
-                echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php?total_price=" . $total_price . "'; </script>";
+                echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php'; </script>";
 
                 exit;
             } else {
@@ -61,6 +60,8 @@
             <div class="form-container">
                 <h1 class="form-title">Package Management</h1>
                 <form id="packageForm" class="form-content" method="POST" action="delivery_details.php">
+                     <!-- Hidden input for total_price -->
+                     <input type="hidden" name="total_price" value="<?php echo htmlspecialchars($total_price); ?>">
                     <div class="grid-container">
                         <div>
                             <label for="firstName" class="label">First Name</label>
