@@ -18,7 +18,7 @@ define("APPURL", "http://localhost/SwiftConnect");
     <!-- <link rel="stylesheet" href="includes/footer.css"> -->
     <link rel="stylesheet" href="includes/footer.css?v=1.0">
 
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@ define("APPURL", "http://localhost/SwiftConnect");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
+        
 
 </head>
 
