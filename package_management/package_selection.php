@@ -7,7 +7,9 @@ if (isset($_POST['submit'])) {
     $weight_range = $_POST['weight_range'];
     $selected_package = $_POST['selected_package'];
 
-    echo "<script> window.location.href ='" . APPURL . "/package_management/delivery_details.php'; </script>";
+    $total_price = $_POST['total_price'] ?? 0;
+    echo "<script> window.location.href ='" . APPURL . "/package_management/delivery_details.php?total_price=$total_price'; </script>";
+
 }
 ?>
 

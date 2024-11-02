@@ -27,7 +27,9 @@
                     VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id')";
 
             if ($conn->query($sql)) {
+                var_dump($total_price);
                 echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php?total_price=" . $total_price . "'; </script>";
+
                 exit;
             } else {
                 echo "Error placing order: " . $conn->error;

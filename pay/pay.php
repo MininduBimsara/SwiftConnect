@@ -24,17 +24,20 @@
 
     <div class="container">
         <!-- Replace "test" with your own sandbox Business account app client ID -->
-        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=AY3C-o8GNXsro2aKEY2LJnEtT0Pnqtr57B6nQeL7aq-6dO2jZmid3lR8QH9kWJ9XweZjd8rJ4tTGkHYS&currency=USD">
+        </script>
         <!-- Set up a container element for the button -->
         <div id="paypal-button-container"></div>
         <script>
         const totalPrice = new URLSearchParams(window.location.search).get('total_price') || '0';
+        console.log('Total Price:', totalPrice);
         paypal.Buttons({
             createOrder: (data, actions) => {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: totalPrice // Use dynamic total price here
+                            value: parseFloat(totalPrice).toFixed(2) // Use dynamic total price here
                         }
                     }]
                 });
