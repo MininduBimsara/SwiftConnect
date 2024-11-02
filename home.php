@@ -29,6 +29,21 @@ define("APPURL", "http://localhost/SwiftConnect");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
+        <style>
+            .dropdown-menu{
+                background-color: #ff8000;
+                
+                
+            }
+            .dropdown-item{
+                color: white;
+                transition: 1s;
+            }
+            .dropdown-item:hover{
+                background-color:#ff0000 ;
+                
+            }
+        </style>
         
 
 </head>
