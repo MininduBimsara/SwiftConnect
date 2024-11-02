@@ -38,6 +38,7 @@ $num_centers = $centerResult->fetch_assoc();
 <head>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="layouts/header.css">
+     
 </head>
 
 
