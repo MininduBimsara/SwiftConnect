@@ -78,10 +78,10 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                     <li><a href="<?php echo APPURL;?>/package_management/package_selection.php">Orders</a></li>
                     <li><a href="#">Contact</a></li>
 
-                    <?php if (!$isLoggedIn): ?>
+                    <!-- <?php if (!$isLoggedIn): ?>
                     <li><a href="<?php echo APPURL;?>/auth/HTML/login1.php">Login</a></li>
                     <li><a href="<?php echo APPURL;?>/auth/HTML/register.php">Register</a></li>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                 </ul>
             </div>
         </header>

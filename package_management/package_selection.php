@@ -2,6 +2,11 @@
 <?php
 include_once '../config/config.php';
 
+    if (!isset($_SESSION['username'])) {
+        echo "<script> window.location.href ='" . APPURL . "/home.php'; </script>";
+        exit(); 
+    }
+    
 if (isset($_POST['submit'])) {
     $destination = $_POST['destination'];
     $weight_range = $_POST['weight_range'];

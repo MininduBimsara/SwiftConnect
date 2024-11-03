@@ -4,10 +4,10 @@
     
     require "../config/config.php";  
 
-    // if (!isset($_SESSION['username'])) {
-    //     echo "<script> window.location.href ='" . APPURL . "'; </script>";
-    //     exit(); 
-    // }
+    if (!isset($_SESSION['username'])) {
+        echo "<script> window.location.href ='" . APPURL . "/home.php'; </script>";
+        exit(); 
+    }
 
    if(isset($_POST['submit-button'])){
     echo "Form submitted!"; 
