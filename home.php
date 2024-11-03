@@ -55,6 +55,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                     <div class="logo-content">
 
                         <h1><i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span></h1>
+
                     </div>
                     <ul>
                         <li><a href="#">Home</a></li>

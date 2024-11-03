@@ -3,10 +3,10 @@ require "../includes/header.php";
 require "../config/config.php"; 
 
 
-// if (!isset($_SESSION['username'])) {
-//     echo "<script> window.location.href ='".APPURL."'; </script>";
-//     exit;
-// }
+    if (!isset($_SESSION['username'])) {
+        echo "<script> window.location.href ='" . APPURL . "/home.php'; </script>";
+        exit(); 
+    }
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
