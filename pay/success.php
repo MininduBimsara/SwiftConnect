@@ -20,6 +20,15 @@ if(!isset($_SESSION['username'])){
 // }
 ?>
 
+
+
+<head>
+
+    <link rel="stylesheet" href="<?php echo APPURL; ?>/pay/success.css">
+    <link rel="stylesheet" href="<?php echo APPURL; ?>/includes/header.css">
+
+</head>
+
 <div class="banner">
     <div class="jumbotron jumbotron-bg text-center rounded-0">
         <div class="container">
