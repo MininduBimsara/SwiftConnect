@@ -42,7 +42,7 @@ if(isset($_GET['order_id'])){
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-5 d-inline">Update Order Status</h5>
-                <form method="POST" action="update-orders.php?id=<?php echo $id; ?>">
+                <form method="POST" action="update-orders.php?order_id=<?php echo $id; ?>">
                     <div class="form-group mt-4">
                         <select name="status" class="form-control" id="exampleFormControlSelect1">
                             <option>--Select Order Status--</option>
