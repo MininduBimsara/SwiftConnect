@@ -44,7 +44,7 @@
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;
-    background-color: #007bff; /* Change color as needed */
+    background-color: #ff8000; /* Change color as needed */
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
@@ -54,7 +54,7 @@
 }
 
 .banner .btn-primary:hover {
-    background-color: #0056b3; /* Darken color on hover */
+    background-color: #fa942e; /* Darken color on hover */
     transform: translateY(-3px);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }

@@ -21,11 +21,11 @@
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $user_id = $_SESSION['user_id']; // check if user_id is set
-    
+        $total_price = $_SESSION['total_price'];
 
         if($user_id) {
-            $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id) 
-                    VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id')";
+            $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id,price) 
+                    VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id','$total_price')";
 
             if ($conn->query($sql)) {
                 echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php'; </script>";
