@@ -26,22 +26,24 @@ define("APPURL", "http://localhost/SwiftConnect");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
-        <style>
-            .dropdown-menu{
-                background-color: #ff8000;
-                
-                
-            }
-            .dropdown-item{
-                color: white;
-                transition: 1s;
-            }
-            .dropdown-item:hover{
-                background-color:#ff0000 ;
-                
-            }
-        </style>
-        
+    <style>
+    .dropdown-menu {
+        background-color: #ff8000;
+
+
+    }
+
+    .dropdown-item {
+        color: white;
+        transition: 1s;
+    }
+
+    .dropdown-item:hover {
+        background-color: #ff0000;
+
+    }
+    </style>
+
 
 </head>
 
@@ -77,17 +79,16 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="auth/html/user_images/<?php echo $_SESSION['image']; ?>"
-                                        alt="User Image">
+                                    <img src="auth/html/user_images/<?php echo $_SESSION['image']; ?>" alt="User Image">
                                 </div>
                                 <span><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item"
-                                    href="users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
+                                    href="users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Transaction
                                     History</a>
                                 <a class="dropdown-item"
-                                    href="users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
+                                    href="users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
                                 <a class="dropdown-item" href="auth/HTML/logout.php">Logout</a>
                             </div>
                         </div>

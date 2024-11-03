@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
         <div class="jumbotron jumbotron-bg text-center rounded-0 banner-jumbotron">
             <div class="container">
                 <h1 class="pt-5">Your Transactions</h1>
-                <p class="lead">Save time and leave the groceries to us.</p>
+                <p class="lead">Save time and leave the Parcels to us.</p>
             </div>
         </div>
     </div>
