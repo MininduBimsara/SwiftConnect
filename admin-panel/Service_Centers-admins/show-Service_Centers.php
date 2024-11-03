@@ -23,7 +23,7 @@ $service_center = $conn->query("SELECT * FROM servicecenter");
             <div class="card-body">
                 <h5 class="card-title mb-4 d-inline">Service Centers</h5>
                 <a href="<?php echo ADMINURL; ?>/Service_Centers-admins/create-Service_Centers.php"
-                    class="btn btn-primary mb-4 text-center float-right">Create <br>Service Centers</a>
+                    class="btn btn-primary mb-4 text-center float-right">Create Service Centers</a>
 
                 <table class="table">
                     <thead>

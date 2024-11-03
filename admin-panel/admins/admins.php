@@ -24,7 +24,6 @@ if ($result->num_rows > 0) {
 <head>
     <link rel="stylesheet" href="admins.css">
     <link rel="stylesheet" href="../layouts/header.css">
-
 </head>
 
 <div class="row">
@@ -44,13 +43,13 @@ if ($result->num_rows > 0) {
                     </thead>
                     <tbody>
                         <?php if (!empty($alladmins)) : ?>
-                        <?php foreach ($alladmins as $admin) : ?>
-                        <tr>
-                            <th scope="row"><?php echo $admin['admin_id']; ?></th>
-                            <td><?php echo $admin['name']; ?></td>
-                            <td><?php echo $admin['email']; ?></td>
-                        </tr>
-                        <?php endforeach; ?>
+                            <?php foreach ($alladmins as $admin) : ?>
+                            <tr>
+                                <th scope="row"><?php echo htmlspecialchars($admin['admin_id']); ?></th>
+                                <td><?php echo htmlspecialchars($admin['name']); ?></td>
+                                <td><?php echo htmlspecialchars($admin['email']); ?></td>
+                            </tr>
+                            <?php endforeach; ?>
                         <?php else : ?>
                         <tr>
                             <td colspan="3" class="text-center">No admins found</td>
