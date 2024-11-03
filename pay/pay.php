@@ -51,7 +51,7 @@
                 return actions.order.capture().then(function(orderData) {
                     window.alert("Order Created successfully");
                     window.location.href =
-                        ' http://localhost/SwiftConnect/home.php'; // Redirect after payment
+                        ' http://localhost/SwiftConnect/pay/success.php'; // Redirect after payment
                 });
             }
         }).render('#paypal-button-container');

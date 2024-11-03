@@ -1,0 +1,37 @@
+/* Separate jumbotron CSS */
+.banner .jumbotron-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+}
+
+.banner .pt-5 {
+    padding-top: 3rem;
+}
+
+.banner h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.banner .lead {
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.banner .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.banner .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
