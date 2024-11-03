@@ -2,7 +2,6 @@
 require "../includes/header.php"; 
 require "../config/config.php"; 
 
-session_start();
 
 // if (!isset($_SESSION['username'])) {
 //     echo "<script> window.location.href ='".APPURL."'; </script>";
@@ -17,7 +16,7 @@ if (isset($_GET['id'])) {
         exit;
     }
 
-    $select = $conn->prepare("SELECT * FROM users WHERE id = ?");
+    $select = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
     $select->bind_param("i", $id);
     $select->execute();
     $result = $select->get_result();
