@@ -22,29 +22,28 @@ body {
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 2.1rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Table Styles */
 .table {
+    font-size: 18px;
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
 }
 
-.table td {
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center; /* Center-aligns text horizontally */
     padding: 12px;
-    text-align: left;
     border-top: 1px solid #dee2e6;
 }
 
 .table th {
-    padding: 12px;
-    text-align: left;
-    border-top: 1px solid #dee2e6;
     background-color: #f2f2f2;
     color: #333;
     font-weight: bold;
@@ -60,11 +59,11 @@ body {
 
 /* Button Styles */
 .btn {
+    font-size: 18px;
     display: inline-block;
     font-weight: bold;
     text-align: center;
     padding: 10px 20px;
-    font-size: 15px;
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;

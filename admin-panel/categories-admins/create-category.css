@@ -14,7 +14,6 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #f8f9fa;
-    margin: 20px;
 }
 
 /* Layout Styling */
@@ -70,7 +69,7 @@ body {
 
 /* Button Styling */
 .btn-primary {
-    background-color: #fc8f01e1;
+    background-color: #fc7201;
     color: #fff;
     border: none;
     padding: 12px;
@@ -87,7 +86,7 @@ body {
 
 .btn-primary:focus {
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgb(255, 153, 0);
 }
 
 /* File Input Label */
