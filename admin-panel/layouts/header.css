@@ -15,7 +15,7 @@ body {
 
 /* Navbar styling */
 .custom-navbar {
-    background: linear-gradient(135deg, #22313f, #ff8000);
+    background: linear-gradient(135deg, #ff8000,#22313f);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 15px 0;
     transition: all 0.3s ease;
@@ -31,6 +31,17 @@ body {
 }
 .unique-nav{
     margin-right: 50px;
+}
+.unique-container i{
+    color:black;
+    
+}
+.unique-container h1{
+   color: #22313f;
+}
+.unique-container h1 span {
+   color: #ff0000;
+   
 }
 
 /* Logo styling */

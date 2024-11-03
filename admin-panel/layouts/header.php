@@ -14,13 +14,21 @@
     <!-- <link rel="stylesheet"  href="../layouts/header.css"> -->
     <link rel="stylesheet" href="../layouts/header.css?v=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a295b70770.js" crossorigin="anonymous"></script>
+    
+ 
+
 </head>
 
 <body>
     <div id="unique-wrapper">
         <nav class="custom-navbar top-nav fixed-top navbar-expand-lg dark-bg">
             <div class="unique-container">
-                <a class="unique-brand" href="#">LOGO</a>
+                <!-- <a class="unique-brand" href="#">LOGO</a> -->
+              
+                <h1>  
+                    <i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span>
+                </h1>
                 <button class="unique-toggler" type="button" data-toggle="collapse" data-target="#unique-navbarText"
                     aria-controls="unique-navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="unique-toggler-icon">&#9776;</span>
