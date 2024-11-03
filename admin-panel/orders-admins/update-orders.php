@@ -20,7 +20,7 @@ if(isset($_GET['order_id'])){
             $status = $_POST['status'];
 
             // Update the order status
-            $update = $conn->prepare("UPDATE orders SET status = ? WHERE id = ?");
+            $update = $conn->prepare("UPDATE orders SET status = ? WHERE order_id = ?");
             $update->bind_param("si", $status, $id);
             $update->execute();
 
