@@ -25,7 +25,7 @@
 
         if($user_id) {
             $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id, price) 
-                    VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id', $total_price')";
+                    VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id', '$total_price')";
 
             if ($conn->query($sql)) {
                 echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php'; </script>";
