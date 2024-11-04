@@ -22,11 +22,20 @@ if (isset($_POST['submit'])) {
         $center_rate = $_POST['center_rate'];
 
         $insert = $conn->prepare("INSERT INTO servicecenter (center_name, country, city, address, contact_number, center_rate) VALUES (?, ?, ?, ?, ?, ?)");
-        $insert->bind_param("sdssss", $center_name, $country, $city, $address, $contact_number, $center_rate);
-        $insert->execute();
+        
+        $insert->bind_param("ssssii", $center_name, $country, $city, $address, $contact_number, $center_rate);
 
+        if ($insert->execute()) {
+            echo "<script>alert('Record inserted successfully');</script>";
+            echo "<script> window.location.href = '".ADMINURL."/Service_Centers-admins/show-Service_Centers.php'; </script>";
+        } else {
+            echo "<script>alert('Error inserting record');</script>";
+        }
+
+        $insert->close();
     }
 }
+
 ?>
 <!-- header.php -->
 

@@ -9,20 +9,15 @@ require "../../config/config.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Fetch product details
-    $select = $conn->query("SELECT * FROM products WHERE id='$id'");
+    // Fetch service certer details
+    $select = $conn->query("SELECT * FROM servicecenter WHERE center_id='$id'");
     $data = $select->fetch_assoc();
 
-    // Delete product image
-    if (file_exists("img-products/" . $data['image'])) {
-        unlink("img-products/" . $data['image']);
-    }
-
     // Delete product record from database
-    $delete = $conn->query("DELETE FROM products WHERE id='$id'");
+    $delete = $conn->query("DELETE FROM servicecenter WHERE center_id='$id'");
     
     if ($delete) {
-        echo "<script> window.location.href = '".ADMINURL."/products-admins/show-Service_Centers.php'; </script>";
+        echo "<script> window.location.href = '".ADMINURL."/Service_Centers-admins/show-Service_Centers.php'; </script>";
     } else {
         echo "<script>alert('Failed to delete product');</script>";
     }
