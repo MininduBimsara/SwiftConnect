@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
         $phone_number = $_POST['phone_number'];
         $city = $_POST['city'];
 
-        $update = $conn->prepare("UPDATE users SET fullname = ?, address = ?, city = ?, country = ?, zip_code = ?, phone_number = ? WHERE id = ?");
+        $update = $conn->prepare("UPDATE users SET fullname = ?, address = ?, city = ?, country = ?, zip_code = ?, phone_number = ? WHERE user_id = ?");
         $update->bind_param("ssssssi", $fullname, $address, $city, $country, $zip_code, $phone_number, $id);
         $update->execute();
 
@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
                             <div class="form-group row">
                                 <div class="col">
                                     <input class="form-control" placeholder="Full Name" name="fullname"
-                                        value="<?php echo $users->fullname; ?>" type="text">
+                                        value="<?php echo $users->name; ?>" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
