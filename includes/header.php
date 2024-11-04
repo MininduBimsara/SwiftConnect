@@ -47,10 +47,10 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                         <div class="nav-item dropdown">
                             <a href="#" class="dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="<?php echo APPURL;?>/assets/images/<?php echo $userImage; ?>"
+                                    <img src="<?php echo APPURL;?>/auth/html/user_images/<?php echo $_SESSION['image']; ?>"
                                         alt="User Image">
                                 </div>
-                                <span><?php echo $userName; ?></span>
+                                <span><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item"
