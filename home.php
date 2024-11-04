@@ -80,7 +80,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="auth/html/user_images/<?php echo $_SESSION['image']; ?>" alt="User Image">
+                                    <img src="<?php echo APPURL;?>/auth/html/user_images/<?php echo $_SESSION['image']; ?>" alt="User Image">
                                 </div>
                                 <span><?php echo $_SESSION['username']; ?></span>
                             </a>

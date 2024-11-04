@@ -141,6 +141,9 @@ nav ul.nav-links li a:hover {
     display: none; /* Hide by default, show in media query */
     cursor: pointer;
 }
+span {
+    color: #ff8000;
+  }
 
 /* Dropdown Menu Styling */
 .dropdown-menu {
@@ -248,6 +251,109 @@ nav ul.nav-links li a:hover {
 .auth-buttons .button.register:hover {
     background-color: #e64520;
 }
+
+/* Dropdown Menu Items */
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  /* Main Account Section Styling */
+  .account-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+  
+  /* Avatar and Username Styling */
+.avatar-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .avatar-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Username Text Styling */
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link span {
+    margin-left: 8px;
+    font-size: 16px;
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color:#ff8000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+    z-index: 10;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+    z-index: 10;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown Menu Items */
+  .dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {

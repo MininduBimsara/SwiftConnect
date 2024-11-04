@@ -1,6 +1,392 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0a/* Base Styles */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  body .main-section {
+      font-family: Arial, sans-serif;
+  }
+  
+  .logo-content {
+      display: flex;
+      gap: 0;
+  }
+  
+  .overlay {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  body nav h1 {
+      color: #22313f;
+      font-size: 24px;
+      margin-left: 80px;
+  }
+  
+  body nav h1 span {
+      color: #ff0000;
+  }
+  
+  nav ul {
+      list-style-type: none;
+      display: flex;
+  }
+  
+  nav ul li {
+      margin-left: 40px;
+  }
+  
+  nav ul.nav-links li a {
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+  }
+  
+  nav ul.nav-links li a:hover {
+      color: #f0a500;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 80%;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 50px 10px;
+      transition: transform 0.3s ease;
+  }
+  
+  /* Hamburger menu */
+  .hamburger {
+      font-size: 30px;
+      display: none;
+  }
+  /* Sidebar Base Styles */
+  /* Sidebar Styles */
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 80%; /* Adjust width as needed */
+      background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+      backdrop-filter: blur(10px); /* Blurred background */
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center items vertically */
+      align-items: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      transform: translateX(-100%); /* Initially hidden by moving it off-screen */
+  }
+  
+  .sidebar.active {
+      transform: translateX(0); /* Show sidebar by sliding it into view */
+  }
+  
+  /* Close Icon */
+  .sidebar .bx-x {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+  }
+  
+  /* Sidebar Links */
+  .sidebar li {
+      list-style-type: none;
+      margin: 15px 0;
+      font-size: 20px; /* Adjust font size as needed */
+  }
+  
+  .sidebar li a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+  }
+  
+  .sidebar li a:hover {
+      color: #ff8000; /* Hover color */
+  }
+  
+  /* Show the hamburger icon on smaller screens */
+  .hamburger {
+      font-size: 30px;
+      display: none; /* Hide by default, show in media query */
+      cursor: pointer;
+  }
+  span {
+      color: #ff8000;
+    }
+  
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color:#ff8000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+    z-index: 10;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown Menu Items */
+  .dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Main Account Section Styling */
+  .account-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+  
+  /* Avatar and Username Styling */
+  .avatar-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 768px) {
+      .hamburger {
+          display: block;
+      }
+      nav ul.nav-links {
+          display: none; /* Hide nav links on mobile */
+      }
+  }
+  
+  
+  /* Hamburger Icon Styles */
+  .hamburger {
+      font-size: 30px;
+      display: none; /* Visible on mobile */
+  }
+  
+  /* Authentication buttons */
+  .auth-buttons {
+      display: flex;
+      gap: 15px;
+      margin-right: 20px;
+  }
+  
+  .auth-buttons .button {
+      padding: 10px 25px;
+      background-color: #ff8000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }
+  
+  .auth-buttons .button:hover {
+      background-color: #e67300;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+  }
+  
+  .auth-buttons .button:active {
+      background-color: #cc6600;
+      transform: translateY(1px);
+  }
+  
+  .auth-buttons .button.register {
+      background-color: #ff5733;
+  }
+  
+  .auth-buttons .button.register:hover {
+      background-color: #e64520;
+  }
+  
+  /* Dropdown Menu Items */
+  .dropdown-item {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.2s ease;
+    }
+    
+    .dropdown-item:hover {
+      background-color: #f0f0f0;
+    }
+    
+    
+    /* Main Account Section Styling */
+    .account-section {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+    
+    /* Avatar and Username Styling */
+  .avatar-header {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .avatar-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    
+    /* Username Text Styling */
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-link span {
+      margin-left: 8px;
+      font-size: 16px;
+    }
+    
+    /* Dropdown Menu Styling */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color:#ff8000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      display: none;
+      z-index: 10;
+    }
+    
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Dropdown Menu Styling */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      display: none;
+      z-index: 10;
+    }
+    
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Dropdown Menu Items */
+    .dropdown-item {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.2s ease;
+    }
+    
+    .dropdown-item:hover {
+      background-color: #f0f0f0;
+    }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+  
+      .hamburger {
+          display: block;
+          cursor: pointer;
+      }
+  
+      nav ul.nav-links {
+          display: none;
+      }
+  
+      nav h1 {
+          margin-left: 0;
+          font-size: 20px;
+          text-align: center;
+      }
+  
+      .auth-buttons {
+          flex-direction: column;
+          gap: 10px;
+      }
+  
+      .auth-buttons .button {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+      }
+  }
+  ;
   box-sizing: border-box;
 }
 
