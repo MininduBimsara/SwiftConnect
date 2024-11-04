@@ -43,7 +43,7 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
 
                     <!-- User Account Section -->
                     <div class="account-section">
-                        <?php if ($isLoggedIn): ?>
+                        <?php if (isset($_SESSION['username'])): ?>
                         <div class="nav-item dropdown">
                             <a href="#" class="dropdown-toggle">
                                 <div class="avatar-header">
