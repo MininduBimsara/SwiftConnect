@@ -1,17 +1,18 @@
+<?php require "includes/header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact SwiftConnect</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="contact.css?v=1.0">
     <link rel="stylesheet" href="includes/footer.css">
-    <link rel="stylesheet" href="includes/header.css">
+    <link rel="stylesheet" href="includes/header.css?">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <?php require "includes/header.php"; ?>
+    
     <?php require "config/config.php"; ?>
 
     <div id="content">
