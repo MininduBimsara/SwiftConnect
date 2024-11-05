@@ -59,54 +59,11 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="../admin-panel/admins/login-admins.css?v=1.0"> -->
-     <!-- <link rel="stylesheet" href="login-admins.css?v=1.0"> -->
+     <link rel="stylesheet" href="login-admins.css?v=1.0">
     <!-- <link rel="stylesheet" href="../layouts/header.css"> -->
     <!-- <link rel="stylesheet" href="../layouts/header.css?v=1.0"> -->
      <style>
-        .container{
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f4f6f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            
-}
-      .content{
-        background-color:#ff8000 ;
-        padding: 60px;
-        border-radius: 5px;
-      }
-     .header{
-        text-align: center;
-        font-size: 30px;
-        padding: 10px;
-     }
-     input{
-        margin: 10px 0;
-        padding: 10px 40px;
-        border: 1px solid black;
-        border-radius: 5px;
-        outline: none;
-        margin-bottom: 10px;
-        border: none;
-     }
-     .btn{
-        display:block;
-        margin: auto;
-        padding: 5px 20px;
-        border: none;
-        outline: none;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        background-color: yellow;
-    
-
-     }
-        
+         
      </style>
 
 </head>
