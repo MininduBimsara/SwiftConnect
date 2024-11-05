@@ -19,7 +19,7 @@
         <div class="about-us">
             <h1>About SwiftConnect</h1>
             <p>
-                SwiftConnect, established in 2024, is a cutting-edge web-based logistics and courier service platform,
+                SwiftConnect, established in 1990, is a cutting-edge web-based logistics and courier service platform,
                 purpose-built to facilitate secure and efficient parcel delivery between Korea and Sri Lanka. Founded
                 with the goal of connecting people and businesses across borders, SwiftConnect provides a seamless and
                 accessible logistics solution for clients with varied needs, from individual customers to large
