@@ -62,6 +62,7 @@ if (isset($_POST['submit'])) {
      <link rel="stylesheet" href="login-admins.css?v=1.0">
     <!-- <link rel="stylesheet" href="../layouts/header.css"> -->
     <!-- <link rel="stylesheet" href="../layouts/header.css?v=1.0"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <style>
          
      </style>
@@ -73,13 +74,26 @@ if (isset($_POST['submit'])) {
                 <h5 class="header">Login</h5>
                 <form method="POST" action="login-admins.php">
                     <!-- Email input -->
-                    <div class="email">
-                        <input type="email" name="email" class="form-control" placeholder="Email" />
+                    <div class="email" id="inputbox">
+                        <i class='bx bxl-gmail'></i> 
+                        <input type="email" name="email" class="form-control" placeholder="Email"  >
                     </div>
 
                     <!-- Password input -->
-                    <div class="password">
+                    <div class="password" id="inputbox">
+                    <i class='bx bxs-lock'></i>
                         <input type="password" name="password" class="form-control" placeholder="Password" />
+                    </div>
+
+                    <div class="checkbox">
+                     <div class="remember">
+                        <input type="checkbox">
+                        <a href="">Remember Me?</a>
+                    </div>
+
+                        <div class="forgot">
+                            <a href="">Forgot Password?</a>
+                        </div>
                     </div>
 
                     <!-- Submit button -->
