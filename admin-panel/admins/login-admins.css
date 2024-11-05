@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .container{
     font-family: Arial, sans-serif;
     color: #333;
@@ -7,37 +14,117 @@
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: linear-gradient(to right, #ebf8ff, #ffcf9f);
+    /* background-image:url(../../assets/images/happy-senior-man-receiving-packages-signing-postman-home-delivery_637285-2323.jpg); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),url(../../assets/images/happy-senior-man-receiving-packages-signing-postman-home-delivery_637285-2323.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91.8vh;
+    
     
 }
 .content{
-   background-color:#ff8000 ;
-   padding: 60px;
-   border-radius: 5px;
+   /* background-color:#ff8000 ; */
+   padding: 80px 40px;
+   border-radius: 10px;
+   border: 1px solid black;
+   backdrop-filter: blur(6px);
+   
 }
 .header{
    text-align: center;
    font-size: 30px;
    padding: 10px;
+   color:#ff8000 ;
+   margin: 20px;
+   margin-top: -20px;
 }
+#inputbox{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#inputbox i{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 5px;
+    color: black;
+}
+
 input{
-   margin: 10px 0;
-   padding: 10px 40px;
-   border: 1px solid black;
-   border-radius: 5px;
+   margin: 20px;
+   padding: 10px 60px;
+   border: 1px solid #ff8000;
+   border-radius: 50px;
    outline: none;
    margin-bottom: 10px;
-border: none;
+   border: none;
+   color: white;
+   
+  
 }
+input::placeholder{
+    color:rgb(114, 110, 110);
+    font-size: 14px
+
+    
+}
+
+.form-control{
+    background-color:transparent;
+    border: 1px solid white;
+}
+.form-control placeholder{
+    color: white;
+}
+.checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+}
+.forgot a{
+    display:block;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 19px;
+    margin-top: 13px;
+    
+}
+.remember  a{
+    text-decoration: none;
+    color: white;
+}
+
+ 
+.checkbox a{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: -15px;
+
+}
+
 .btn{
    display:block;
    margin: auto;
-   padding: 5px 20px;
+   padding: 10px 125px;
    border: none;
    outline: none;
-   border-radius: 5px;
+   border-radius: 50px;
    margin-bottom: 20px;
    margin-top: 20px;
-   background-color: yellow;
-
-
+   background-color:#ff8000;
+   cursor: pointer;
+   color: white;
+   transition: .8s;
+}
+.btn:hover{
+    background-color: red;
+}
+a:hover{
+    color: #ff8000;
+    transition: 0.5s;
 }
