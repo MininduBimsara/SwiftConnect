@@ -30,11 +30,11 @@ if (isset($_GET['id'])) {
         $phone_number = $_POST['phone_number'];
         $city = $_POST['city'];
 
-        $update = $conn->prepare("UPDATE users SET fullname = ?, address = ?, city = ?, country = ?, zip_code = ?, phone_number = ? WHERE user_id = ?");
+        $update = $conn->prepare("UPDATE users SET name = ?, address = ?, city = ?, country = ?, zip_code = ?, phone_number = ? WHERE user_id = ?");
         $update->bind_param("ssssssi", $fullname, $address, $city, $country, $zip_code, $phone_number, $id);
         $update->execute();
 
-        echo "<script> window.location.href ='".APPURL."'; </script>";
+        echo "<script> window.location.href ='".APPURL."/home.php'; </script>";
         exit;
     }
 } else {
