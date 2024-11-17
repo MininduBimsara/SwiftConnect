@@ -82,6 +82,7 @@ body {
   font-weight: bold;
   display: block;
   margin: 0 auto; 
+  cursor: pointer;
   background-color: #ebf8ff;
   color: rgb(81, 77, 73);
 }
