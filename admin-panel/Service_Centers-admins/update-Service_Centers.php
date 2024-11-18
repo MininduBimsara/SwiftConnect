@@ -3,10 +3,10 @@
 
 <?php 
 
-// if(!isset($_SESSION['adminname'])){
-//     echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
-//     exit;
-// }
+if(!isset($_SESSION['adminname'])){
+    echo "<script> window.location.href ='".ADMINURL."/admins/login-admins.php'; </script>";
+    exit;
+}
 
 if(isset($_GET['id'])) {
     
@@ -38,10 +38,10 @@ if(isset($_GET['id'])) {
 
             // Update query using MySQLi
             $update = $conn->prepare("UPDATE servicecenter SET center_name=?, country=?, city=?, address=?, contact_number=?, center_rate=? WHERE center_id =?");
-            $update->bind_param("sssi", $center_name, $country, $city, $address, $contact_number, $center_rate, $center_id);
+            $update->bind_param("ssssssi", $center_name, $country, $city, $address, $contact_number, $center_rate, $id);
 
             if ($update->execute()) {
-                echo "<script> window.location.href = '".ADMINURL."/categories-admins/show-Service_Centers.php'; </script>";
+                echo "<script> window.location.href = '".ADMINURL."/Service_Centers-admins/show-Service_Centers.php'; </script>";
             } else {
                 echo "<script>alert('Error updating category');</script>";
             }
@@ -64,11 +64,11 @@ if(isset($_GET['id'])) {
                 <h5 class="card-title mb-5 d-inline">Update Service Center</h5>
 
                 <?php if($service_center): ?>
-                <form method="POST" action="update-Service_Centers.php?id=<?php echo $center_id; ?>">
+                <form method="POST" action="update-Service_Centers.php?id=<?php echo $id; ?>">
                     <!-- Name input -->
                     <div class="form-outline mb-4 mt-4">
                         <label>Center Name</label>
-                        <input type="text" name="name" value="<?php echo $service_center['center_name']; ?>"
+                        <input type="text" name="center_name" value="<?php echo $service_center['center_name']; ?>"
                             class="form-control" placeholder="Name" />
                     </div>
 
