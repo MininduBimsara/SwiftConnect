@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <!-- Centered Reset Form -->
-    <div class="wrapper">
+    <div class="wrapp">
         <div class="reset-container">
             <h1>Reset Password</h1>
             <form method="post" action="">
@@ -80,6 +80,5 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </div>
-</body>
 
-</html>
+    <?php include "../../includes/footer.php";?>
