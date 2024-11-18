@@ -15,7 +15,7 @@ define("APPURL", "http://localhost/SwiftConnect");
     <!-- <link rel="stylesheet" href="includes/footer.css"> -->
     <link rel="stylesheet" href="includes/footer.css?v=1.0">
 
-    <link rel="stylesheet" href="home.css?v=1.0">
+    <link rel="stylesheet" href="home.css?v=1.1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
@@ -80,7 +80,8 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle">
                                 <div class="avatar-header">
-                                    <img src="<?php echo APPURL;?>/auth/html/user_images/<?php echo $_SESSION['image']; ?>" alt="User Image">
+                                    <img src="<?php echo APPURL;?>/auth/html/user_images/<?php echo $_SESSION['image']; ?>"
+                                        alt="User Image">
                                 </div>
                                 <span><?php echo $_SESSION['username']; ?></span>
                             </a>
@@ -173,7 +174,7 @@ define("APPURL", "http://localhost/SwiftConnect");
             <h1 class="headings">Our Services</h1>
             <div class="wrapper">
                 <div class="gallery-item">
-                    <img src=" assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
+                    <img src="assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
                         alt="Description 1">
                     <div class="description">
                         <h4>Corporate Main Bag Services</h4>
