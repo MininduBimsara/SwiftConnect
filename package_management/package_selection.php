@@ -90,15 +90,15 @@ if (isset($_POST['submit'])) {
                             $name = $row_categories['name'];
                             $dimensions = $row_categories['dimensions'];
                             $image = $row_categories['image'];
-                        echo '
-                        <div class="package-option" data-type="' . $category_id . '">
-                            <img src="' . APPURL . '/admin-panel/categories-admins/img-category/' . $image . '" 
-                                alt="' . $name . '" class="package-image">
-                            <p class="package-title">' . $name . '</p>
-                            <p class="package-details">' . $dimensions . '</p>
-                            <p class="package-price" data-type="' . $category_id . '">Price: <span id="price_' . $category_id . '">Select
-                                destination and weight range</span></p>
-                        </div>';
+                                    echo "
+                <div class='package-option' data-type='$category_id'>
+                    <img src='" . APPURL . "/admin-panel/categories-admins/img-category/$image' 
+                        alt='$name' class='package-image'>
+                    <p class='package-title'>$name</p>
+                    <p class='package-details'>$dimensions</p>
+                    <p class='package-price' data-type='$category_id'>Price: <span id='price_$category_id'>Select
+                        destination and weight range</span></p>
+                </div>";
 
                     }
                     ?>
