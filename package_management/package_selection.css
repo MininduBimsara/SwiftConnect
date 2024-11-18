@@ -62,7 +62,7 @@ body, html {
 }
 
 /* Dropdown styles */
-#styling-box {
+#weight_range, #destination {
     width: 100%;
     padding: 0.5rem 0.75rem;
     border: 1px solid #d1d5db;
