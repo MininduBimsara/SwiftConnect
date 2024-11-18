@@ -51,92 +51,34 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .reset-container {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .reset-container h1 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .reset-container input {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .reset-container button {
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        border: none;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .reset-container button:hover {
-        background-color: #0056b3;
-    }
-
-    .reset-container .back-link {
-        text-align: center;
-        display: block;
-        margin-top: 10px;
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .reset-container .back-link:hover {
-        text-decoration: underline;
-    }
-    </style>
 
     <link rel="stylesheet" href="../../includes/footer.css">
+    <link rel="stylesheet" href="../CSS/reset_password.css">
     <link rel="stylesheet" href="../../includes/header.css">
 </head>
 
 <body>
-    <div class="reset-container">
-        <h1>Reset Password</h1>
-        <form method="post" action="">
-            <!-- Email Field -->
-            <input type="email" name="email" placeholder="Enter your email" required>
+    <!-- Centered Reset Form -->
+    <div class="wrapper">
+        <div class="reset-container">
+            <h1>Reset Password</h1>
+            <form method="post" action="">
+                <!-- Email Field -->
+                <input type="email" name="email" placeholder="Enter your email" required>
 
-            <!-- New Password Field -->
-            <input type="password" name="new_password" placeholder="Enter new password" required>
+                <!-- New Password Field -->
+                <input type="password" name="new_password" placeholder="Enter new password" required>
 
-            <!-- Confirm Password Field -->
-            <input type="password" name="confirm_password" placeholder="Confirm new password" required>
+                <!-- Confirm Password Field -->
+                <input type="password" name="confirm_password" placeholder="Confirm new password" required>
 
-            <!-- Submit Button -->
-            <button type="submit" name="submit">Submit Password</button>
+                <!-- Submit Button -->
+                <button type="submit" name="submit">Submit Password</button>
 
-            <!-- Back to Login -->
-            <a href="login1.php" class="back-link">Back to Login</a>
-        </form>
+                <!-- Back to Login -->
+                <a href="login1.php" class="back-link">Back to Login</a>
+            </form>
+        </div>
     </div>
 </body>
 
