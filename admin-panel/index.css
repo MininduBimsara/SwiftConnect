@@ -41,7 +41,7 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 .col-md-3{
-    margin: 10px;
+    margin: 80px 30px 80px 30px;
 }
 
 /* Card Header Styling */
@@ -62,5 +62,18 @@
     color: #ff8000;
     font-weight: 500;
     margin-top: 10px;
+}
+@media (max-width:768px) {
+    .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .col-md-3{
+        margin: 30px;
+
+    }
+    
 }
         

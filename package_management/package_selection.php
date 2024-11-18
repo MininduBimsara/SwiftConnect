@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Management</title>
-    <link rel="stylesheet" href="../includes/header.css">
+    <link rel="stylesheet" href="../includes/header.css?v=1.0">
     <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="package_selection.css">
+    <link rel="stylesheet" href="package_selection.css?v=1.0">
 </head>
 
 <body>
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 
                 <div>
                     <label for="destination" class="label">Delivery Destination</label>
-                    <select id="destination" name="destination" class="dropdown" required
+                    <select id="styling-box" name="destination" class="dropdown" required
                         aria-label="Delivery Destination">
                         <option value="" disabled selected>Select a destination</option>
                         <?php
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 
                 <div>
                     <label for="weight_range" class="label">Weight Range</label>
-                    <select id="weight_range" name="weight_range" class="dropdown" required aria-label="Weight Range">
+                    <select id="styling-box" name="weight_range" class="dropdown" required aria-label="Weight Range">
                         <option value="" disabled selected>Select weight range</option>
                         <?php
                         // Get weight ranges with prices
