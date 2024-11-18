@@ -45,6 +45,7 @@ if (isset($_GET['id'])) {
 
 <head>
     <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="../includes/header.css">
 
 </head>
 
