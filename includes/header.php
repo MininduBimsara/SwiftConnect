@@ -14,7 +14,7 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftConnect – Your Gateway to Seamless Shipping.</title>
-    <link rel="stylesheet" href="../includes/header.css?v=1.0">
+    <!-- <link rel="stylesheet" href="../includes/header.css?v=1.0"> -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="../assets/fonts/font-awesome/font-awesome.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
