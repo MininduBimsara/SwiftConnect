@@ -85,26 +85,7 @@
       font-size: 30px;
       display: none;
   }
-  /* Sidebar Base Styles */
-  /* Sidebar Styles */
-  .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 80%; /* Adjust width as needed */
-      background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
-      backdrop-filter: blur(10px); /* Blurred background */
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center items vertically */
-      align-items: center;
-      padding: 20px;
-      transition: transform 0.3s ease;
-      transform: translateX(-100%); /* Initially hidden by moving it off-screen */
-  }
-  
+ 
   .sidebar.active {
       transform: translateX(0); /* Show sidebar by sliding it into view */
   }
@@ -884,7 +865,9 @@ button:hover {
   nav h1{
     margin-left: 30px;
   }
-  
+  .lists{
+    display: none;
+  }
 
   .header-content h2 {
     font-size: 36px;

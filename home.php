@@ -57,7 +57,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <h1><i class="fa-brands fa-nfc-symbol"></i>Swift<span>Connect</span></h1>
 
                     </div>
-                    <ul>
+                    <ul class="lists">
                         <li><a href="#">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="package_management/package_selection.php">Orders</a></li>
@@ -224,7 +224,7 @@ define("APPURL", "http://localhost/SwiftConnect");
     <script>
     function showsidebar() {
         const sidebar = document.querySelector(".sidebar")
-        sidebar.style.display = 'flex';
+        sidebar.style.display = 'flex'
 
     }
 
