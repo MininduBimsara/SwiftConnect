@@ -33,6 +33,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none;
 }
 
 body nav h1 {
@@ -43,6 +44,7 @@ body nav h1 {
 
 body nav h1 span {
     color: #ff0000;
+    text-decoration: none;
 }
 
 nav ul {
@@ -63,7 +65,9 @@ nav ul.nav-links li a {
 nav ul.nav-links li a:hover {
     color: #f0a500;
 }
-
+#username{
+  text-decoration: none;
+}
 /* Sidebar */
 .sidebar {
     position: fixed;

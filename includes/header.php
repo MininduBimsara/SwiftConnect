@@ -50,7 +50,7 @@ $userImage = $isLoggedIn && isset($_SESSION['user']['image']) ? $_SESSION['user'
                                     <img src="<?php echo APPURL;?>/auth/html/user_images/<?php echo $_SESSION['image']; ?>"
                                         alt="User Image">
                                 </div>
-                                <span><?php echo $_SESSION['username']; ?></span>
+                                <span id="username"><?php echo $_SESSION['username']; ?></span>
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item"
