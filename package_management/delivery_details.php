@@ -27,6 +27,11 @@
             $sql = "INSERT INTO orders(fname, lname, company_name, postal_code, description, email, phone_number, user_id, price) 
                     VALUES ('$fname', '$lname', '$company', '$postalCode', '$description', '$email', '$phone', '$user_id', '$total_price')";
 
+            $sql_payment = "INSERT INTO payment(amount, user_id) 
+                                VALUES ('$total_price', '$user_id')";
+
+            $conn->query($sql_payment);
+
             if ($conn->query($sql)) {
                 echo "<script> window.location.href = 'http://localhost/SwiftConnect/pay/pay.php'; </script>";
 

@@ -120,7 +120,20 @@ define("APPURL", "http://localhost/SwiftConnect");
                 <div class="status">
                     <input type="text" class="input" disabled>
                     <button class="check-btn">
-                        <a href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>" style="text-decoration: none; color: white;">Check your package status</a>
+                        <?php
+                        if(isset($_SESSION['username'])){
+                        ?>
+                        <a  href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>" style="text-decoration: none; color: white;">Check your package status</a>
+
+                        <?php
+                        } else {
+                        ?>
+                        Check your package status
+                        <?php
+                            
+                        }
+                        ?>
+
                     </button>
                 </div>
             </div>
