@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     if ($id != $_SESSION['user_id']) {
-        echo "<script> window.location.href ='".APPURL."'; </script>";
+        echo "<script> window.location.href ='".APPURL."/home.php'; </script>";
         exit;
     }
 
@@ -34,7 +34,9 @@ if (isset($_GET['id'])) {
         $update->bind_param("ssssssi", $fullname, $address, $city, $country, $zip_code, $phone_number, $id);
         $update->execute();
 
+        echo "<script>alert('Updated Successfully');</script>";
         echo "<script> window.location.href ='".APPURL."/home.php'; </script>";
+         
         exit;
     }
 } else {

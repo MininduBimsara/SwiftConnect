@@ -118,7 +118,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                 </div>
 
                 <div class="status">
-                    <input type="text" placeholder="Enter customer code" class="input">
+                    <input type="text" class="input" disabled>
                     <button class="check-btn">Check your package status</button>
                 </div>
             </div>
@@ -155,12 +155,12 @@ define("APPURL", "http://localhost/SwiftConnect");
                         <div class="icon">
                             <i class="fa-solid fa-business-time"></i>
                             <h2>320+</h2>
-                            <h5>Vehicles</h5>
+                            <h5>Packages</h5>
                         </div>
                         <div class="icon">
                             <i class="fa-solid fa-handshake"></i>
                             <h2>650+</h2>
-                            <h5>Vehicles</h5>
+                            <h5>Service Coverage</h5>
                         </div>
                     </div>
                 </div>

@@ -108,7 +108,8 @@
                         </label>
                     </div>
                     <div class="form-footer">
-                        <button type="button" class="previous-button">Previous</button>
+                        <a href="<?php echo APPURL; ?>/package_management/package_selection.php"><button type="button"
+                                class="previous-button">Previous</button></a>
                         <button type="submit" name="submit-button" class="submit-button">Proceed to Checkout</button>
                     </div>
                 </form>
