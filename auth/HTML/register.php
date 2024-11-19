@@ -1,88 +1,94 @@
 <?php include_once "../../includes/header.php"; ?>
 <?php
-    include_once "../../config/config.php";
+include_once "../../config/config.php";
 
-    if (isset($_POST['submit'])) {
-        $errors = [];
+if (isset($_POST['submit'])) {
+    $errors = [];
 
-        // Check if fields are empty
-        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username']) || empty($_POST['country']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
-            $errors[] = "All fields are required.";
+    // Check if fields are empty
+    if (
+        empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) ||
+        empty($_POST['username']) || empty($_POST['country']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK
+    ) {
+        $errors[] = "All fields are required.";
+    }
+
+    // Validate name (letters only)
+    if (!preg_match("/^[a-zA-Z\s]+$/", $_POST['name'])) {
+        $errors[] = "Name must contain only letters.";
+    }
+
+    // Validate username (letters only)
+    if (!preg_match("/^[a-zA-Z]+$/", $_POST['username'])) {
+        $errors[] = "Username must contain only letters.";
+    }
+
+    // Validate email
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format.";
+    }
+
+    // Check if passwords match
+    if ($_POST['password'] !== $_POST['confirm_password']) {
+        $errors[] = "Passwords do not match.";
+    }
+
+    // Check if Terms and Conditions are agreed to
+    if (!isset($_POST['terms'])) {
+        $errors[] = "You must agree to our Terms and Conditions.";
+    }
+
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<script>alert('$error');</script>";
         }
+    } else {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+        $country = $_POST['country'];
 
-        // Validate name (letters only)
-        if (!preg_match("/^[a-zA-Z\s]+$/", $_POST['name'])) {
-            $errors[] = "Name must contain only letters.";
-        }
+        // Check if username or email already exists
+        $check_user_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+        $result = mysqli_query($conn, $check_user_query);
 
-        // Validate username (letters only)
-        if (!preg_match("/^[a-zA-Z]+$/", $_POST['username'])) {
-            $errors[] = "Username must contain only letters.";
-        }
-
-        // Validate email
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Invalid email format.";
-        }
-
-        // Check if passwords match
-        if ($_POST['password'] !== $_POST['confirm_password']) {
-            $errors[] = "Passwords do not match.";
-        }
-
-        if (!empty($errors)) {
-            foreach ($errors as $error) {
-                echo "<script>alert('$error');</script>";
-            }
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('Username or email already exists!');</script>";
         } else {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-            $country = $_POST['country'];
+            // Image upload
+            $image = $_FILES['image']['name'];
+            $image_tmp = $_FILES['image']['tmp_name'];
+            $image_folder = "user_images/" . $image;
+            $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-            // Check if username or email already exists
-            $check_user_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
-            $result = mysqli_query($conn, $check_user_query);
+            $image_ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
-            if (mysqli_num_rows($result) > 0) {
-                echo "<script>alert('Username or email already exists!');</script>";
+            if (!in_array($image_ext, $allowed_extensions)) {
+                echo "<script>alert('Invalid image format. Only jpg, jpeg, png, and gif are allowed.');</script>";
             } else {
-                // Image upload
-                $image = $_FILES['image']['name'];
-                $image_tmp = $_FILES['image']['tmp_name'];
-                $image_folder = "user_images/" . $image;
-                $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-
-                $image_ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-
-                if (!in_array($image_ext, $allowed_extensions)) {
-                    echo "<script>alert('Invalid image format. Only jpg, jpeg, png, and gif are allowed.');</script>";
-                } else {
-                    // Move image
-                    if (move_uploaded_file($image_tmp, $image_folder)) {
-
-                        // Insert user data into the database
+                // Move image
+                if (move_uploaded_file($image_tmp, $image_folder)) {
+                    // Insert user data into the database
                     $insert_query = "INSERT INTO users (username, name, email, password, country, image) 
                                     VALUES (?, ?, ?, ?, ?, ?)";
                     $stmt = $conn->prepare($insert_query);
-                    $stmt->bind_param("ssssss", $username, $name, $email, $password_hashed, $country, $image); // Bind parameters
-                    
+                    $stmt->bind_param("ssssss", $username, $name, $email, $password_hashed, $country, $image);
+
                     if ($stmt->execute()) {
-                            echo "<script>window.location.href = 'login1.php';</script>";
-                        } else {
-                            echo "<script>alert('Failed to create account.');</script>";
-                        }
+                        echo "<script>window.location.href = 'login1.php';</script>";
                     } else {
-                        echo "<script>alert('Failed to upload image.');</script>";
+                        echo "<script>alert('Failed to create account.');</script>";
                     }
+                } else {
+                    echo "<script>alert('Failed to upload image.');</script>";
                 }
             }
         }
     }
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -169,6 +175,18 @@
                                     </div>
                                 </div>
 
+                                <!-- Terms and Conditions Checkbox -->
+                                <div class="form-group row mt-4">
+                                    <div class="col-md-12">
+                                        <input type="checkbox" name="terms" id="terms" required>
+                                        <label for="terms">I agree to the
+                                            <a href="terms_and_conditions.php" target="_blank"
+                                                style="color: #000000; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">Terms
+                                                and Conditions</a>.
+                                        </label>
+                                    </div>
+                                </div>
+
                                 <!-- Submit Button -->
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
@@ -183,6 +201,7 @@
         </div>
     </div>
     <?php include_once "../../includes/footer.php"; ?>
+
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const form = document.querySelector("form");
