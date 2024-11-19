@@ -103,7 +103,7 @@
                     </div>
                     <div class="checkbox-container">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="SwiftConnectServicePoint" class="checkbox">
+                            <input type="checkbox" name="SwiftConnectServicePoint" class="checkbox" required>
                             <span class="checkbox-text">At a SwiftConnect ServicePoint (Free)</span>
                         </label>
                     </div>
