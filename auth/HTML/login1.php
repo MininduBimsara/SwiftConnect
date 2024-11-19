@@ -7,6 +7,7 @@ include "../../includes/header.php";
 
 require "../../config/config.php";  
 
+// Redirect to home page if user is already logged in
 if (isset($_SESSION['username'])) {
     echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
     exit(); 
@@ -17,12 +18,11 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('One or more inputs are empty');</script>";
     } else {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        // Optional: Validate email format
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "<script>alert('Invalid email format');</script>";
             exit();
         }
-        
+
         $password = $_POST['password'];
 
         $query = "SELECT * FROM users WHERE email = ?";
@@ -40,6 +40,17 @@ if (isset($_POST['submit'])) {
                 $_SESSION['user_id'] = $fetch['user_id'];
                 $_SESSION['image'] = $fetch['image'];
                 $_SESSION['user_country'] = $fetch['country'];
+
+                // Handle "Remember Me"
+                if (isset($_POST['remember'])) {
+                    setcookie("email", rawurlencode($email), time() + (86400 * 30), "/"); // Encode email to handle special characters
+                    setcookie("password", $password, time() + (86400 * 30), "/"); // Store password as is
+                } else {
+                    setcookie("email", "", time() - 3600, "/");
+                    setcookie("password", "", time() - 3600, "/");
+                }
+
+
                 echo "<script> window.location.href ='http://localhost/SwiftConnect/home.php'; </script>";
                 exit();
             } else {
@@ -64,7 +75,6 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <!-- <link rel="stylesheet" href="../../includes/footer.css"> -->
     <link rel="stylesheet" href="../../includes/footer.css?v=1.0">
     <link rel="stylesheet" href="../../includes/header.css">
     <link rel="stylesheet" href="../CSS/login.css">
@@ -123,5 +133,28 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-    <?php include "../../includes/footer.php";
-?>
+    <?php include "../../includes/footer.php"; ?>
+
+    <script>
+    // Retrieve cookies and pre-fill the form
+    window.onload = function() {
+        const email = getCookie("email");
+        const password = getCookie("password");
+
+        if (email && password) {
+            document.querySelector("input[name='email']").value = decodeURIComponent(email); // Decode email
+            document.querySelector("input[name='password']").value = password; // Password remains as is
+            document.querySelector("input[name='remember']").checked = true;
+        }
+    };
+
+    // Function to get a cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+    </script>
+</body>
+
+</html>
