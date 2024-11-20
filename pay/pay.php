@@ -20,7 +20,7 @@
 
     <div class="container">
         <h1>PAY WITH PAYPAL</h1>
-        <h2>Save time and leave the PArcels to us!</h2>
+        <h2>Save time and leave the Parcels to us!</h2>
 
         <div id="paypal-button-container"></div>
         <p id="result-message"></p>
