@@ -375,10 +375,11 @@ span {
         display: none;
     }
 
-    nav h1 {
-        margin-left: 0;
+   body nav h1 {
+        margin-left: 30px;
         font-size: 20px;
         text-align: center;
+        
     }
 
     .auth-buttons {

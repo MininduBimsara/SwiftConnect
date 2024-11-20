@@ -862,9 +862,12 @@ button:hover {
     text-align: center;
     margin: 10px 0;
   }
-  nav h1{
+  body nav h1{
     margin-left: 30px;
+    font-size: 20px;
   }
+  
+
   .lists{
     display: none;
   }
@@ -923,7 +926,7 @@ button:hover {
   }
 
   .nav-link span {
-    display: none;
+    /* display: none; */
   }
 
 }
