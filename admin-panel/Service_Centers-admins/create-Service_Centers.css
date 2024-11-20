@@ -73,11 +73,11 @@ label {
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #ff8000;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: red;
 }
 
 /* Responsive Design */
