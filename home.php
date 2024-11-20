@@ -192,7 +192,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                     <img src="assets/images/african-american-female-courier-standing-street-with-packages-clipboard-while-making-delivery-city_637285-2054.jpg"
                         alt="Description 1">
                     <div class="description">
-                        <h4>Corporate Main Bag Services</h4>
+                        <h4>CONFIDENTIAL & SENSITIVE DOCUMENTS & PARCELS DELIVERY</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
                             sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
                             dignissimos numquam! Est aspernatur architecto aliquid?</p>
@@ -202,7 +202,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                 <div class="gallery-item">
                     <img src=" assets/images/close-up-man-delivering-pack_23-2149103391.jpg" alt="Description 2">
                     <div class="description">
-                        <h4>Corporate Main Bag Services</h4>
+                        <h4>CORPORATE MAIN BAG SERVICES</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
                             sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
                             dignissimos numquam! Est aspernatur architecto aliquid?</p>
@@ -214,7 +214,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                     <img src=" assets/images/young-worker-loading-cardboard-boxes-delivery-van-communicating-with-his-colleague_637285-1268.jpg"
                         alt="Description 3">
                     <div class="description">
-                        <h4>Corporate Main Bag Services</h4>
+                        <h4>MANAGEMENT OF MAIL ROOM</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
                             sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
                             dignissimos numquam! Est aspernatur architecto aliquid?</p>
@@ -225,7 +225,7 @@ define("APPURL", "http://localhost/SwiftConnect");
                     <img src="assets/images/young-delivery-man-holding-packages-while-communicating-mobile-phone-standing-street_637285-1278.jpg"
                         alt="Description 4">
                     <div class="description">
-                        <h4>Corporate Main Bag Services</h4>
+                        <h4>WAREHOUSE MANAGEMENT SOLUTION</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui beatae culpa ratione
                             sapiente voluptatibus amet laudantium? Rerum temporibus, corporis eum harum laudantium est
                             dignissimos numquam! Est aspernatur architecto aliquid?</p>
